@@ -32,16 +32,23 @@ module.exports = (options) => ({
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: options.contentPath || "blog",
-        path: options.contentPath || "blog",
+        name: options.postsContentPath || "content/posts",
+        path: options.postsContentPath || "content/posts",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: options.postThumbnail || "images",
-        path: options.postThumbnail || "images",
+        name: options.postsContentThumbnail || "content/images",
+        path: options.postsContentThumbnail || "content/images",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem", 
+      options: { 
+        name: options.pagesContentPath || "content/pages",
+        path: options.pagesContentPath || "content/pages",
+      },
+    }
   ],
 });

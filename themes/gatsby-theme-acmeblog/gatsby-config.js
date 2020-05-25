@@ -3,7 +3,9 @@ module.exports = {
     {
       resolve: "gatsby-theme-acmeblog-data",
       options: { 
-        postThumbnail: 'images',
+        postsContentPath: "content/posts",
+        postsContentThumbnail: 'content/images',
+        pagesContentPath: 'content/pages',
         basePath:'/blog',
       }
     },
