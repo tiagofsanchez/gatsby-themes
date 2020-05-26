@@ -149,7 +149,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
 /*
 Runs before Gatsby does things.
-Checks if there is a content directory (blog) and the post thumbail directory
+Checks if there is a content directory (posts, images for thumbnails and pages) and the post thumbail directory
 If not creates one for us
 */
 exports.onPreBootstrap = ({ store }, options) => {

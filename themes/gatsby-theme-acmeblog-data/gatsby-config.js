@@ -1,4 +1,10 @@
-module.exports = (options) => ({
+const withDefaults = require(`./utils/default-options`)
+
+module.exports = (themeOptions) => {
+
+  const options= withDefaults(themeOptions);
+
+  return {
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -32,23 +38,23 @@ module.exports = (options) => ({
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: options.postsContentPath || "content/posts",
-        path: options.postsContentPath || "content/posts",
+        name: options.postsContentPath, 
+        path: options.postsContentPath 
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: options.postsContentThumbnail || "content/images",
-        path: options.postsContentThumbnail || "content/images",
+        name: options.postsContentThumbnail, 
+        path: options.postsContentThumbnail 
       },
     },
     {
       resolve: "gatsby-source-filesystem", 
       options: { 
-        name: options.pagesContentPath || "content/pages",
-        path: options.pagesContentPath || "content/pages",
+        name: options.pagesContentPath,
+        path: options.pagesContentPath
       },
     }
   ],
-});
+}};

@@ -11,14 +11,15 @@
   "license": "MIT",
   "dependencies": {
     "gatsby": "^2.22.1",
+    "gatsby-plugin-react-helmet": "^3.3.2",
+    "gatsby-theme-acmeblog-data": "*",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "gatsby-theme-acmeblog-data": "*"
+    "react-dom": "^16.13.1"
   },
   "scripts": {
     "develop": "gatsby clean & gatsby develop",
     "clean": "gatsby clean",
-    "build": "gatsby build", 
+    "build": "gatsby build",
     "serve": "gatsby serve"
   }
 }
