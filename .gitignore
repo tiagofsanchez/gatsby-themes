@@ -67,3 +67,17 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+themes/gatsby-theme-acmeblog/.cache/async-requires.js
+themes/gatsby-theme-acmeblog/.cache/sync-requires.js
+themes/gatsby-theme-acmeblog/.cache/redux/redux.node.state_0
+themes/gatsby-theme-acmeblog/.cache/redux/redux.rest.state
+themes/gatsby-theme-acmeblog/public/page-data/blog/page-data.json
+themes/gatsby-theme-acmeblog/public/page-data/blog/category/mdx/page-data.json
+themes/gatsby-theme-acmeblog/public/page-data/blog/category/something-else/page-data.json
+themes/gatsby-theme-acmeblog/public/page-data/blog/firstpost/page-data.json
+themes/gatsby-theme-acmeblog/public/page-data/blog/secondpost/page-data.json
+themes/gatsby-theme-acmeblog/public/page-data/blog/tags/gatsby/page-data.json
+themes/gatsby-theme-acmeblog/public/page-data/blog/tags/mdx/page-data.json
+themes/gatsby-theme-acmeblog/public/page-data/blog/tags/post/page-data.json
+themes/gatsby-theme-acmeblog/public/page-data/dev-404-page/page-data.json
+themes/gatsby-theme-acmeblog/public/page-data/index/page-data.json

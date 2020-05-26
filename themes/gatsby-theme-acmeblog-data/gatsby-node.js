@@ -27,14 +27,15 @@ exports.onCreateNode = ({ node, actions, getNode }, options) => {
 
   if (node.internal.type === "Mdx" && source === postsContentPath) {
     const slug = createFilePath({ node, getNode });
-    let basePath = "";
-    if (options.basePath !== undefined) {
-      basePath = options.basePath;
+    console.log(slug);
+    let blogPath =""
+    if (options.blogPath !== undefined && options.blogPath !== "/") {
+      blogPath = options.blogPath;
     }
     createNodeField({
       node,
       name: "slug",
-      value: `${basePath}${slug}`,
+      value: `${blogPath}${slug}`,
     });
   }
 
@@ -85,18 +86,18 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   const blogPostArray = results.data.allMdx.nodes;
   const pagesArray = results.data.pages.nodes;
 
-  let basePath = "";
-  if (options.basePath !== undefined) {
-    basePath = options.basePath;
+  let blogPath = "";
+  if (options.blogPath !== undefined) {
+    blogPath = options.blogPath;
   }
 
   createPage({
-    path: basePath || "/",
+    path: blogPath || "/",
     component: homePageComponent,
   });
 
   createPage({
-    path: `${basePath}/tags`,
+    path: `${blogPath}tags`,
     component: allTagsComponent,
   });
 
@@ -112,14 +113,14 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     createPage({
       path: node.fields.slug,
       component: blogPostComponent,
-      context: { slug: node.fields.slug, basePath },
+      context: { slug: node.fields.slug, blogPath },
     });
   });
 
   blogPostArray.forEach((node) => {
     const category = node.frontmatter.category;
     createPage({
-      path: `${basePath}/category/${_.kebabCase(category)}`,
+      path: `${blogPath}category/${_.kebabCase(category)}`,
       component: categoryPostsComponent,
       context: {
         category: node.frontmatter.category,
@@ -139,7 +140,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
   tagsArray.forEach((tag) => {
     createPage({
-      path: `${basePath}/tags/${_.kebabCase(tag)}`,
+      path: `${blogPath}tags/${_.kebabCase(tag)}`,
       component: tagPostsComponent,
       context: { tag },
     });

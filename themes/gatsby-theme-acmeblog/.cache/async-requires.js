@@ -8,7 +8,6 @@ exports.components = {
   "component---gatsby-theme-acmeblog-data-src-templates-category-posts-js": () => import("./../../gatsby-theme-acmeblog-data/src/templates/categoryPosts.js" /* webpackChunkName: "component---gatsby-theme-acmeblog-data-src-templates-category-posts-js" */),
   "component---gatsby-theme-acmeblog-data-src-templates-home-page-js": () => import("./../../gatsby-theme-acmeblog-data/src/templates/homePage.js" /* webpackChunkName: "component---gatsby-theme-acmeblog-data-src-templates-home-page-js" */),
   "component---gatsby-theme-acmeblog-data-src-templates-other-pages-js": () => import("./../../gatsby-theme-acmeblog-data/src/templates/otherPages.js" /* webpackChunkName: "component---gatsby-theme-acmeblog-data-src-templates-other-pages-js" */),
-  "component---gatsby-theme-acmeblog-data-src-templates-tag-posts-js": () => import("./../../gatsby-theme-acmeblog-data/src/templates/tagPosts.js" /* webpackChunkName: "component---gatsby-theme-acmeblog-data-src-templates-tag-posts-js" */),
-  "component---src-pages-index-js": () => import("./../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */)
+  "component---gatsby-theme-acmeblog-data-src-templates-tag-posts-js": () => import("./../../gatsby-theme-acmeblog-data/src/templates/tagPosts.js" /* webpackChunkName: "component---gatsby-theme-acmeblog-data-src-templates-tag-posts-js" */)
 }
 

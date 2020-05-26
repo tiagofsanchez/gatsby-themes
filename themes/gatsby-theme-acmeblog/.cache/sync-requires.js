@@ -11,7 +11,6 @@ exports.components = {
   "component---gatsby-theme-acmeblog-data-src-templates-category-posts-js": hot(preferDefault(require("C:\\Users\\tformosinhosanchez\\Documents\\_Programming\\gatsby-themes\\themes\\gatsby-theme-acmeblog-data\\src\\templates\\categoryPosts.js"))),
   "component---gatsby-theme-acmeblog-data-src-templates-home-page-js": hot(preferDefault(require("C:\\Users\\tformosinhosanchez\\Documents\\_Programming\\gatsby-themes\\themes\\gatsby-theme-acmeblog-data\\src\\templates\\homePage.js"))),
   "component---gatsby-theme-acmeblog-data-src-templates-other-pages-js": hot(preferDefault(require("C:\\Users\\tformosinhosanchez\\Documents\\_Programming\\gatsby-themes\\themes\\gatsby-theme-acmeblog-data\\src\\templates\\otherPages.js"))),
-  "component---gatsby-theme-acmeblog-data-src-templates-tag-posts-js": hot(preferDefault(require("C:\\Users\\tformosinhosanchez\\Documents\\_Programming\\gatsby-themes\\themes\\gatsby-theme-acmeblog-data\\src\\templates\\tagPosts.js"))),
-  "component---src-pages-index-js": hot(preferDefault(require("C:\\Users\\tformosinhosanchez\\Documents\\_Programming\\gatsby-themes\\themes\\gatsby-theme-acmeblog\\src\\pages\\index.js")))
+  "component---gatsby-theme-acmeblog-data-src-templates-tag-posts-js": hot(preferDefault(require("C:\\Users\\tformosinhosanchez\\Documents\\_Programming\\gatsby-themes\\themes\\gatsby-theme-acmeblog-data\\src\\templates\\tagPosts.js")))
 }
 

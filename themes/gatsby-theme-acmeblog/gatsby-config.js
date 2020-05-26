@@ -6,7 +6,7 @@ module.exports = {
         postsContentPath: "content/posts",
         postsContentThumbnail: 'content/images',
         pagesContentPath: 'content/pages',
-        basePath:'/blog',
+        blogPath:'/',
       }
     },
   ],
