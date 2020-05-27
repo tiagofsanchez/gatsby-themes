@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `ACME VC`,
+    siteTitle: `ACME, not a barrista`,
     siteTitleAlt: `Simple Blog - @tiagofsanchez/gatsby-theme-acmeblog`,
     siteHeadline: `Simple Blog - Gatsby Theme from tiagofsanchez`,
     // siteUrl: ``,
@@ -10,6 +10,13 @@ module.exports = {
     author: `tiagofsanchez`,
   },
   plugins: [
+    "gatsby-plugin-theme-ui",
+    {
+      resolve: "gatsby-plugin-layout", 
+      options: { 
+        component: require.resolve(`./src/components/layout`)
+      }
+    },
     {
       resolve: "gatsby-theme-acmeblog-data",
       options: {
