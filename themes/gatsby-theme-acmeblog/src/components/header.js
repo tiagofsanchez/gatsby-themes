@@ -1,4 +1,3 @@
-import React from "react";
 /** @jsx jsx */
 import { useColorMode, Button, jsx } from "theme-ui";
 import styled from "@emotion/styled";
@@ -31,24 +30,22 @@ const Header = () => {
   };
 
   return (
-    <>
-      <HeaderContainer sx={{ bg: `headerbgcolor` }}>
-        <TitleContainer>
-          <p style={{ margin: `0px` }}>This is my Header</p>
-        </TitleContainer>
+    <HeaderContainer sx={{ bg: `headerbgcolor` }}>
+      <TitleContainer>
+        <p style={{ margin: `0px` }}>This is my Header</p>
+      </TitleContainer>
 
-        <Button
-          onClick={changeModehandler}
-          style={{
-            padding: `0px`,
-            backgroundColor: `none`,
-            borderRadius: `15px`,
-          }}
-        >
-          <ToogleMode mode={colorMode} onClick={changeModehandler} />
-        </Button>
-      </HeaderContainer>
-    </>
+      <Button
+        onClick={changeModehandler}
+        style={{
+          padding: `0px`,
+          backgroundColor: `none`,
+          borderRadius: `15px`,
+        }}
+      >
+        <ToogleMode mode={colorMode} onClick={changeModehandler} />
+      </Button>
+    </HeaderContainer>
   );
 };
 export default Header;
