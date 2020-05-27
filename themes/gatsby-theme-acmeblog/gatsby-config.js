@@ -16,7 +16,7 @@ module.exports = {
         postsContentPath: "content/posts",
         postsContentThumbnail: "content/images",
         pagesContentPath: "content/pages",
-        blogPath: "/",
+        blogPath: "/blog",
         navigation: [
           {
             title: `Blog`,

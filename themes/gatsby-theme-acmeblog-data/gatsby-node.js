@@ -10,7 +10,7 @@ const categoryPostsComponent = require.resolve(
 );
 const homePageComponent = require.resolve("./src/templates/homePage.js");
 const allTagsComponent = require.resolve("./src/templates/allTags.js");
-const otherPages = require.resolve("./src/templates/otherPages.js")
+const otherPages = require.resolve("./src/templates/otherPages.js");
 
 exports.onCreateNode = ({ node, actions, getNode }, options) => {
   const { createNodeField } = actions;
@@ -28,7 +28,7 @@ exports.onCreateNode = ({ node, actions, getNode }, options) => {
   if (node.internal.type === "Mdx" && source === postsContentPath) {
     const slug = createFilePath({ node, getNode });
     console.log(slug);
-    let blogPath =""
+    let blogPath = "";
     if (options.blogPath !== undefined && options.blogPath !== "/") {
       blogPath = options.blogPath;
     }
@@ -77,12 +77,11 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     }
   `);
 
-
   if (results.errors) {
     reporter.panic("ERROR LOADING ACME MDX FILES", result, errors);
   }
 
-  const { createPage } = actions
+  const { createPage } = actions;
   const blogPostArray = results.data.allMdx.nodes;
   const pagesArray = results.data.pages.nodes;
 
@@ -96,18 +95,19 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     component: homePageComponent,
   });
 
+  const allTagsPath = blogPath === "/" ? `${blogPath}tags` : `${blogPath}/tags`;
   createPage({
-    path: `${blogPath}tags`,
+    path: allTagsPath,
     component: allTagsComponent,
   });
 
-  pagesArray.forEach((node) => { 
+  pagesArray.forEach((node) => {
     createPage({
-      path: node.fields.slug, 
+      path: node.fields.slug,
       component: otherPages,
-      context: { slug: node.fields.slug }
-    })
-  })
+      context: { slug: node.fields.slug },
+    });
+  });
 
   blogPostArray.forEach((node) => {
     createPage({
@@ -119,8 +119,12 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
   blogPostArray.forEach((node) => {
     const category = node.frontmatter.category;
+    const categoryPath =
+      blogPath === "/"
+        ? `${blogPath}category/${_.kebabCase(category)}`
+        : `${blogPath}/category/${_.kebabCase(category)}`;
     createPage({
-      path: `${blogPath}category/${_.kebabCase(category)}`,
+      path: categoryPath,
       component: categoryPostsComponent,
       context: {
         category: node.frontmatter.category,
@@ -139,8 +143,12 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   });
 
   tagsArray.forEach((tag) => {
+    const tagPath =
+      blogPath === "/"
+        ? `${blogPath}tags/${_.kebabCase(tag)}`
+        : `${blogPath}/tags/${_.kebabCase(tag)}`;
     createPage({
-      path: `${blogPath}tags/${_.kebabCase(tag)}`,
+      path: tagPath,
       component: tagPostsComponent,
       context: { tag },
     });
