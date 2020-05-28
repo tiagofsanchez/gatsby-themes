@@ -131,7 +131,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     createPage({
       path: node.fields.slug,
       component: blogPostComponent,
-      context: { slug: node.fields.slug, blogPath },
+      context: { slug: node.fields.slug},
     });
   });
 
@@ -186,13 +186,13 @@ If not creates one for us
 */
 exports.onPreBootstrap = ({ store }, options) => {
   const { program } = store.getState();
-  const postsContentPath = options.postsContentPath || "content/posts";
+  const { postsContentPath, postsContentThumbnail, pagesContentPath} = withDefaults(options);
+
   const dirPostsContentPath = path.join(program.directory, postsContentPath);
   if (!fs.existsSync(dirPostsContentPath)) {
     mkdirp.sync(dirPostsContentPath);
   }
-  const postsContentThumbnail =
-    options.postsContentThumbnail || "content/images";
+
   const dirPostContnentThumbnail = path.join(
     program.directory,
     postsContentThumbnail
@@ -200,7 +200,6 @@ exports.onPreBootstrap = ({ store }, options) => {
   if (!fs.existsSync(dirPostContnentThumbnail)) {
     mkdirp.sync(dirPostContnentThumbnail);
   }
-  const pagesContentPath = options.pagesContentPath || "content/pages";
   const dirPagesContentPath = path.join(program.directory, pagesContentPath);
   if (!fs.existsSync(dirPagesContentPath)) {
     mkdirp.sync(dirPagesContentPath);
