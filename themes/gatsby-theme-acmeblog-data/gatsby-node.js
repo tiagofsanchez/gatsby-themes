@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const mkdirp = require("mkdirp");
+const withDefaults = require(`./utils/default-options`)
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const _ = require("lodash");
 const blogPostComponent = require.resolve("./src/templates/blogPost.js");
@@ -12,10 +13,48 @@ const homePageComponent = require.resolve("./src/templates/homePage.js");
 const allTagsComponent = require.resolve("./src/templates/allTags.js");
 const otherPages = require.resolve("./src/templates/otherPages.js");
 
+
+//embeed the themeoptions in my graphql so that they can be queried
+exports.sourceNodes =({actions, createContentDigest}, options) => { 
+  const { createNode} = actions 
+  const { 
+    blogPath,
+    postsContentPath,
+    postsContentThumbnail,
+    pagesContentPath,
+    otherImagesContentPath,
+    tagsPath, 
+    categoryPath
+  } = withDefaults(options)
+
+  const acmeBlogConfig = { 
+    blogPath,
+    postsContentPath,
+    postsContentThumbnail,
+    pagesContentPath,
+    otherImagesContentPath, 
+    tagsPath, 
+    categoryPath
+  }
+
+  createNode({
+    ...acmeBlogConfig,
+    id: `@tfs/gatsby-theme-acmeblog-data-config`,
+    parent: null,
+    children: [],
+    internal: {
+      type: `ACMEBlogConfig`,
+      contentDigest: createContentDigest(acmeBlogConfig),
+      content: JSON.stringify(acmeBlogConfig),
+      description: `Options for @tfs/gatsby-theme-acmeblog-data-config`,
+    },
+  })
+}
+
 exports.onCreateNode = ({ node, actions, getNode }, options) => {
   const { createNodeField } = actions;
-  const { postsContentPath, pagesContentPath } = options;
-  //making sure this is only for Mdx nodes
+  const { postsContentPath, pagesContentPath , blogPath } = withDefaults(options);
+  //just for mdx
   if (node.internal.type !== `Mdx`) {
     return;
   }
@@ -27,11 +66,7 @@ exports.onCreateNode = ({ node, actions, getNode }, options) => {
 
   if (node.internal.type === "Mdx" && source === postsContentPath) {
     const slug = createFilePath({ node, getNode });
-    console.log(slug);
-    let blogPath = "";
-    if (options.blogPath !== undefined && options.blogPath !== "/") {
-      blogPath = options.blogPath;
-    }
+
     createNodeField({
       node,
       name: "slug",
@@ -81,32 +116,15 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     reporter.panic("ERROR LOADING ACME MDX FILES", result, errors);
   }
 
+  const { tagsPath, categoryPath, blogPath } = withDefaults(options);
+
   const { createPage } = actions;
   const blogPostArray = results.data.allMdx.nodes;
   const pagesArray = results.data.pages.nodes;
 
-  let blogPath = "";
-  if (options.blogPath !== undefined) {
-    blogPath = options.blogPath;
-  }
-
   createPage({
-    path: blogPath || "/",
+    path: blogPath,
     component: homePageComponent,
-  });
-
-  const allTagsPath = blogPath === "/" ? `${blogPath}tags` : `${blogPath}/tags`;
-  createPage({
-    path: allTagsPath,
-    component: allTagsComponent,
-  });
-
-  pagesArray.forEach((node) => {
-    createPage({
-      path: node.fields.slug,
-      component: otherPages,
-      context: { slug: node.fields.slug },
-    });
   });
 
   blogPostArray.forEach((node) => {
@@ -117,14 +135,34 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     });
   });
 
+  createPage({
+    path: `${blogPath}${tagsPath}`,
+    component: allTagsComponent,
+  });
+
+    //gets all the tags in one Array
+    const tagsArray = [];
+    blogPostArray.forEach((node) => {
+      node.frontmatter.tags.forEach((tag) => {
+        if (tagsArray.includes(tag) === false) {
+          tagsArray.push(tag);
+        }
+      });
+    });
+  
+    tagsArray.forEach((tag) => {
+      createPage({
+        path: `${blogPath}${tagsPath}/${_.kebabCase(tag)}`,
+        component: tagPostsComponent,
+        context: { tag },
+      });
+    });
+  
   blogPostArray.forEach((node) => {
     const category = node.frontmatter.category;
-    const categoryPath =
-      blogPath === "/"
-        ? `${blogPath}category/${_.kebabCase(category)}`
-        : `${blogPath}/category/${_.kebabCase(category)}`;
+
     createPage({
-      path: categoryPath,
+      path: `${blogPath}${categoryPath}/${_.kebabCase(category)}`,
       component: categoryPostsComponent,
       context: {
         category: node.frontmatter.category,
@@ -132,25 +170,11 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     });
   });
 
-  //gets all the tags in one Array
-  const tagsArray = [];
-  blogPostArray.forEach((node) => {
-    node.frontmatter.tags.forEach((tag) => {
-      if (tagsArray.includes(tag) === false) {
-        tagsArray.push(tag);
-      }
-    });
-  });
-
-  tagsArray.forEach((tag) => {
-    const tagPath =
-      blogPath === "/"
-        ? `${blogPath}tags/${_.kebabCase(tag)}`
-        : `${blogPath}/tags/${_.kebabCase(tag)}`;
+  pagesArray.forEach((node) => {
     createPage({
-      path: tagPath,
-      component: tagPostsComponent,
-      context: { tag },
+      path: node.fields.slug,
+      component: otherPages,
+      context: { slug: node.fields.slug },
     });
   });
 };

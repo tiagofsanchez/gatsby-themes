@@ -55,6 +55,13 @@ module.exports = (themeOptions) => {
         name: options.pagesContentPath,
         path: options.pagesContentPath
       },
-    }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: options.otherImagesContentPath, 
+        path: options.otherImagesContentPath 
+      },
+    },
   ],
 }};

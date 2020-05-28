@@ -19,7 +19,6 @@ const Toogle = styled.div`
 `;
 
 const ToogleMode = ({ mode }) => {
-  console.log(mode)
   return (
     <ToogleContainer mode={mode}>
       <Toogle sx={{ bg: `headerbgcolor` }} />

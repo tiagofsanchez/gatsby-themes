@@ -1,8 +1,10 @@
 /** @jsx jsx */
-import { useColorMode, Button, jsx } from "theme-ui";
+import { useColorMode, Button, jsx} from "theme-ui";
 import styled from "@emotion/styled";
 
+import useSiteMetadata from "../hooks/useSiteMetadata";
 import ToogleMode from "./toogleMode";
+import AcmeLogo from "./acmeLogo";
 
 const HeaderContainer = styled.div`
   position: fixed;
@@ -23,18 +25,27 @@ const TitleContainer = styled.div`
   height: auto;
 `;
 
+const FlexBox =styled.div`
+display: flex;
+align-items: center;
+`
+
+
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode();
+  const { siteTitle } = useSiteMetadata();
   const changeModehandler = () => {
     setColorMode(colorMode === "dark" ? "default" : "dark");
   };
 
   return (
     <HeaderContainer sx={{ bg: `headerbgcolor` }}>
-      <TitleContainer>
-        <p style={{ margin: `0px` }}>This is my Header</p>
-      </TitleContainer>
-
+      <FlexBox >
+        <AcmeLogo  width="50px"/>
+        <TitleContainer>
+          <p style={{ margin: `0px` }}>{siteTitle}</p>
+        </TitleContainer>
+      </FlexBox >
       <Button
         onClick={changeModehandler}
         style={{

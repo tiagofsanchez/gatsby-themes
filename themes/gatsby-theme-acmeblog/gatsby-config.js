@@ -4,13 +4,36 @@ module.exports = {
     siteTitleAlt: `Simple Blog - @tiagofsanchez/gatsby-theme-acmeblog`,
     siteHeadline: `Simple Blog - Gatsby Theme from tiagofsanchez`,
     // siteUrl: ``,
-    siteDescription: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and line highlighting.`,
+    siteDescription: `A blogging theme with small aesthetics. Includes tags and categories support`,
     siteLanguage: `en`,
-    siteImage: `./images/latte.png`,
+    siteImage: `./images/logo.png`,
     author: `tiagofsanchez`,
+    navigation: [
+      {
+        title: `blog`,
+        slug: `/blog`,
+      },
+      {
+        title: `about`,
+        slug: `/about`,
+      },
+    ],
+    externalLinks: [
+      {
+        name: `LinkedIn`,
+        url: `https://www.linkedin.com/in/tiagofsanchez/`,
+      },
+      {
+        name: `Twitter`,
+        url: `https://twitter.com/tiagofsanchez`,
+      },
+    ],
   },
+  
   plugins: [
-    "gatsby-plugin-theme-ui",
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-plugin-layout", 
       options: { 
@@ -23,27 +46,8 @@ module.exports = {
         postsContentPath: "content/posts",
         postsContentThumbnail: "content/images",
         pagesContentPath: "content/pages",
+        otherImagesContentPath: "images",
         blogPath: "/blog",
-        navigation: [
-          {
-            title: `Blog`,
-            slug: `/blog`,
-          },
-          {
-            title: `About`,
-            slug: `/about`,
-          },
-        ],
-        externalLinks: [
-          {
-            name: `LinkedIn`,
-            url: `https://www.linkedin.com/in/tiagofsanchez/`,
-          },
-          {
-            name: `Twitter`,
-            url: `https://twitter.com/tiagofsanchez`,
-          },
-        ],
       },
     },
   ],

@@ -17,8 +17,6 @@ const BlogPostPage = ({
   thumbnail, 
 }) => {
 
-  console.log(basePath)
-  console.log(slug)
   return (
     <>
       <section>
