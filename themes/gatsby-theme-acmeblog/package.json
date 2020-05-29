@@ -23,7 +23,8 @@
     "gatsby-transformer-sharp": "^2.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.1",
+    "typeface-ibm-plex-sans": "^0.0.75"
   },
   "scripts": {
     "develop": "gatsby clean & gatsby develop",

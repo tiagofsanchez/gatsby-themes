@@ -12,6 +12,14 @@ const useSiteMetadata = () => {
           siteLanguage
           siteTitle
           siteTitleAlt
+          navigation { 
+            slug
+            title
+          }
+          externalLinks { 
+            name 
+            url
+          }
         }
       }
     }

@@ -1,10 +1,12 @@
 /** @jsx jsx */
-import { useColorMode, Button, jsx} from "theme-ui";
+import { useColorMode, Button, jsx, Styled } from "theme-ui";
 import styled from "@emotion/styled";
+import { Link } from "gatsby";
 
 import useSiteMetadata from "../hooks/useSiteMetadata";
 import ToogleMode from "./toogleMode";
 import AcmeLogo from "./acmeLogo";
+import Nav from "./navigation";
 
 const HeaderContainer = styled.div`
   position: fixed;
@@ -17,45 +19,48 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 20px 40px;
 `;
 
-const TitleContainer = styled.div`
-  width: auto;
-  height: auto;
+const FlexBox = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-const FlexBox =styled.div`
-display: flex;
-align-items: center;
-`
-
+const NavContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode();
-  const { siteTitle } = useSiteMetadata();
+  const { siteTitle, navigation } = useSiteMetadata();
   const changeModehandler = () => {
     setColorMode(colorMode === "dark" ? "default" : "dark");
   };
 
   return (
     <HeaderContainer sx={{ bg: `headerbgcolor` }}>
-      <FlexBox >
-        <AcmeLogo  width="50px"/>
-        <TitleContainer>
-          <p style={{ margin: `0px` }}>{siteTitle}</p>
-        </TitleContainer>
-      </FlexBox >
-      <Button
-        onClick={changeModehandler}
-        style={{
-          padding: `0px`,
-          backgroundColor: `none`,
-          borderRadius: `15px`,
-        }}
-      >
-        <ToogleMode mode={colorMode} onClick={changeModehandler} />
-      </Button>
+      <FlexBox>
+        <AcmeLogo width="50px" />
+        <Link to="/" style={{ textDecoration: `none` }}>
+          <Styled.h1 sx={{ color: `headerTextColor` }}>{siteTitle}</Styled.h1>
+        </Link>
+      </FlexBox>
+      <NavContainer>
+        <Nav navigation={navigation} />
+        <Button
+          onClick={changeModehandler}
+          style={{
+            padding: `0px`,
+            backgroundColor: `none`,
+            borderRadius: `15px`,
+            marginLeft: `10px`,
+          }}
+        >
+          <ToogleMode mode={colorMode} onClick={changeModehandler} />
+        </Button>
+      </NavContainer>
     </HeaderContainer>
   );
 };
