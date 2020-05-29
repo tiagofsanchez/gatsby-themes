@@ -13,11 +13,11 @@ const Navigation = ({ navigation }) => {
   return (
     <>
       {navigation.map((url) => (
-        <Link to={url.slug} as={Link} key={url.title} style={{textDecoration: `none`, color: `inherit`}}>
-          <NavItems >
-            <Styled.h3 sx={{color: `headerTextColor`}}>{url.title}</Styled.h3>
-          </NavItems>
-        </Link>
+        <NavItems key={url.title}>
+          <Styled.h3 sx={{ color: `headerTextColor` }} as={Link} to={url.slug}>
+            {url.title}
+          </Styled.h3>
+        </NavItems>
       ))}
     </>
   );

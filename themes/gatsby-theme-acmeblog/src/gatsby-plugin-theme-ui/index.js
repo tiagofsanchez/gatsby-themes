@@ -1,18 +1,20 @@
 export default {
   colors: {
-    text: "#000",
+    text: "#2d3748",
     background: "#EEEEEE",
     headerbgcolor: "#59595A",
-    headerTextColor: '#E5E5E5',
-    primary: "#9E0F6E",
+    headerTextColor: "#E5E5E5",
+    hover: "#cccccc",
+    primary: "black",
     secondary: "#2b2758",
     modes: {
       dark: {
-        text: "#fff",
-        background: "#686868",
-        headerTextColor: '#E5E5E5',
+        text: "#cbd5e0",
+        background: "#1A202C",
+        headerTextColor: "#E5E5E5",
+        hover: "#2D2D2D",
         headerbgcolor: "#2D2D2D",
-        primary: "#261B9E",
+        primary: "White",
         secondary: "#625F9E",
       },
     },
@@ -33,30 +35,45 @@ export default {
     body: "normal",
     caps: "0.2em",
   },
-  styles : { 
-   root: { 
-    fontFamily: 'body',
-    lineHeight: 'body',
-    fontWeight: 'body'
-   },
-   h1: { 
-    fontSize: 40,
-    fontFamily: "heading",
-    fontWeight: "bold",
-    color: "primary",
-    my:4
-   },
-   h2: { 
-    fontSize: 26,
-    fontFamily: "heading",
-    fontWeight: "bold",
-    my:3
-   }, 
-   h3: { 
-    fontSize: 22,
-    fontFamily: "heading",
-    fontWeight: "bold",
-    my:3
-   }
-  }
+  styles: {
+    root: {
+      fontFamily: "body",
+      lineHeight: "body",
+      fontWeight: "body",
+    },
+    h1: {
+      fontSize: 44,
+      fontFamily: "heading",
+      fontWeight: "bold",
+      color: "primary",
+      my: 4,
+      textDecoration: "none",
+    },
+    h2: {
+      fontSize: 30,
+      fontFamily: "heading",
+      fontWeight: "bold",
+      color: "primary",
+      my: 3,
+      textDecoration: "none",
+    },
+    h3: {
+      fontSize: 26,
+      fontFamily: "heading",
+      fontWeight: "bold",
+      my: 3,
+      textDecoration: "none", 
+    },
+    h4: {
+      fontSize: 24,
+      fontFamily: "heading",
+      fontWeight: "bold",
+      my: 3,
+      textDecoration: "none", 
+    },
+    p: {
+      fontSize: 22,
+      fontFamily: 'body',
+    },
+  },
 };
