@@ -1,23 +1,34 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, Styled, Flex } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import { Link } from "gatsby";
+import styled from '@emotion/styled';
 import PropTypes from "prop-types";
 
-import useAcmeBlogConfig from '../hooks/useAcmeBlogConfig';
-import useSiteMetadata from '../hooks/useSiteMetadata'
+import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
 import BlogPostListing from "./blogPostListing";
 
+const Flex = styled.div`
+display: flex; 
+justify-content: space-between; 
+align-items: baseline
+`
+
+
 const HomePage = ({ posts }) => {
-  const { tagsPath , blogPath } = useAcmeBlogConfig();
+  const { tagsPath, blogPath } = useAcmeBlogConfig();
 
   return (
     <>
-      <Flex sx={{ alignItems: `baseline`, justifyContent: `space-between` }}>
-        <Styled.h1>Our blog</Styled.h1>
-        <Styled.h4 sx={{ color: `primary` }} as={Link} to={`${blogPath}${tagsPath}`}>
-          All tags
-        </Styled.h4>
+    <Flex>
+      <Styled.h1 >Blog</Styled.h1>
+      <Styled.h4
+        sx={{ color: `primary`, margin: '0px' }}
+        as={Link}
+        to={`${blogPath}${tagsPath}`}
+      >
+        All tags
+      </Styled.h4>
       </Flex>
       <BlogPostListing posts={posts} />
     </>
