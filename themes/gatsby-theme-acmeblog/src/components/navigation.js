@@ -14,9 +14,11 @@ const Navigation = ({ navigation }) => {
     <>
       {navigation.map((url) => (
         <NavItems key={url.title}>
-          <Styled.h3 sx={{ color: `headerTextColor` }} as={Link} to={url.slug}>
-            {url.title}
-          </Styled.h3>
+          <Link to={url.slug} style={{textDecoration: `none`}}>
+            <h3 sx={{ color: `headerTextColor` }}>
+              {url.title}
+            </h3>
+          </Link>
         </NavItems>
       ))}
     </>

@@ -43,7 +43,9 @@ const Header = () => {
     <HeaderContainer sx={{ bg: `headerbgcolor` }}>
       <FlexBox>
         <AcmeLogo width="50px" />
-          <Styled.h1 sx={{ color: `headerTextColor` }} as={Link} to="/">{siteTitle}</Styled.h1>
+        <Link to="/" style={{ textDecoration: `none`}}>
+          <h1 sx={{ color: `headerTextColor`}}>{siteTitle}</h1>
+        </Link>
       </FlexBox>
       <NavContainer>
         <Nav navigation={navigation} />

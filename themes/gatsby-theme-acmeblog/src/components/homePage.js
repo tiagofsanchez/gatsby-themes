@@ -20,15 +20,16 @@ const HomePage = ({ posts }) => {
 
   return (
     <>
-    <Flex>
-      <Styled.h1 >Blog</Styled.h1>
-      <Styled.h4
-        sx={{ color: `primary`, margin: '0px' }}
-        as={Link}
-        to={`${blogPath}${tagsPath}`}
-      >
-        All tags
-      </Styled.h4>
+      <Flex>
+        <h1>Blog</h1>
+        <Link to={`${blogPath}${tagsPath}`} style={{ textDecoration: `none` }}>
+          <h4
+            sx={{ color: `primary`, margin: "0px" }}
+            to={`${blogPath}${tagsPath}`}
+          >
+            All tags
+          </h4>
+        </Link>
       </Flex>
       <BlogPostListing posts={posts} />
     </>

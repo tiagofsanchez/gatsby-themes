@@ -6,6 +6,8 @@ import theme from "../gatsby-plugin-theme-ui/index";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
+import BlogPostHeader from './blogPostHeader'
+
 const _ = require("lodash");
 
 const BlogPostPage = ({
@@ -16,50 +18,34 @@ const BlogPostPage = ({
   tags,
   tableOfContentsArray,
   slug,
-  basePath,
   thumbnail,
 }) => {
+ 
+  const blogHeader = {title , date, tags, category, page: true}
   return (
     <>
+      <section>
+        <BlogPostHeader {...blogHeader} />
+      </section>
       <ThemeProvider theme={theme}>
-        <section>
-          <h1>Title: {title}</h1>
-          <p>Date: {date}</p>
-          <p>
-            Category:{" "}
-            <Link to={`${basePath}/category/${_.kebabCase(category)}`}>
-              {category}
-            </Link>
-          </p>
-          <p>
-            Tags:{" "}
-            {tags.map((tag) => (
-              <span key={tag} style={{ margin: `auto 2px` }}>
-                <Link to={`${basePath}/tags/${_.kebabCase(tag)}`}>{tag}</Link>
-              </span>
-            ))}
-          </p>
-        </section>
-
-        <div style={{ border: `1px solid black` }} />
         <MDXRenderer>{body}</MDXRenderer>
-        <section>
-          <h3>Table of contents</h3>
-          <ul>
-            {tableOfContentsArray.map((item) => {
-              return (
-                <li key={item.title}>
-                  <Link to={`${slug}${item.url}`}>{item.title}</Link>
-                  {item.items &&
-                    item.items.map((intItem) => (
-                      <p key={intItem.title}>{intItem.title}</p>
-                    ))}
-                </li>
-              );
-            })}
-          </ul>
-        </section>
       </ThemeProvider>
+      <section>
+        <h3>Table of contents</h3>
+        <ul>
+          {tableOfContentsArray.map((item) => {
+            return (
+              <li key={item.title}>
+                <Link to={`${slug}${item.url}`}>{item.title}</Link>
+                {item.items &&
+                  item.items.map((intItem) => (
+                    <p key={intItem.title}>{intItem.title}</p>
+                  ))}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </>
   );
 };
@@ -72,7 +58,7 @@ BlogPostPage.propTypes = {
   tags: PropTypes.array.isRequired,
   tableOfContentsArray: PropTypes.array.isRequired,
   slug: PropTypes.string.isRequired,
-  basePath: PropTypes.string.isRequired,
+
 };
 
 export default BlogPostPage;

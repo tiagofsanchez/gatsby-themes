@@ -14,7 +14,8 @@ const TagsCatContainer = styled.div`
   margin: 0px;
 `;
 
-const BlogPostHeader = ({ title, date, tags, category, excerpt, slug }) => {
+//blogheader for the BLOG
+const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
   return (
     <>
       <PostHeaderContainer sx={{ ":hover": { backgroundColor: `hover` } }}>
@@ -41,6 +42,44 @@ const BlogPostHeader = ({ title, date, tags, category, excerpt, slug }) => {
       </PostHeaderContainer>
     </>
   );
+};
+
+//bloghedear for the PAGE
+const blogHeaderForPage = (title, date, tags, category) => {
+  return (
+    <>
+      <Styled.h1 style={{marginBottom: `0px`}}>{title}</Styled.h1>
+      <TagsCatContainer>
+        <Styled.p sx={{ color: `primary`, fontWeight: `900`}}>
+          {date} | {category} |
+        </Styled.p>
+        {tags.map((tag, index) => (
+          <Styled.p style={{marginLeft: `5px`}} key={index}>
+            {tag}
+          </Styled.p>
+        ))}
+      </TagsCatContainer>
+    </>
+  );
+};
+
+const BlogPostHeader = ({
+  title,
+  date,
+  tags,
+  category,
+  excerpt,
+  slug,
+  page,
+}) => {
+  console.log(page);
+  if(page === true) { 
+    console.log("YES")
+    return blogHeaderForPage(title, date, tags, category)
+  } else {
+    return blogHeaderForBlog(title, date, tags, category, excerpt, slug);
+  }
+    
 };
 
 export default BlogPostHeader;

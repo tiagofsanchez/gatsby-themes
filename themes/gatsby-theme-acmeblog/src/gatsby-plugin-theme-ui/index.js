@@ -1,4 +1,4 @@
-const theme =  {
+const theme = {
   colors: {
     text: "#2d3748",
     background: "#EEEEEE",
@@ -40,42 +40,38 @@ const theme =  {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
-    },
-    h1: {
-      fontSize: 44,
-      fontFamily: "heading",
-      fontWeight: "bold",
-      color: "primary",
-      my: 4,
-      textDecoration: "none",
-    },
-    h2: {
-      fontSize: 30,
-      fontFamily: "heading",
-      fontWeight: "bold",
-      color: "primary",
-      my: 3,
-      textDecoration: "none",
-    },
-    h3: {
-      fontSize: 26,
-      fontFamily: "heading",
-      fontWeight: "bold",
-      my: 3,
-      textDecoration: "none", 
-    },
-    h4: {
-      fontSize: 24,
-      fontFamily: "heading",
-      fontWeight: "bold",
-      my: 3,
-      textDecoration: "none", 
-    },
-    p: {
-      fontSize: 22,
-      fontFamily: 'body',
+      h1: {
+        fontSize: 44,
+        fontFamily: "heading",
+        fontWeight: "bold",
+        color: "primary",
+        my: 4,
+      },
+      h2: {
+        fontSize: 30,
+        fontFamily: "heading",
+        fontWeight: "bold",
+        color: "primary",
+        my: 3,
+      },
+      h3: {
+        fontSize: 26,
+        fontFamily: "heading",
+        fontWeight: "bold",
+        my: 3,
+      },
+      h4: {
+        fontSize: 24,
+        fontFamily: "heading",
+        fontWeight: "bold",
+        my: 3,
+      },
+      p: {
+        fontSize: 22,
+        fontFamily: "body",
+      },
     },
   },
 };
 
-export default theme 
+export default theme;
