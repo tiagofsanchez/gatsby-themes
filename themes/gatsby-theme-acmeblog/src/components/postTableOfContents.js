@@ -1,0 +1,51 @@
+import React from "react";
+import { Link } from "gatsby";
+import styled from '@emotion/styled';
+
+const ContentContainer = styled.div`
+margin-left: 20px;
+padding-left: 20px;
+height:fit-content;
+border-left: 3px solid;
+flex: 1 1 280px;
+
+`
+
+const Ul = styled.ul`
+padding-left:0;
+margin-bottom: 16px;
+`
+
+
+const Li = styled.div`
+list-style: none;
+`
+
+
+
+const postTableOfContents = ({ tableOfContentsArray , slug }) => {
+    console.log(tableOfContentsArray);
+    
+return (
+    <ContentContainer sx={{borderLeftColor: `primary`}}>
+      <h3>Table of contents</h3>
+      <Ul>
+        {tableOfContentsArray.map((item) => {
+          return (
+            <Li key={item.title} >
+              <Link to={`${slug}${item.url}`}>{item.title}</Link>
+              {item.items &&
+                item.items.map((intItem) => (
+                  <Li key={intItem.title}>
+                    {intItem.title}
+                  </Li>
+                ))}
+            </Li>
+          );
+        })}
+      </Ul>
+    </ContentContainer>
+  );
+};
+
+export default postTableOfContents;

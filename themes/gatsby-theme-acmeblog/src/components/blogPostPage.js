@@ -2,12 +2,17 @@
 import React from "react";
 import { jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Link } from "gatsby";
 import PropTypes from "prop-types";
+import styled from '@emotion/styled';
 
 import BlogPostHeader from "./blogPostHeader";
+import PostTableOfContents from "./postTableOfContents";
 
 const _ = require("lodash");
+
+const PostContainer = styled.div`
+display: flex; 
+`
 
 const BlogPostPage = ({
   title,
@@ -25,23 +30,15 @@ const BlogPostPage = ({
       <section>
         <BlogPostHeader {...blogHeader} />
       </section>
+      <PostContainer>
+        <div style={{flex: `1 1 80%`}}>
         <MDXRenderer>{body}</MDXRenderer>
-      <section>
-        <h3>Table of contents</h3>
-        <ul>
-          {tableOfContentsArray.map((item) => {
-            return (
-              <li key={item.title}>
-                <Link to={`${slug}${item.url}`} >{item.title}</Link>
-                {item.items &&
-                  item.items.map((intItem) => (
-                    <a sx={{variant: 'links'}} key={intItem.title}>{intItem.title}</a>
-                  ))}
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+        </div>
+        <PostTableOfContents
+          tableOfContentsArray={tableOfContentsArray}
+          slug={slug}
+        />
+      </PostContainer>
     </>
   );
 };

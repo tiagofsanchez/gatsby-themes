@@ -1,20 +1,30 @@
+import prism from "@theme-ui/prism/presets/night-owl";
+
 const theme = {
-  initialColorModeName: 'dark',
+  initialColorModeName: "dark",
   colors: {
     text: "#2d3748",
-    background: "#EEEEEE",
+    background: "#cccccc",
     togglebg: "#1A202C",
-    hover: "#cccccc",
+    hover: "gray",
     primary: "black",
     secondary: "#2b2758",
+    prism: {
+      background: `#1A202C`,
+      text: `#cbd5e0`
+    },
     modes: {
       dark: {
         text: "#cbd5e0",
         background: "#1A202C",
-        togglebg:"#EEEEEE",
+        togglebg: "#cccccc",
         hover: "#2D2D2D",
         primary: "White",
         secondary: "#625F9E",
+        prism: {
+          background: `#cccccc`,
+          text: "black"
+        },
       },
     },
   },
@@ -104,8 +114,39 @@ const theme = {
         verticalAlign: `top`,
         borderBottomWidth: `1px`,
       },
+      img: {
+        maxWidth: "100%",
+        height: "auto",
+        boxShadow: `1px 2px 10px rgba(0, 0, 0, 0.5)`,
+        textAlign: `center`,
+        display: `block`,
+        margin: `auto`,
+      },
+      pre: {
+        variant: `prism`,
+        bg: `prism.background`,
+       
+        hyphens: `none`,
+        marginBottom: 3,
+        overflow: `auto`,
+        borderRadius: 5,
+        p: 3,
+      },
+      code: {
+        prism,
+        background: `none`,
+        color: `prism.text`,
+      },
+      inlineCode: {
+        fontFamily: `body`,
+        borderRadius: `0.3em`,
+        color: `prism.text`,
+        p: `0.1em`,
+        fontSize: `16`
+      }, 
     },
   },
+ 
 };
 
 export default theme;

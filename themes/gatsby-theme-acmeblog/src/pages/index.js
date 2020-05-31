@@ -4,7 +4,7 @@ import { Styled } from "theme-ui";
 const IndexPage = () => {
   return (
     <>
-      <Styled.h1>MAIN PAGE HERE</Styled.h1>
+      <h1>MAIN PAGE HERE</h1>
     </>
   );
 };
