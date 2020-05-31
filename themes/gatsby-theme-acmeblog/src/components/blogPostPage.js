@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, ThemeProvider } from "theme-ui";
+import { jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import theme from "../gatsby-plugin-theme-ui/index";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
-import BlogPostHeader from './blogPostHeader'
+import BlogPostHeader from "./blogPostHeader";
 
 const _ = require("lodash");
 
@@ -20,26 +19,23 @@ const BlogPostPage = ({
   slug,
   thumbnail,
 }) => {
- 
-  const blogHeader = {title , date, tags, category, page: true}
+  const blogHeader = { title, date, tags, category, page: true };
   return (
     <>
       <section>
         <BlogPostHeader {...blogHeader} />
       </section>
-      <ThemeProvider theme={theme}>
         <MDXRenderer>{body}</MDXRenderer>
-      </ThemeProvider>
       <section>
         <h3>Table of contents</h3>
         <ul>
           {tableOfContentsArray.map((item) => {
             return (
               <li key={item.title}>
-                <Link to={`${slug}${item.url}`}>{item.title}</Link>
+                <Link to={`${slug}${item.url}`} >{item.title}</Link>
                 {item.items &&
                   item.items.map((intItem) => (
-                    <p key={intItem.title}>{intItem.title}</p>
+                    <a sx={{variant: 'links'}} key={intItem.title}>{intItem.title}</a>
                   ))}
               </li>
             );
@@ -58,7 +54,6 @@ BlogPostPage.propTypes = {
   tags: PropTypes.array.isRequired,
   tableOfContentsArray: PropTypes.array.isRequired,
   slug: PropTypes.string.isRequired,
-
 };
 
 export default BlogPostPage;

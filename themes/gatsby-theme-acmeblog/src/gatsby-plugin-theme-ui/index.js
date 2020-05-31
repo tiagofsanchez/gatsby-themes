@@ -1,9 +1,9 @@
 const theme = {
+  initialColorModeName: 'dark',
   colors: {
     text: "#2d3748",
     background: "#EEEEEE",
-    headerbgcolor: "#59595A",
-    headerTextColor: "#E5E5E5",
+    togglebg: "#1A202C",
     hover: "#cccccc",
     primary: "black",
     secondary: "#2b2758",
@@ -11,9 +11,8 @@ const theme = {
       dark: {
         text: "#cbd5e0",
         background: "#1A202C",
-        headerTextColor: "#E5E5E5",
+        togglebg:"#EEEEEE",
         hover: "#2D2D2D",
-        headerbgcolor: "#2D2D2D",
         primary: "White",
         secondary: "#625F9E",
       },
@@ -67,8 +66,43 @@ const theme = {
         my: 3,
       },
       p: {
-        fontSize: 22,
+        fontSize: 18,
         fontFamily: "body",
+      },
+      a: {
+        color: "pink",
+      },
+      blockquote: {
+        borderLeftColor: `primary`,
+        borderLeftStyle: `solid`,
+        borderLeftWidth: `4px`,
+        pl: 4,
+        p: {
+          fontStyle: `italic`,
+        },
+      },
+      table: {
+        width: `100%`,
+        my: 4,
+        borderCollapse: `separate`,
+        borderSpacing: 0,
+        [[`th`, `td`]]: {
+          textAlign: `left`,
+          py: `4px`,
+          pr: `4px`,
+          pl: 0,
+          borderColor: `muted`,
+          borderBottomStyle: `solid`,
+        },
+      },
+      th: {
+        verticalAlign: `bottom`,
+        borderBottomWidth: `2px`,
+        color: `heading`,
+      },
+      td: {
+        verticalAlign: `top`,
+        borderBottomWidth: `1px`,
       },
     },
   },

@@ -2,18 +2,17 @@
 import React from "react";
 import { jsx, Styled } from "theme-ui";
 import { Link } from "gatsby";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
 import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
 import BlogPostListing from "./blogPostListing";
 
 const Flex = styled.div`
-display: flex; 
-justify-content: space-between; 
-align-items: baseline
-`
-
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+`;
 
 const HomePage = ({ posts }) => {
   const { tagsPath, blogPath } = useAcmeBlogConfig();
@@ -31,7 +30,8 @@ const HomePage = ({ posts }) => {
           </h4>
         </Link>
       </Flex>
-      <BlogPostListing posts={posts} />
+      
+        <BlogPostListing posts={posts} />
     </>
   );
 };

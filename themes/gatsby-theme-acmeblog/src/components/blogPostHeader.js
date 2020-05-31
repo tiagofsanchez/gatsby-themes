@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, Styled, Link as TLink } from "theme-ui";
+import { jsx, Styled, } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 
@@ -19,26 +19,23 @@ const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
   return (
     <>
       <PostHeaderContainer sx={{ ":hover": { backgroundColor: `hover` } }}>
-        <TLink
-          as={Link}
+        <Link
           style={{ textDecoration: `none`, color: `inherit` }}
           to={slug}
         >
-          <Styled.h2>{title}</Styled.h2>
+          <h2>{title}</h2>
           <TagsCatContainer>
-            <Styled.p
-              sx={{ color: `primary`, fontWeight: `900`, margin: `0px` }}
-            >
+            <p sx={{ color: `primary`, fontWeight: `900`, margin: `0px` }}>
               {date} | {category} |
-            </Styled.p>
+            </p>
             {tags.map((tag, index) => (
-              <Styled.p style={{ margin: `0px 5px` }} key={index}>
+              <p sx={{ margin: `0px 5px` }} key={index}>
                 {tag}
-              </Styled.p>
+              </p>
             ))}
           </TagsCatContainer>
-          <Styled.p>{excerpt}</Styled.p>
-        </TLink>
+          <p>{excerpt}</p>
+        </Link>
       </PostHeaderContainer>
     </>
   );
@@ -48,15 +45,15 @@ const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
 const blogHeaderForPage = (title, date, tags, category) => {
   return (
     <>
-      <Styled.h1 style={{marginBottom: `0px`}}>{title}</Styled.h1>
+      <h1 style={{ marginBottom: `0px` }}>{title}</h1>
       <TagsCatContainer>
-        <Styled.p sx={{ color: `primary`, fontWeight: `900`}}>
+        <p sx={{ color: `primary`, fontWeight: `900` }}>
           {date} | {category} |
-        </Styled.p>
+        </p>
         {tags.map((tag, index) => (
-          <Styled.p style={{marginLeft: `5px`}} key={index}>
+          <p style={{ marginLeft: `5px` }} key={index}>
             {tag}
-          </Styled.p>
+          </p>
         ))}
       </TagsCatContainer>
     </>
@@ -73,13 +70,12 @@ const BlogPostHeader = ({
   page,
 }) => {
   console.log(page);
-  if(page === true) { 
-    console.log("YES")
-    return blogHeaderForPage(title, date, tags, category)
+  if (page === true) {
+    console.log("YES");
+    return blogHeaderForPage(title, date, tags, category);
   } else {
     return blogHeaderForBlog(title, date, tags, category, excerpt, slug);
   }
-    
 };
 
 export default BlogPostHeader;

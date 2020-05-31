@@ -9,13 +9,9 @@ import AcmeLogo from "./acmeLogo";
 import Nav from "./navigation";
 
 const HeaderContainer = styled.div`
-  position: fixed;
-  left: 0px;
-  top: 0px;
   width: 100%;
   height: 70px;
   opacity: 0.95;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,11 +36,11 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer sx={{ bg: `headerbgcolor` }}>
+    <HeaderContainer >
       <FlexBox>
         <AcmeLogo width="50px" />
         <Link to="/" style={{ textDecoration: `none`}}>
-          <h1 sx={{ color: `headerTextColor`}}>{siteTitle}</h1>
+          <h1 >{siteTitle}</h1>
         </Link>
       </FlexBox>
       <NavContainer>
