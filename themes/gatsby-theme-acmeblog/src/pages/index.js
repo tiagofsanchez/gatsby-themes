@@ -1,5 +1,4 @@
 import React from "react";
-import { Styled } from "theme-ui";
 
 const IndexPage = () => {
   return (

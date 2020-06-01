@@ -3,16 +3,22 @@ import React from "react";
 import { jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import PropTypes from "prop-types";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
+import useAcmeBlogConfig from '../hooks/useAcmeBlogConfig';
+
 
 import BlogPostHeader from "./blogPostHeader";
 import PostTableOfContents from "./postTableOfContents";
 
-const _ = require("lodash");
+const PostContentContainer = styled.div`
+  flex: 1 1 70%;
+  white-space: normal;
+  overflow: hidden;
+`;
 
-const PostContainer = styled.div`
-display: flex; 
-`
+const Flex = styled.div`
+  display: flex;
+`;
 
 const BlogPostPage = ({
   title,
@@ -25,20 +31,22 @@ const BlogPostPage = ({
   thumbnail,
 }) => {
   const blogHeader = { title, date, tags, category, page: true };
+  const { postTableOfContents } = useAcmeBlogConfig()
+
   return (
     <>
-      <section>
-        <BlogPostHeader {...blogHeader} />
-      </section>
-      <PostContainer>
-        <div style={{flex: `1 1 80%`}}>
-        <MDXRenderer>{body}</MDXRenderer>
-        </div>
-        <PostTableOfContents
-          tableOfContentsArray={tableOfContentsArray}
-          slug={slug}
-        />
-      </PostContainer>
+      <BlogPostHeader {...blogHeader} />
+      <Flex>
+        <PostContentContainer>
+          <MDXRenderer>{body}</MDXRenderer>
+        </PostContentContainer>
+        {postTableOfContents === true ? (
+          <PostTableOfContents
+            tableOfContentsArray={tableOfContentsArray}
+            slug={slug}
+          />
+        ) : null}
+      </Flex>
     </>
   );
 };

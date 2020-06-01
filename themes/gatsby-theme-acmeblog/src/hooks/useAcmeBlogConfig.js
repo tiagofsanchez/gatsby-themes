@@ -10,7 +10,8 @@ const useAcmeBlogConfig = () => {
         postsContentPath
         postsContentThumbnail
         categoryPath
-        tagsPath
+        tagsPath,
+        postTableOfContents
       }
     }
   `);

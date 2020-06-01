@@ -1,4 +1,4 @@
-import prism from "@theme-ui/prism/presets/night-owl";
+import nightOwl from '@theme-ui/prism/presets/night-owl'
 
 const theme = {
   initialColorModeName: "dark",
@@ -11,7 +11,7 @@ const theme = {
     secondary: "#2b2758",
     prism: {
       background: `#1A202C`,
-      text: `#cbd5e0`
+      text: `#cbd5e0`,
     },
     modes: {
       dark: {
@@ -23,7 +23,7 @@ const theme = {
         secondary: "#625F9E",
         prism: {
           background: `#cccccc`,
-          text: "black"
+          text: "black",
         },
       },
     },
@@ -44,8 +44,18 @@ const theme = {
     body: "normal",
     caps: "0.2em",
   },
+  links: {
+    primary: {
+      color: 'red',
+      bg: 'pink',
+    },
+    secondary: {
+      color: 'white',
+      bg: 'primary',
+    },
+  }, 
   styles: {
-    root: {
+    root: { 
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
@@ -117,36 +127,12 @@ const theme = {
       img: {
         maxWidth: "100%",
         height: "auto",
-        boxShadow: `1px 2px 10px rgba(0, 0, 0, 0.5)`,
         textAlign: `center`,
         display: `block`,
         margin: `auto`,
       },
-      pre: {
-        variant: `prism`,
-        bg: `prism.background`,
-       
-        hyphens: `none`,
-        marginBottom: 3,
-        overflow: `auto`,
-        borderRadius: 5,
-        p: 3,
-      },
-      code: {
-        prism,
-        background: `none`,
-        color: `prism.text`,
-      },
-      inlineCode: {
-        fontFamily: `body`,
-        borderRadius: `0.3em`,
-        color: `prism.text`,
-        p: `0.1em`,
-        fontSize: `16`
-      }, 
     },
   },
- 
 };
 
 export default theme;
