@@ -1,27 +1,23 @@
 /** @jsx jsx */
-import React from 'react';
 import { jsx } from "theme-ui";
-import { Link } from 'gatsby';
+import { Link } from "gatsby";
 import styled from "@emotion/styled";
 
 const NavItems = styled.nav`
   display: flex;
-  margin-right: 10px;
 `;
 
 const Navigation = ({ navigation }) => {
   return (
-    <>
+    <NavItems>
       {navigation.map((url) => (
-        <NavItems key={url.title}>
-          <Link to={url.slug} style={{textDecoration: `none`}}>
-            <h3 sx={{ color: `primary` }}>
-              {url.title}
-            </h3>
+        <div key={url.title} style={{marginRight: `10px`}}>
+          <Link to={url.slug} style={{ textDecoration: `none` }}>
+            <h3 sx={{ color: `primary` }}>{url.title}</h3>
           </Link>
-        </NavItems>
+        </div>
       ))}
-    </>
+    </NavItems>
   );
 };
 

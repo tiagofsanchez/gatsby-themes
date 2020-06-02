@@ -19,7 +19,7 @@ const Toogle = styled.div`
 
 const ToogleMode = ({ mode }) => {
   return (
-    <ToogleContainer mode={mode} sx={{bg:`togglebg`}}>
+    <ToogleContainer mode={mode} sx={{bg:`primary`}}>
       <Toogle sx={{ bg: `background` }} />
     </ToogleContainer>
   );

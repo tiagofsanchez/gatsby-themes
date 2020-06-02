@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from "react";
 import { jsx, Link as TLink } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";

@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 const ImageWrapper = styled.div`
   width: ${(props) => props.width};
   margin-right: 15px;
+
 `;
 
 const AcmeLogo = ({ width }) => {
@@ -29,7 +30,7 @@ const AcmeLogo = ({ width }) => {
 };
 
 AcmeLogo.propTypes = {
-  width: PropTypes.string.isRequired,
+  width: PropTypes.string,
 };
 
 export default AcmeLogo;

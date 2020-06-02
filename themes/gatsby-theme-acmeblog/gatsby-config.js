@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `ACME, not a barrista`,
+    siteTitle: `ACME`,
     siteTitleAlt: `Simple Blog - @tiagofsanchez/gatsby-theme-acmeblog`,
     siteHeadline: `Simple Blog - Gatsby Theme from tiagofsanchez`,
     // siteUrl: ``,
@@ -43,7 +43,7 @@ module.exports = {
     {
       resolve: "gatsby-theme-acmeblog-data",
       options: { 
-        postTableOfContents: true
+        postTableOfContents: false
       }
     },
   ],

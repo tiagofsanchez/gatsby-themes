@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from "react";
 import { jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import PropTypes from "prop-types";
@@ -34,7 +33,7 @@ const BlogPostPage = ({
   const { postTableOfContents } = useAcmeBlogConfig()
 
   return (
-    <>
+    <div>
       <BlogPostHeader {...blogHeader} />
       <Flex>
         <PostContentContainer>
@@ -47,7 +46,7 @@ const BlogPostPage = ({
           />
         ) : null}
       </Flex>
-    </>
+    </div>
   );
 };
 

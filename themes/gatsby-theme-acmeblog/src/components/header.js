@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useColorMode, Button, jsx, Styled } from "theme-ui";
+import { useColorMode, Button, jsx, Link as TLink } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
@@ -9,13 +9,10 @@ import AcmeLogo from "./acmeLogo";
 import Nav from "./navigation";
 
 const HeaderContainer = styled.div`
-  width: 100%;
-  height: 70px;
-  opacity: 0.95;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
 `;
 
 const FlexBox = styled.div`
@@ -36,12 +33,12 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer >
+    <HeaderContainer sx={{variant: `layout.header`}}>
       <FlexBox>
         <AcmeLogo width="50px" />
-        <Link to="/" style={{ textDecoration: `none`}}>
+        <TLink  to="/" as={Link} sx={{ variant: `links.secondary` }}>
           <h1 >{siteTitle}</h1>
-        </Link>
+        </TLink>
       </FlexBox>
       <NavContainer>
         <Nav navigation={navigation} />

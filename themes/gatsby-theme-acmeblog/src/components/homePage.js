@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import React from "react";
-import { jsx, Styled } from "theme-ui";
+import { jsx} from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
@@ -18,7 +17,7 @@ const HomePage = ({ posts }) => {
   const { tagsPath, blogPath } = useAcmeBlogConfig();
 
   return (
-    <>
+    <div>
       <Flex>
         <h1>Blog</h1>
         <Link to={`${blogPath}${tagsPath}`} style={{ textDecoration: `none` }}>
@@ -30,9 +29,8 @@ const HomePage = ({ posts }) => {
           </h4>
         </Link>
       </Flex>
-      
-        <BlogPostListing posts={posts} />
-    </>
+      <BlogPostListing posts={posts} />
+    </div>
   );
 };
 

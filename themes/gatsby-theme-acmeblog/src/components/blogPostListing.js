@@ -23,7 +23,7 @@ const BlogPostListing = ({ posts }) => {
               <br />
             </div>
           );
-        }
+        } else { return null}
       })}
     </>
   );

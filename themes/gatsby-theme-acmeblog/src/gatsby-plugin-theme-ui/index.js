@@ -1,18 +1,16 @@
-import nightOwl from '@theme-ui/prism/presets/night-owl'
+import prism from "@theme-ui/prism/presets/oceanic-next"
 
 const theme = {
-  initialColorModeName: "dark",
+  initialColorModeName: "light",
   colors: {
     text: "#2d3748",
-    background: "#cccccc",
+    background: "#eeeeee",
     togglebg: "#1A202C",
     hover: "gray",
     primary: "black",
     secondary: "#2b2758",
-    prism: {
-      background: `#1A202C`,
-      text: `#cbd5e0`,
-    },
+    link: "#d23669",
+    highlight:"#d23669",
     modes: {
       dark: {
         text: "#cbd5e0",
@@ -21,10 +19,8 @@ const theme = {
         hover: "#2D2D2D",
         primary: "White",
         secondary: "#625F9E",
-        prism: {
-          background: `#cccccc`,
-          text: "black",
-        },
+        link: "pink",
+        highlight:"tomato",
       },
     },
   },
@@ -44,21 +40,26 @@ const theme = {
     body: "normal",
     caps: "0.2em",
   },
-  links: {
-    primary: {
-      color: 'red',
-      bg: 'pink',
-    },
-    secondary: {
-      color: 'white',
-      bg: 'primary',
-    },
-  }, 
   styles: {
-    root: { 
+    root: {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
+      inlineCode: {
+        ...prism,
+        fontSize: 1,
+        p: 1,
+      },
+      pre: {
+        ...prism,
+        fontSize: 1,
+        p: 3,
+        my: 4,
+        overflowX: "auto",
+        width: ["100vw", null, "100%", null, null],
+        position: ["relative", null, "static", null, null],
+        left: ["calc(-50vw + 50%)", null, "auto", null, null],
+      },
       h1: {
         fontSize: 44,
         fontFamily: "heading",
@@ -86,11 +87,16 @@ const theme = {
         my: 3,
       },
       p: {
-        fontSize: 18,
+        fontSize: 20,
         fontFamily: "body",
       },
       a: {
-        color: "pink",
+        color: `link`,
+        fontWeight: "bold",
+        textDecoration: "none",
+        ":hover": {
+          color: "tomato",
+        },
       },
       blockquote: {
         borderLeftColor: `primary`,
@@ -131,6 +137,35 @@ const theme = {
         display: `block`,
         margin: `auto`,
       },
+    },
+    h1: {
+      fontSize: 44,
+      fontFamily: "heading",
+      fontWeight: "bold",
+      color: "link",
+      my: 4,
+    },
+  },
+  links: {
+    primary: {
+      textDecoration: "none",
+      ":hover": {
+        borderBottom: "none",
+      },
+    },
+  },
+  layout: {
+    header: {
+      mx: "40px",
+      marginTop: "10px",
+    },
+    main: {
+      mx: "60px",
+      marginTop: "60px",
+    },
+    footer: {
+      mx: `40px`,
+      marginBottom: "20px",
     },
   },
 };
