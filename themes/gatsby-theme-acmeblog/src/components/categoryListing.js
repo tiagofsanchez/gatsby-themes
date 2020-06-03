@@ -11,15 +11,9 @@ const CatListing = ({ categoriesArray, categoryPath, blogPath }) => {
         <Link
           key={cat.fieldValue}
           to={`${blogPath}${categoryPath}/${_.kebabCase(cat.fieldValue)}`}
+          sx={{borderBottom: 'none'}}
         >
-          <Card
-            sx={{
-              bg: `highlight`,
-              mx: `10px`,
-              p: `10px 15px 10px 15px`,
-              borderRadius: `4px`,
-            }}
-          >
+          <Card variant="category">
             <h3 sx={{ color: `white` }}>{cat.fieldValue}</h3>
           </Card>
         </Link>

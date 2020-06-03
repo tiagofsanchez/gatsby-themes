@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useColorMode, Button, jsx, Link as TLink } from "theme-ui";
+import { useColorMode, Button, jsx } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
@@ -33,12 +33,12 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer sx={{variant: `layout.header`}}>
+    <HeaderContainer sx={{ variant: `layout.header` }}>
       <FlexBox>
         <AcmeLogo width="50px" />
-        <TLink  to="/" as={Link} sx={{ variant: `links.secondary` }}>
-          <h1 >{siteTitle}</h1>
-        </TLink>
+        <Link to="/" sx={{variant: `links.primary`}}>  
+          {siteTitle}
+        </Link>
       </FlexBox>
       <NavContainer>
         <Nav navigation={navigation} />

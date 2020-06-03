@@ -1,4 +1,4 @@
-import prism from "@theme-ui/prism/presets/oceanic-next"
+import prism from "@theme-ui/prism/presets/night-owl.json";
 
 const theme = {
   initialColorModeName: "light",
@@ -10,7 +10,8 @@ const theme = {
     primary: "black",
     secondary: "#2b2758",
     link: "#d23669",
-    highlight:"#d23669",
+    linkbg: "#1A202C",
+    highlight: "#d23669",
     modes: {
       dark: {
         text: "#cbd5e0",
@@ -19,8 +20,9 @@ const theme = {
         hover: "#2D2D2D",
         primary: "White",
         secondary: "#625F9E",
-        link: "pink",
-        highlight:"tomato",
+        link: "tomato",
+        linkbg: "#eeeeee",
+        highlight: "tomato",
       },
     },
   },
@@ -94,9 +96,7 @@ const theme = {
         color: `link`,
         fontWeight: "bold",
         textDecoration: "none",
-        ":hover": {
-          color: "tomato",
-        },
+        borderBottom: "2px dashed",
       },
       blockquote: {
         borderLeftColor: `primary`,
@@ -142,16 +142,21 @@ const theme = {
       fontSize: 44,
       fontFamily: "heading",
       fontWeight: "bold",
-      color: "link",
+      color: "primary",
       my: 4,
     },
   },
   links: {
     primary: {
-      textDecoration: "none",
-      ":hover": {
-        borderBottom: "none",
-      },
+      fontSize: 44,
+      fontFamily: "heading",
+      fontWeight: "bold",
+      color: "highlight",
+      my: 4,
+      borderBottom: "none",
+    },
+    secondary: {
+      borderBottom: "none",
     },
   },
   layout: {
@@ -166,6 +171,29 @@ const theme = {
     footer: {
       mx: `40px`,
       marginBottom: "20px",
+    },
+  },
+  cards: {
+    category: {
+      bg: `highlight`,
+      mx: `10px`,
+      p: `10px 15px 10px 15px`,
+      borderRadius: `4px`,
+    },
+    tag: {
+      p: `5px 15px 5px 15px`,
+      borderRadius: `4px`,
+      m: 2,
+      width: "auto",
+      border: `2px solid`,
+      borderColor: "highlight",
+    },
+  },
+  badges: {
+    number: {
+      bg: `highlight`,
+      color: `white`,
+      p: `6px`,
     },
   },
 };

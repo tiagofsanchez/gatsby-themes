@@ -5,7 +5,7 @@ import TagsListing from './tagsListing'
 const AllTagsPage = ({allTagsArray}) => { 
     return (
     <>
-    <h1>All tags array Page</h1>
+    <h1>Tags</h1>
     <TagsListing allTagsArray={allTagsArray}/>
     </>
     )
