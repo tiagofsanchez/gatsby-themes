@@ -15,7 +15,7 @@ export const allBlogposts = graphql`
         frontmatter {
           title
           tags
-          date
+          date (formatString: "MMMM DD, YYYY")
           category
         }
       }

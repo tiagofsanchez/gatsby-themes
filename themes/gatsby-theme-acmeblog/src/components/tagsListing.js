@@ -25,7 +25,7 @@ const TagsListing = ({ allTagsArray }) => {
               to={`${blogPath}${tagsPath}/${_.kebabCase(tag.fieldValue)}`}
             >
               <Card variant="tag" sx={{ marginRight: `-10px` }}>
-                <h4 >{tag.fieldValue}</h4>
+                <h4 sx={{my:`0px`}}>{tag.fieldValue}</h4>
               </Card>
 
               <div>

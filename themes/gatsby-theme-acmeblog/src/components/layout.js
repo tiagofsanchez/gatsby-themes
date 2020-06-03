@@ -6,26 +6,32 @@ import styled from "@emotion/styled";
 import Header from "./header";
 import Footer from "./footer";
 
-const Main = styled.main`
-  @media (max-width: 600px) {
-    width: 80%;
-  }
-`;
-
 const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   height: -webkit-fill-available;
   flex-direction: column;
+  min-height: 100vh;
 `;
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Header />
+    <div
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+
+      }}
+    >
+      <header sx={{ variant: `layout.header` }}>
+        <Header />
+      </header>
       <Flex>
-        <Main sx={{ variant: `layout.main` }}>{children}</Main>
-        <Footer />
+        <main sx={{ variant: `layout.main` }}>{children}</main>
+        <footer sx={{ variant: `layout.footer` }} >
+          <Footer />
+        </footer>
       </Flex>
     </div>
   );

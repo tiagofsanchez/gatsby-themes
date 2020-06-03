@@ -10,7 +10,7 @@ const Flex = styled.footer`
 
 const Footer = () => {
   return (
-    <Flex sx={{ variant: `layout.footer` }}>
+    <Flex>
       <h5>2020 by ACME. All rights reserved</h5>
       <h5>
         Theme by{" "}

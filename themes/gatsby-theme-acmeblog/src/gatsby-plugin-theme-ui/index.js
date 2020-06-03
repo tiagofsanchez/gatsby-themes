@@ -2,11 +2,15 @@ import prism from "@theme-ui/prism/presets/night-owl.json";
 
 const theme = {
   initialColorModeName: "light",
+  breakpoints: [
+    '40em', '56em', '64em',
+  ],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     text: "#2d3748",
     background: "#eeeeee",
     togglebg: "#1A202C",
-    hover: "gray",
+    hover: "white",
     primary: "black",
     secondary: "#2b2758",
     link: "#d23669",
@@ -17,7 +21,7 @@ const theme = {
         text: "#cbd5e0",
         background: "#1A202C",
         togglebg: "#cccccc",
-        hover: "#2D2D2D",
+        hover: "black",
         primary: "White",
         secondary: "#625F9E",
         link: "tomato",
@@ -57,9 +61,7 @@ const theme = {
         fontSize: 1,
         p: 3,
         my: 4,
-        width: ["100vw", null, "100%", null, null],
-        position: ["relative", null, "static", null, null],
-        left: ["calc(-50vw + 50%)", null, "auto", null, null],
+        
       },
       h1: {
         fontSize: 44,
@@ -163,15 +165,23 @@ const theme = {
   layout: {
     header: {
       mx: "40px",
+      width: `90%`,
+      margin:  `auto`,
       marginTop: "10px",
     },
     main: {
       mx: "60px",
+      width: [`90%`, null , `70%` ],
+      flex: `1 1 auto`,
+      margin: `auto`,
       marginTop: "60px",
     },
     footer: {
-      mx: `40px`,
+      mx: `60px`,
+      width: [`90%`, null , `70%` ],
+      margin: `auto`,
       marginBottom: "20px",
+      bottom: `0`
     },
   },
   cards: {

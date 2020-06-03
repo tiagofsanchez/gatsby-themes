@@ -11,7 +11,7 @@ const usePostsForIndexPage = () => {
         nodes {
           frontmatter {
             title
-            date
+            date (formatString: "MMMM DD, YYYY")
             category
             tags
           }

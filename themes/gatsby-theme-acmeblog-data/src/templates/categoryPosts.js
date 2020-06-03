@@ -14,7 +14,7 @@ export const category = graphql`
         frontmatter {
           title
           tags
-          date
+          date (formatString: "MMMM DD, YYYY")
           category
         }
         fields {

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Card } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 
@@ -16,17 +16,34 @@ const TagsCatContainer = styled.div`
 //blogheader for the BLOG
 const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
   return (
-    <PostHeaderContainer sx={{ ":hover": { backgroundColor: `hover` } }}>
-      <Link style={{ textDecoration: `none`, color: `inherit` }} to={slug}>
-        <h2>{title}</h2>
+    <PostHeaderContainer
+      sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 1px" } }}
+    >
+      <Link
+        style={{
+          textDecoration: `none`,
+          color: `inherit`,
+          fontWeight: `normal`,
+        }}
+        to={slug}
+      >
+        <h2 sx={{ marginBottom: `3px` }}>{title}</h2>
+        <p sx={{ color: `primary`, my: `5px` }}>{date}</p>
         <TagsCatContainer>
-          <p sx={{ color: `primary`, fontWeight: `900`, margin: `0px` }}>
-            {date} | {category} |
-          </p>
+          <Card
+            variant="category"
+            sx={{ color: `white`, marginLeft: `0px`, p: `5px` }}
+          >
+            {category}
+          </Card>
           {tags.map((tag, index) => (
-            <p sx={{ margin: `0px 5px` }} key={index}>
+            <Card
+              variant="tag"
+              sx={{ p: `5px`, my: `0px`, mx: `3px`, borderWidth: `1px` }}
+              key={index}
+            >
               {tag}
-            </p>
+            </Card>
           ))}
         </TagsCatContainer>
         <p>{excerpt}</p>
@@ -35,23 +52,31 @@ const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
   );
 };
 
-//bloghedear for the PAGE
-const blogHeaderForPage = (title, date, tags, category) => {
+//bloghedear for the post page
+const blogHeaderForPostPage = (title, date, tags, category) => {
   return (
     <div>
       <h1 style={{ marginBottom: `0px` }} sx={{ variant: `layout.total` }}>
         {title}
       </h1>
+      <p sx={{ color: `primary`, my: `5px` }}>{date}</p>
       <TagsCatContainer>
-        <p sx={{ color: `primary`, fontWeight: `900` }}>
-          {date} | {category} |
-        </p>
-        {tags.map((tag, index) => (
-          <p style={{ marginLeft: `5px` }} key={index}>
-            {tag}
-          </p>
-        ))}
-      </TagsCatContainer>
+          <Card
+            variant="category"
+            sx={{ color: `white`, marginLeft: `0px`, p: `5px` }}
+          >
+            {category}
+          </Card>
+          {tags.map((tag, index) => (
+            <Card
+              variant="tag"
+              sx={{ p: `5px`, my: `0px`, mx: `3px`, borderWidth: `1px` }}
+              key={index}
+            >
+              {tag}
+            </Card>
+          ))}
+        </TagsCatContainer>
     </div>
   );
 };
@@ -66,7 +91,7 @@ const BlogPostHeader = ({
   page,
 }) => {
   if (page === true) {
-    return blogHeaderForPage(title, date, tags, category);
+    return blogHeaderForPostPage(title, date, tags, category);
   } else {
     return blogHeaderForBlog(title, date, tags, category, excerpt, slug);
   }

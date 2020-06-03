@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer sx={{ variant: `layout.header` }}>
+    <HeaderContainer>
       <FlexBox>
         <AcmeLogo width="50px" />
         <Link to="/" sx={{variant: `links.primary`}}>  
