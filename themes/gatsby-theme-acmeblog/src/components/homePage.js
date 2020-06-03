@@ -15,7 +15,7 @@ const Flex = styled.div`
 
 const HomePage = ({ posts }) => {
   const { tagsPath, blogPath } = useAcmeBlogConfig();
-
+  console.log(posts)
   return (
     <div>
       <Flex>

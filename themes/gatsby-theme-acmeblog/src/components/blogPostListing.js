@@ -3,6 +3,8 @@ import BlogPostHeader from "./blogPostHeader";
 
 
 const BlogPostListing = ({ posts }) => {
+  
+  //NOTE: the map() could be outside the return to improve readability
   return (
     <>
       {posts.map((post , index) => {
