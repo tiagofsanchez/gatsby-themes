@@ -1,4 +1,5 @@
 const withDefaults = require(`./utils/default-options`)
+const remarkSlug = require(`remark-slug`);
 
 module.exports = (themeOptions) => {
 
@@ -25,6 +26,7 @@ module.exports = (themeOptions) => {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [`.mdx`, `.md`],
+        remarkPlugins: [remarkSlug],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,

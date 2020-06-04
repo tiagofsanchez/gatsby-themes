@@ -43,7 +43,7 @@ module.exports = {
     {
       resolve: "gatsby-theme-acmeblog-data",
       options: { 
-        postTableOfContents: false
+        postTableOfContents: true
       }
     },
   ],

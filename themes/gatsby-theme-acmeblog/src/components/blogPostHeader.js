@@ -56,7 +56,7 @@ const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
 const blogHeaderForPostPage = (title, date, tags, category) => {
   return (
     <div>
-      <h1 style={{ marginBottom: `0px` }} sx={{ variant: `layout.total` }}>
+      <h1 sx={{ my: `0px` }}>
         {title}
       </h1>
       <p sx={{ color: `primary`, my: `5px` }}>{date}</p>

@@ -3,8 +3,7 @@ import { jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-import useAcmeBlogConfig from '../hooks/useAcmeBlogConfig';
-
+import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
 
 import BlogPostHeader from "./blogPostHeader";
 import PostTableOfContents from "./postTableOfContents";
@@ -26,24 +25,22 @@ const BlogPostPage = ({
   category,
   tags,
   tableOfContentsArray,
-  slug,
   thumbnail,
 }) => {
   const blogHeader = { title, date, tags, category, page: true };
-  const { postTableOfContents } = useAcmeBlogConfig()
-
+  const { postTableOfContents } = useAcmeBlogConfig();
+  console.log(thumbnail)
   return (
     <div>
-      <BlogPostHeader {...blogHeader} />
       <Flex>
         <PostContentContainer>
+          <BlogPostHeader {...blogHeader} />
           <MDXRenderer>{body}</MDXRenderer>
         </PostContentContainer>
-        {postTableOfContents === true ? (
-          <PostTableOfContents
-            tableOfContentsArray={tableOfContentsArray}
-            slug={slug}
-          />
+        {postTableOfContents === true &&
+        tableOfContentsArray !== null &&
+        tableOfContentsArray !== undefined ? (
+          <PostTableOfContents tableOfContentsArray={tableOfContentsArray} />
         ) : null}
       </Flex>
     </div>
