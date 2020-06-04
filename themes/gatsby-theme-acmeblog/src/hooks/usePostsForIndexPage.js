@@ -6,7 +6,7 @@ const usePostsForIndexPage = () => {
       posts: allMdx(
         filter: { frontmatter: { date: { ne: null } } }
         limit: 5
-        sort: { order: ASC, fields: frontmatter___date }
+        sort: { order: DESC, fields: frontmatter___date }
       ) {
         nodes {
           frontmatter {

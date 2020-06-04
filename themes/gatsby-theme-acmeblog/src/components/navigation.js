@@ -5,6 +5,9 @@ import styled from "@emotion/styled";
 
 const NavItems = styled.nav`
   display: flex;
+  @media (max-width: 600px) { 
+    display: none;
+  }
 `;
 
 const Navigation = ({ navigation }) => {
