@@ -2,6 +2,7 @@
   "private": true,
   "workspaces": [
     "gatsby-theme-acmeblog-data",
-    "gatsby-theme-acmeblog"
+    "gatsby-theme-acmeblog",
+    "gatsby-theme-acme"
   ]
 }

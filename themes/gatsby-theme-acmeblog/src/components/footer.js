@@ -35,28 +35,36 @@ const FlexMenu = styled.div`
   padding: 0px 20px 0px 20px;
 `;
 
-const creds = (
-  <FlexCreds>
-    <h5>2020 by ACME. All rights reserved</h5>
-    <h5>
-      Theme by{" "}
-      <Tlink
-        href="https://www.tiagofsanchez.com/"
-        rel="noreferrer noopener"
-        target="_blank"
-      >
-        Tiago
-      </Tlink>
-    </h5>
-  </FlexCreds>
-);
-
 const Footer = () => {
-  const { navigation } = useSiteMetadata();
+  const { navigation, externalLinks } = useSiteMetadata();
   return (
     <div>
-      {creds}
-      <MenuContainer sx={{ bg: `secondary` }}>
+      <FlexCreds>
+        <h5>2020 by ACME. All rights reserved</h5>
+        <h5>
+          Theme by{" "}
+          <Tlink
+            href="https://www.tiagofsanchez.com/"
+            rel="noreferrer noopener"
+            target="_blank"
+            style={{ marginRight: `5px` }}
+          >
+            Tiago
+          </Tlink>
+          , {""}
+          {externalLinks.map((link) => (
+            <Tlink
+              href={link.url}
+              rel="noreferrer noopener"
+              target="_blank"
+              style={{ marginRight: `5px` }}
+            >
+              {link.name}
+            </Tlink>
+          ))}
+        </h5>
+      </FlexCreds>
+      <MenuContainer sx={{ bg: `background` }}>
         <FlexMenu>
           <Link to="/" sx={{ borderBottom: `0px` }}>
             <p sx={{ color: `primary`, margin: `0px`, fontWeight: `600` }}>

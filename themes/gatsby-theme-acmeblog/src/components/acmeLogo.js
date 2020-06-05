@@ -22,11 +22,11 @@ const AcmeLogo = ({ width }) => {
       }
     }
   `);
-  return (
+  return data.logo !== null ? (
     <ImageWrapper width={width}>
       <Img fluid={data.logo.childImageSharp.fluid} />
     </ImageWrapper>
-  );
+  ) : null;
 };
 
 AcmeLogo.propTypes = {

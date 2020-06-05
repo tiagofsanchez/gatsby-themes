@@ -188,12 +188,13 @@ If not creates one for us
 */
 exports.onPreBootstrap = ({ store }, options) => {
   const { program } = store.getState();
-  const { postsContentPath, postsContentThumbnail, pagesContentPath} = withDefaults(options);
+  const { postsContentPath, postsContentThumbnail, pagesContentPath , otherImagesContentPath} = withDefaults(options);
 
   const dirPostsContentPath = path.join(program.directory, postsContentPath);
   if (!fs.existsSync(dirPostsContentPath)) {
     mkdirp.sync(dirPostsContentPath);
   }
+
 
   const dirPostContnentThumbnail = path.join(
     program.directory,
@@ -206,4 +207,10 @@ exports.onPreBootstrap = ({ store }, options) => {
   if (!fs.existsSync(dirPagesContentPath)) {
     mkdirp.sync(dirPagesContentPath);
   }
+
+  const dirOtherImagesContentPath = path.join(program.directory, otherImagesContentPath);
+  if (!fs.existsSync(dirOtherImagesContentPath)) {
+    mkdirp.sync(dirOtherImagesContentPath);
+  }
+
 };
