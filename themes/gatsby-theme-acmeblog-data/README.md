@@ -1,4 +1,4 @@
-# @tfs/gatsby-theme-acmeblog-data
+# gatsby-theme-acmeblog-data
 
 The parent theme (that defines all the data needed) that will feed the `@gastby-theme-acmeblog` and, in a way, `@gatsby-theme-acme` (basically will be shadow acmeblog) themes with data. 
 
