@@ -98,3 +98,6 @@ There are a couple of things that I still need to do
 
 - [ ] thumbnail is not totally implemented at `gatsby-theme-acmeblog`
 - [ ] reading time for every posts
+- [ ] Pagination implementation
+- [ ] Next and previous post in the post page
+- [ ] attached a PDF in a post
