@@ -51,7 +51,7 @@ const theme = {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
-      inlineCode: {
+      code: {
         ...prism,
         fontSize: 1,
         p: 1,

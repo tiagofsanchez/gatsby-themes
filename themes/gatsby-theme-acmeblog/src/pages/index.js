@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import usePostsForIndexPage from "../hooks/usePostsForIndexPage";
 import useAllCategories from "../hooks/useAllCategories";
 import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
+import useSiteMetadata from "../hooks/useSiteMetadata";
 
 import Logo from "../components/acmeLogo";
 import BlogPostHeader from "../components/blogPostHeader";
@@ -25,7 +26,8 @@ const ImgContainer = styled.div`
 const IndexPage = () => {
   const postsArray = usePostsForIndexPage();
   const categoriesArray = useAllCategories();
-  const { categoryPath , blogPath } = useAcmeBlogConfig();
+  const { categoryPath, blogPath } = useAcmeBlogConfig();
+  const { siteDescription } = useSiteMetadata();
   return (
     <div>
       <FlexContainer>
@@ -33,13 +35,7 @@ const IndexPage = () => {
           <h1>
             <span sx={{ color: `highlight` }}>Hello!</span> We are ACME!
           </h1>
-          <h2>Yes, we could be a barista :)</h2>
-          <h3>
-            We create content for the web - you know, that thing that lives on
-            the cloud? Just kidding! This is a gatsby theme that you can use for
-            share your cool work
-          </h3>
-          <h3>Hope you enjoy!</h3>
+          <h3>{siteDescription}</h3>
         </div>
         <ImgContainer>
           <Logo />

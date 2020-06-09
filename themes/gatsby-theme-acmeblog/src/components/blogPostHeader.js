@@ -10,6 +10,7 @@ const PostHeaderContainer = styled.div`
 
 const TagsCatContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   margin: 0px;
 `;
 
@@ -32,14 +33,14 @@ const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
         <TagsCatContainer>
           <Card
             variant="category"
-            sx={{ color: `white`, marginLeft: `0px`, p: `5px` }}
+            sx={{ color: `white`, marginLeft: `0px`, p: `5px` , my: `2px`}}
           >
             {category}
           </Card>
           {tags.map((tag, index) => (
             <Card
               variant="tag"
-              sx={{ p: `5px`, my: `0px`, mx: `3px`, borderWidth: `1px` }}
+              sx={{ p: `5px`, my: `2px`, mx: `3px`, borderWidth: `1px` }}
               key={index}
             >
               {tag}
@@ -63,14 +64,14 @@ const blogHeaderForPostPage = (title, date, tags, category) => {
       <TagsCatContainer>
           <Card
             variant="category"
-            sx={{ color: `white`, marginLeft: `0px`, p: `5px` }}
+            sx={{ color: `white`, marginLeft: `0px`, p: `5px`, my: `2px` }}
           >
             {category}
           </Card>
           {tags.map((tag, index) => (
             <Card
               variant="tag"
-              sx={{ p: `5px`, my: `0px`, mx: `3px`, borderWidth: `1px` }}
+              sx={{ p: `5px`, my: `2px`, mx: `3px`, borderWidth: `1px` }}
               key={index}
             >
               {tag}
