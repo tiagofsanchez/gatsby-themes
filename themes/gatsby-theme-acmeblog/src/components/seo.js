@@ -16,7 +16,7 @@ const Seo = ({ title, description, pathname, image, children }) => {
   const {
     siteTitle,
     siteTitleAlt: defaultTitle,
-    // siteUrl,
+    siteUrl,
     siteDescription: defaultDescription,
     siteLanguage,
     siteImage: defaultImage,
