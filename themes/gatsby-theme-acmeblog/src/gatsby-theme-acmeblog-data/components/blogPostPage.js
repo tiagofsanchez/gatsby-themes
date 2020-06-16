@@ -5,6 +5,7 @@ import BlogPostPage from '../../components/blogPostPage'
 
     const post = {
         body: data.post.body,
+        excerpt: data.post.excerpt,
         title: data.post.frontmatter.title,
         date: data.post.frontmatter.date,
         category: data.post.frontmatter.category,

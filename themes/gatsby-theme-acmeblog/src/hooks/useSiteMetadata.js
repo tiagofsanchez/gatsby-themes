@@ -6,6 +6,7 @@ const useSiteMetadata = () => {
       site {
         siteMetadata {
           author
+          siteUrl
           siteHeadline
           siteDescription
           siteImage
@@ -26,5 +27,6 @@ const useSiteMetadata = () => {
   `);
   return data.site.siteMetadata;
 };
+
 
 export default useSiteMetadata

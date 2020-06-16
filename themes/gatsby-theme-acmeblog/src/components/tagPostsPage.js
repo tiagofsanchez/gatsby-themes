@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import BlogPostListing from "../components/blogPostListing";
+import SEO from '../components/seo';
 
 const TagPostsPage = ({ data }) => {
   let postsArray = [];
@@ -20,6 +21,7 @@ const TagPostsPage = ({ data }) => {
 
   return (
     <div>
+      <SEO />
       <h1>
         All posts tagged with{" "}
         <span sx={{ color: `highlight` }}>{data.pageContext.tag}</span> tag

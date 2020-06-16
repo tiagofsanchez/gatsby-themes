@@ -24,6 +24,7 @@ export const blogPost = graphql`
       fields {
         slug
       }
+      excerpt
     }
   }
 `;

@@ -1,13 +1,15 @@
-import React from 'react'; 
-import TagsListing from './tagsListing'
+import React from "react";
+import TagsListing from "./tagsListing";
+import SEO from "../components/seo";
 
-const AllTagsPage = ({allTagsArray}) => { 
-    return (
+const AllTagsPage = ({ allTagsArray }) => {
+  return (
     <>
-    <h1>Tags</h1>
-    <TagsListing allTagsArray={allTagsArray}/>
+      <SEO />
+      <h1>Tags</h1>
+      <TagsListing allTagsArray={allTagsArray} />
     </>
-    )
-}
+  );
+};
 
 export default AllTagsPage;

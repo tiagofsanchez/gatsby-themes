@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
 
+
+import SEO from '../components/seo'
 import BlogPostHeader from "./blogPostHeader";
 import PostTableOfContents from "./postTableOfContents";
 
@@ -21,6 +23,7 @@ const Flex = styled.div`
 const BlogPostPage = ({
   title,
   body,
+  excerpt,
   date,
   category,
   tags,
@@ -32,6 +35,7 @@ const BlogPostPage = ({
   console.log(thumbnail)
   return (
     <div>
+      <SEO description={excerpt} title={title} image={thumbnail}/>
       <Flex>
         <PostContentContainer>
           <BlogPostHeader {...blogHeader} />

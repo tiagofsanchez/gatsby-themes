@@ -10,6 +10,7 @@ import useSiteMetadata from "../hooks/useSiteMetadata";
 import Logo from "../components/acmeLogo";
 import BlogPostHeader from "../components/blogPostHeader";
 import CategoryListing from "../components/categoryListing";
+import SEO from "../components/seo";
 
 const FlexContainer = styled.section`
   display: flex;
@@ -30,6 +31,7 @@ const IndexPage = () => {
   const { siteDescription } = useSiteMetadata();
   return (
     <div>
+      <SEO/>
       <FlexContainer>
         <div style={{ flex: `1 1 50%` }}>
           <h1>

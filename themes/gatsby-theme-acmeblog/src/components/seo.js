@@ -1,39 +1,31 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import useSiteMetadata from "../hooks/use-site-metadata";
+import useSiteMetadata from '..//hooks/useSiteMetadata'
+import useSiteLogo from '../hooks/useSiteLogo'
 
-const defaultProps = {
-  title: ``,
-  description: false,
-  pathname: false,
-  image: false,
-  children: null,
-};
 
-const Seo = ({ title, description, pathname, image, children }) => {
-  const site = useSiteMetadata();
-
+const SEO = ({ title, description, image, children }) => {
   const {
     siteTitle,
-    siteTitleAlt: defaultTitle,
     siteUrl,
-    siteDescription: defaultDescription,
+    siteDescription,
     siteLanguage,
-    siteImage: defaultImage,
     author,
-  } = site;
+  } = useSiteMetadata();
+  const logo = useSiteLogo()
 
   const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    url: `${siteUrl}${pathname || ``}`,
-    image: `${siteUrl}${image || defaultImage}`,
+    title: title || siteTitle,
+    description: description || siteDescription,
+    url: siteUrl,
+    image: `${siteUrl}${image || logo}`,
   };
 
+  console.log(seo)
   return (
     <Helmet
-      title={title}
-      defaultTitle={defaultTitle}
+      title={seo.title}
+      defaultTitle={seo.title}
       titleTemplate={`%s | ${siteTitle}`}
     >
       <html lang={siteLanguage} />
@@ -52,24 +44,7 @@ const Seo = ({ title, description, pathname, image, children }) => {
       <meta name="twitter:image" content={seo.image} />
       <meta name="twitter:image:alt" content={seo.description} />
       <meta name="twitter:creator" content={author} />
-      <meta name="gatsby-theme" content="@lekoarts/gatsby-theme-minimal-blog" />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href={withPrefix(`/favicon-32x32.png`)}
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href={withPrefix(`/favicon-16x16.png`)}
-      />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href={withPrefix(`/apple-touch-icon.png`)}
-      />
+      <meta name="gatsby-theme" content="gatsby-theme-acme" />
       {children}
     </Helmet>
   );
