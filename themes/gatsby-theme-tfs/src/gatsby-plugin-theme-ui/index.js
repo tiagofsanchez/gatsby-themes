@@ -24,9 +24,9 @@ const theme = {
         hover: "black",
         primary: "White",
         secondary: "black",
-        link: "tomato",
+        link: "#d23669",
         linkbg: "#eeeeee",
-        highlight: "tomato",
+        highlight: "#d23669",
       },
     },
   },
@@ -85,7 +85,7 @@ const theme = {
         my: 3,
       },
       h4: {
-        fontSize: 24,
+        fontSize: 22,
         fontFamily: "heading",
         fontWeight: "bold",
         color: "primary",
@@ -102,10 +102,11 @@ const theme = {
         borderBottom: "2px dashed",
       },
       blockquote: {
-        borderLeftColor: `primary`,
+        borderLeftColor: `highlight`,
         borderLeftStyle: `solid`,
         borderLeftWidth: `4px`,
-        pl: 4,
+        pl: 3,
+        ml: 0,
         p: {
           fontStyle: `italic`,
         },
@@ -151,7 +152,7 @@ const theme = {
   },
   links: {
     primary: {
-      fontSize: 44,
+      fontSize: 30,
       fontFamily: "heading",
       fontWeight: "bold",
       color: "highlight",
@@ -164,23 +165,17 @@ const theme = {
   },
   layout: {
     header: {
-      mx: "40px",
-      width: `90%`,
-      margin:  `auto`,
-      marginTop: "10px",
+      width: `100%`,
     },
     main: {
-      mx: "60px",
       width: [`90%`, null , `70%` ],
       flex: `1 1 auto`,
       margin: `auto`,
       marginTop: "60px",
     },
     footer: {
-      mx: `60px`,
       width: [`90%`, null , `70%` ],
       margin: `auto`,
-      marginBottom: "20px",
       bottom: `0`
     },
   },

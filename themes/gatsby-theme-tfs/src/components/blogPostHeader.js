@@ -53,7 +53,7 @@ const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
   );
 };
 
-//bloghedear for the post page
+// blog header for the post page
 const blogHeaderForPostPage = (title, date, tags, category) => {
   return (
     <div>

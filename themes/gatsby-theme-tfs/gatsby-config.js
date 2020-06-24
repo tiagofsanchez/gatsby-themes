@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `ACME`,
+    siteTitle: `tiagofsanchez`,
     siteTitleAlt: `Simple Blog - @tiagofsanchez/gatsby-theme-acmeblog`,
     siteHeadline: `Simple Blog - Gatsby Theme from tiagofsanchez`,
     siteUrl: `https://gatsby-tfs-acme-starter.netlify.app/`,
@@ -12,11 +12,11 @@ module.exports = {
     author: `tiagofsanchez`,
     navigation: [
       {
-        title: `blog`,
+        title: `digital garden`,
         slug: `/blog`,
       },
       {
-        title: `about`,
+        title: `me`,
         slug: `/about`,
       },
     ],
@@ -40,13 +40,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-layout",
       options: {
-        component: require.resolve(`./src/components/layout`),
+        component: require.resolve(`./src/components/Layout/layout`),
       },
     },
     {
       resolve: "gatsby-theme-acmeblog-data",
       options: {
-        postTableOfContents: true,
+        postTableOfContents: false,
       },
     },
   ],

@@ -2,7 +2,7 @@
 import { jsx, Link as Tlink } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
-import useSiteMetadata from "../hooks/useSiteMetadata";
+import useSiteMetadata from "../../hooks/useSiteMetadata";
 
 const FlexCreds = styled.div`
   display: flex;

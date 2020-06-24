@@ -3,9 +3,8 @@ import { useColorMode, Button, jsx } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
-import useSiteMetadata from "../hooks/useSiteMetadata";
-import ToogleMode from "./toogleMode";
-import AcmeLogo from "./acmeLogo";
+import useSiteMetadata from "../../hooks/useSiteMetadata";
+import ToogleMode from "../toogleMode";
 import Nav from "./navigation";
 
 const HeaderContainer = styled.div`
@@ -13,6 +12,7 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 `;
 
 const FlexBox = styled.div`
@@ -35,7 +35,6 @@ const Header = () => {
   return (
     <HeaderContainer>
       <FlexBox>
-        <AcmeLogo width="50px" />
         <Link to="/" sx={{variant: `links.primary`}}>  
           {siteTitle}
         </Link>
