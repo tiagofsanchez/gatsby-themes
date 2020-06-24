@@ -1,5 +1,5 @@
 import React from "react"; 
-import BlogPostPage from '../../components/blogPostPage'
+import BlogPostPage from '../../components/pages/blogPostPage'
 
  const MinBlogPost = ({data, pageContext}) => {
 

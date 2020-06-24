@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import useSiteMetadata from '..//hooks/useSiteMetadata'
-import useSiteLogo from '../hooks/useSiteLogo'
+import useSiteMetadata from '../../hooks/useSiteMetadata'
+import useSiteLogo from '../../hooks/useSiteLogo'
 
 
 const SEO = ({ title, description, image, children }) => {

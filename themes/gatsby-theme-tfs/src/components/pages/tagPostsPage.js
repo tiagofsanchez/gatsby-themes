@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import BlogPostListing from "../components/blogPostListing";
-import SEO from '../components/seo'
+import BlogPostListing from "../shared/blogPostListing";
+import SEO from '../shared/seo';
 
-const CategoryPostsPage = ({ data }) => {
+const TagPostsPage = ({ data }) => {
   let postsArray = [];
 
-  data.postsOfCategory.nodes.map((post) => {
+  data.postsOfTag.nodes.map((post) => {
     const postObject = {
       title: post.frontmatter.title,
       date: post.frontmatter.date,
@@ -23,9 +23,8 @@ const CategoryPostsPage = ({ data }) => {
     <div>
       <SEO />
       <h1>
-        All posts from{" "}
-        <span sx={{ color: `highlight` }}>{data.pageContext.category}</span>{" "}
-        category
+        All posts tagged with{" "}
+        <span sx={{ color: `highlight` }}>{data.pageContext.tag}</span> tag
       </h1>
       <section style={{ margin: `40px auto` }}>
         <BlogPostListing posts={postsArray} />
@@ -33,4 +32,5 @@ const CategoryPostsPage = ({ data }) => {
     </div>
   );
 };
-export default CategoryPostsPage;
+
+export default TagPostsPage;

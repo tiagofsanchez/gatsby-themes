@@ -1,6 +1,6 @@
 import React from "react";
-import TagsListing from "./tagsListing";
-import SEO from "../components/seo";
+import TagsListing from "../shared/tagsListing";
+import SEO from "../shared/seo";
 
 const AllTagsPage = ({ allTagsArray }) => {
   return (

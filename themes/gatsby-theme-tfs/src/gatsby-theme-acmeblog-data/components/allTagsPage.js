@@ -1,5 +1,5 @@
 import React from "react"; 
-import AllTagsPage from '../../components/allTagsPage'
+import AllTagsPage from '../../components/pages/allTagsPage'
 
 const MinBlogPost = ({data}) => {
     const allTagsArray = data.allMdx.group 

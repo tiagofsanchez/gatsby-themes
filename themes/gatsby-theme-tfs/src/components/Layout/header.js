@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
 import useSiteMetadata from "../../hooks/useSiteMetadata";
-import ToogleMode from "../toogleMode";
+import ToogleMode from "./toogleMode";
 import Nav from "./navigation";
 
 const HeaderContainer = styled.div`

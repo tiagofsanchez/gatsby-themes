@@ -3,12 +3,13 @@ import { jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
+import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
 
-import SEO from '../components/seo'
-import BlogPostHeader from "./blogPostHeader";
-import PostTableOfContents from "./postTableOfContents";
+import SEO from '../shared/seo'
+import BlogPostHeader from "../shared/blogPostHeader";
+import PostTableOfContents from "../shared/postTableOfContents";
+
 
 const PostContentContainer = styled.div`
   flex: 1 1 70%;

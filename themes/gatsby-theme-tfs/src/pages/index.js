@@ -7,10 +7,10 @@ import useAllCategories from "../hooks/useAllCategories";
 import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
 import useSiteMetadata from "../hooks/useSiteMetadata";
 
-import Logo from "../components/acmeLogo";
-import BlogPostHeader from "../components/blogPostHeader";
-import CategoryListing from "../components/categoryListing";
-import SEO from "../components/seo";
+import Logo from "../components/shared/acmeLogo";
+import BlogPostHeader from "../components/shared/blogPostHeader";
+import CategoryListing from "../components/shared/categoryListing";
+import SEO from "../components/shared/seo";
 
 const FlexContainer = styled.section`
   display: flex;

@@ -1,5 +1,5 @@
 import React from "react"; 
-import CategoryPostsPage from '../../components/categoryPostsPage'; 
+import CategoryPostsPage from '../../components/pages/categoryPostsPage'; 
 
 const MinBlogPost =({data , pageContext}) => { 
     return <CategoryPostsPage data={{...data, pageContext}} />

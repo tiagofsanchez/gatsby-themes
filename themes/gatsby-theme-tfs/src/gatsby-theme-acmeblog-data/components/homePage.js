@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePage from '../../components/homePage';
+import HomePage from '../../components/pages/homePage';
 
 const MinBlogPost = ({data}) => { 
     const { posts } = data

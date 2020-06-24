@@ -1,5 +1,5 @@
 import React from "react";
-import OtherPages from "../../components/otherPages";
+import OtherPages from "../../components/pages/otherPages";
 
 const MinBlogPost = ({ data }) => {
   const page = {

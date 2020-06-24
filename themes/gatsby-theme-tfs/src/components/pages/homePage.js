@@ -4,8 +4,8 @@ import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
-import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
-import BlogPostListing from "./blogPostListing";
+import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
+import BlogPostListing from "../shared/blogPostListing";
 
 const Flex = styled.div`
   display: flex;
