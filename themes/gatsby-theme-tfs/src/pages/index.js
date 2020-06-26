@@ -30,7 +30,7 @@ const IndexPage = () => {
   const { categoryPath, blogPath } = useAcmeBlogConfig();
   const { siteDescription } = useSiteMetadata();
   return (
-    <div>
+    <div >
       <SEO/>
       <FlexContainer>
         <div style={{ flex: `1 1 50%` }}>

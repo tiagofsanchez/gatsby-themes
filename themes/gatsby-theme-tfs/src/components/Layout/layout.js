@@ -8,10 +8,11 @@ import Footer from "../Layout/footer";
 
 const Grid = styled.div `
 display: grid; 
-grid-templates-columns: auto;
-align-content: space-between;
+grid-template-rows: auto 1fr auto;
+grid-template-columns: 1fr;
 grid-gap: 40px;
-padding: 20px
+padding: 20px;
+height: 100vh;
 `
 
 const Layout = ({ children }) => {
@@ -20,7 +21,7 @@ const Layout = ({ children }) => {
       <header sx={{ variant: `layout.header` }}>
         <Header />
       </header>
-        <main sx={{ variant: `layout.main` }}>{children}</main>
+        <main sx={{ variant: `layout.main` , alignSelf: `grid-start`}}>{children}</main>
         <footer sx={{ variant: `layout.footer` }} >
           <Footer />
         </footer>

@@ -59,6 +59,7 @@ const theme = {
       pre: {
         ...prism,
         fontSize: 1,
+        overflow:'auto',
         p: 3,
         my: 4,
         
@@ -114,6 +115,7 @@ const theme = {
       table: {
         width: `100%`,
         my: 4,
+        overflow: `auto`,
         borderCollapse: `separate`,
         borderSpacing: 0,
         [[`th`, `td`]]: {
@@ -168,13 +170,11 @@ const theme = {
       width: `100%`,
     },
     main: {
-      width: [`90%`, null , `70%` ],
-      flex: `1 1 auto`,
-      margin: `auto`,
-      marginTop: "60px",
+      width: [`90%`, `80%` , `70%` ],
+      margin: `0 auto`,
     },
     footer: {
-      width: [`90%`, null , `70%` ],
+      width: [`90%`, `80%` , `70%` ],
       margin: `auto`,
       bottom: `0`
     },

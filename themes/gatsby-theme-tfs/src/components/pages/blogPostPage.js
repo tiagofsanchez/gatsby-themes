@@ -2,24 +2,11 @@
 import { jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
-
-import SEO from '../shared/seo'
+import SEO from "../shared/seo";
 import BlogPostHeader from "../shared/blogPostHeader";
 import PostTableOfContents from "../shared/postTableOfContents";
-
-
-const PostContentContainer = styled.div`
-  flex: 1 1 70%;
-  white-space: normal;
-  overflow: hidden;
-`;
-
-const Flex = styled.div`
-  display: flex;
-`;
 
 const BlogPostPage = ({
   title,
@@ -30,26 +17,24 @@ const BlogPostPage = ({
   tags,
   tableOfContentsArray,
   thumbnail,
-  timeToRead
+  timeToRead,
 }) => {
-  const blogHeader = { title, date, tags, category, timeToRead , page: true };
+  const blogHeader = { title, date, tags, category, timeToRead, page: true };
   const { postTableOfContents } = useAcmeBlogConfig();
   // console.log(thumbnail)
   // console.log(timeToRead)
   return (
-    <div>
-      <SEO description={excerpt} title={title} image={thumbnail}/>
-      <Flex>
-        <PostContentContainer>
-          <BlogPostHeader {...blogHeader} />
-          <MDXRenderer>{body}</MDXRenderer>
-        </PostContentContainer>
-        {postTableOfContents === true &&
-        tableOfContentsArray !== null &&
-        tableOfContentsArray !== undefined ? (
-          <PostTableOfContents tableOfContentsArray={tableOfContentsArray} />
-        ) : null}
-      </Flex>
+    <div sx={{ width: `auto` }}>
+      <SEO description={excerpt} title={title} image={thumbnail} />
+      <BlogPostHeader {...blogHeader} />
+
+      <MDXRenderer>{body}</MDXRenderer>
+
+      {postTableOfContents === true &&
+      tableOfContentsArray !== null &&
+      tableOfContentsArray !== undefined ? (
+        <PostTableOfContents tableOfContentsArray={tableOfContentsArray} />
+      ) : null}
     </div>
   );
 };
