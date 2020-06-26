@@ -52,17 +52,19 @@ const theme = {
       lineHeight: "body",
       fontWeight: "body",
       code: {
-        ...prism,
-        fontSize: 1,
-        p: 1,
+        fontSize: 20,
+        fontFamily: "body",
+        px: 2
       },
       pre: {
         ...prism,
-        fontSize: 1,
-        overflow:'auto',
+        fontSize: 16,
+        fontFamily: "monospace",
+        maxWidth: "100%",
+        overflowX: "auto",
         p: 3,
         my: 4,
-        
+        boxShadow: `1px 2px 10px rgba(0, 0, 0, 0.5)`
       },
       h1: {
         fontSize: 44,
@@ -81,6 +83,7 @@ const theme = {
       h3: {
         fontSize: 26,
         fontFamily: "heading",
+        lineHeight: 1.7,
         fontWeight: "bold",
         color: "primary",
         my: 3,
@@ -88,6 +91,7 @@ const theme = {
       h4: {
         fontSize: 22,
         fontFamily: "heading",
+        lineHeight: 1.7,
         fontWeight: "bold",
         color: "primary",
         my: 3,
@@ -95,6 +99,18 @@ const theme = {
       p: {
         fontSize: 20,
         fontFamily: "body",
+        lineHeight: 1.7
+      },
+      ul: { 
+        my: 2,
+      },
+      ol: { 
+        my:2
+      },
+      li: { 
+        fontSize: 20,
+        fontFamily: "body",
+        lineHeight:1.7
       },
       a: {
         color: `link`,

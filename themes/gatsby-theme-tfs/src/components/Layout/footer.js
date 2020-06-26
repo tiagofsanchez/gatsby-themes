@@ -54,6 +54,7 @@ const Footer = () => {
           , {""}
           {externalLinks.map((link) => (
             <Tlink
+              key={link.name}
               href={link.url}
               rel="noreferrer noopener"
               target="_blank"

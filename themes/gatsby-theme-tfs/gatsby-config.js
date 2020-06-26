@@ -4,9 +4,7 @@ module.exports = {
     siteTitleAlt: `Simple Blog - @tiagofsanchez/gatsby-theme-acmeblog`,
     siteHeadline: `Simple Blog - Gatsby Theme from tiagofsanchez`,
     siteUrl: `https://gatsby-tfs-acme-starter.netlify.app/`,
-    siteDescription: ` We create content for the web - you know, that thing that lives on
-    the cloud? Just kidding! This is a gatsby theme that you can use for
-    share your cool work`,
+    siteDescription: ` Learning to code, writing about it and putting ✒️'pen to paper' on stuff that I like to do and to think about!`,
     siteLanguage: `en`,
     siteImage: `./images/logo.png`,
     author: `tiagofsanchez`,

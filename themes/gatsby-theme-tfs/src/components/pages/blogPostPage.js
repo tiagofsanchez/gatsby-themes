@@ -7,6 +7,7 @@ import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 import SEO from "../shared/seo";
 import BlogPostHeader from "../shared/blogPostHeader";
 import PostTableOfContents from "../shared/postTableOfContents";
+import { TinyHero } from '../shared/hero'
 
 const BlogPostPage = ({
   title,
@@ -19,22 +20,21 @@ const BlogPostPage = ({
   thumbnail,
   timeToRead,
 }) => {
-  const blogHeader = { title, date, tags, category, timeToRead, page: true };
+  const blogHeader = { title, date, tags, category, timeToRead, thumbnail , page: true };
   const { postTableOfContents } = useAcmeBlogConfig();
-  // console.log(thumbnail)
-  // console.log(timeToRead)
+  console.log(thumbnail)
   return (
-    <div sx={{ width: `auto` }}>
+    <div sx={{ width: `auto`, marginBottom: `100px` }}>
       <SEO description={excerpt} title={title} image={thumbnail} />
       <BlogPostHeader {...blogHeader} />
-
       <MDXRenderer>{body}</MDXRenderer>
-
       {postTableOfContents === true &&
       tableOfContentsArray !== null &&
       tableOfContentsArray !== undefined ? (
         <PostTableOfContents tableOfContentsArray={tableOfContentsArray} />
       ) : null}
+      <br/>
+      <TinyHero />
     </div>
   );
 };
@@ -46,7 +46,6 @@ BlogPostPage.propTypes = {
   category: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
   tableOfContentsArray: PropTypes.array.isRequired,
-  slug: PropTypes.string.isRequired,
 };
 
 export default BlogPostPage;

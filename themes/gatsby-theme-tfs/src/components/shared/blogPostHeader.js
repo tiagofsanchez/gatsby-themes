@@ -15,8 +15,17 @@ const TagsCatContainer = styled.div`
 `;
 
 //blogheader for the BLOG
-const blogHeaderForBlog = (title, date, tags, category, excerpt, slug, timeToRead) => {
-  console.log(timeToRead)
+const blogHeaderForBlog = (
+  title,
+  date,
+  tags,
+  category,
+  excerpt,
+  slug,
+  timeToRead,
+  thumbnail
+) => {
+  console.log(thumbnail)
   return (
     <PostHeaderContainer
       sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 1px" } }}
@@ -55,30 +64,29 @@ const blogHeaderForBlog = (title, date, tags, category, excerpt, slug, timeToRea
 };
 
 // blog header for the post page
-const blogHeaderForPostPage = (title, date, tags, category) => {
+const blogHeaderForPostPage = (title, date, tags, category, thumbnail) => {
+  console.log(thumbnail)
   return (
     <div>
-      <h1 sx={{ my: `0px` }}>
-        {title}
-      </h1>
+      <h1 sx={{ my: `0px` }}>{title}</h1>
       <p sx={{ color: `primary`, my: `5px` }}>{date}</p>
       <TagsCatContainer>
+        <Card
+          variant="category"
+          sx={{ color: `white`, marginLeft: `0px`, p: `5px`, my: `2px` }}
+        >
+          {category}
+        </Card>
+        {tags.map((tag, index) => (
           <Card
-            variant="category"
-            sx={{ color: `white`, marginLeft: `0px`, p: `5px`, my: `2px` }}
+            variant="tag"
+            sx={{ p: `5px`, my: `2px`, mx: `3px`, borderWidth: `1px` }}
+            key={index}
           >
-            {category}
+            {tag}
           </Card>
-          {tags.map((tag, index) => (
-            <Card
-              variant="tag"
-              sx={{ p: `5px`, my: `2px`, mx: `3px`, borderWidth: `1px` }}
-              key={index}
-            >
-              {tag}
-            </Card>
-          ))}
-        </TagsCatContainer>
+        ))}
+      </TagsCatContainer>
     </div>
   );
 };
@@ -91,12 +99,22 @@ const BlogPostHeader = ({
   excerpt,
   slug,
   page,
-  timeToRead
+  timeToRead,
+  thumbnail,
 }) => {
   if (page === true) {
-    return blogHeaderForPostPage(title, date, tags, category , timeToRead);
+    return blogHeaderForPostPage(title, date, tags, category, timeToRead , thumbnail);
   } else {
-    return blogHeaderForBlog(title, date, tags, category, excerpt, slug , timeToRead);
+    return blogHeaderForBlog(
+      title,
+      date,
+      tags,
+      category,
+      excerpt,
+      slug,
+      timeToRead,
+      thumbnail
+    );
   }
 };
 

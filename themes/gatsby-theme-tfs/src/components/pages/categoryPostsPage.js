@@ -18,7 +18,7 @@ const CategoryPostsPage = ({ data }) => {
     postsArray.push(postObject);
     return postsArray;
   });
-
+  
   return (
     <div>
       <SEO />

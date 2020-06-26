@@ -1,6 +1,5 @@
-
 import { graphql } from "gatsby";
-import HomePage from '../components/homePage'
+import HomePage from "../components/homePage";
 
 export default HomePage;
 
@@ -15,11 +14,17 @@ export const allBlogposts = graphql`
         frontmatter {
           title
           tags
-          date (formatString: "MMMM DD, YYYY")
+          date(formatString: "MMMM DD, YYYY")
           category
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 2000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
   }
 `;
-

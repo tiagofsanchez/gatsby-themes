@@ -18,6 +18,8 @@ const BlogPostListing = ({ posts }) => {
             tags: post.tags,
             excerpt: post.excerpt,
             slug: post.slug,
+            timeToRead: post.timeToRead,
+            thumbnail: post.thumbnail
           };
           return (
             <div key={index}>

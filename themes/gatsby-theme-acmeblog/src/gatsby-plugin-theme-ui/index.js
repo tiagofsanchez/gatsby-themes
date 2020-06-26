@@ -58,6 +58,7 @@ const theme = {
       },
       pre: {
         ...prism,
+        overflow: 'auto',
         fontSize: 1,
         p: 3,
         my: 4,
@@ -172,7 +173,7 @@ const theme = {
     main: {
       mx: "60px",
       width: [`90%`, null , `70%` ],
-      flex: `1 1 auto`,
+      // flex: `1 1 auto`,
       margin: `auto`,
       marginTop: "60px",
     },

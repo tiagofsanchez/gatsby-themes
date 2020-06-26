@@ -12,9 +12,16 @@ const usePostsForIndexPage = () => {
           timeToRead
           frontmatter {
             title
-            date (formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             category
             tags
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 2000, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           fields {
             slug
@@ -33,7 +40,8 @@ const usePostsForIndexPage = () => {
       tags: post.frontmatter.tags,
       excerpt: post.excerpt,
       slug: post.fields.slug,
-      timeToRead: post.timeToRead
+      timeToRead: post.timeToRead,
+      thumbnail: post.frontmatter.thumbnail,
     };
     postsArray.push(postObject);
     return postsArray;
