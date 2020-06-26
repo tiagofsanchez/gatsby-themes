@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
 import SEO from "../shared/seo";
-import BlogPostHeader from "../shared/blogPostHeader";
+import {BlogHeaderMax} from "../shared/blogPostHeader";
 import PostTableOfContents from "../shared/postTableOfContents";
 import { TinyHero } from '../shared/hero'
 
@@ -26,7 +26,7 @@ const BlogPostPage = ({
   return (
     <div sx={{ width: `auto`, marginBottom: `100px` }}>
       <SEO description={excerpt} title={title} image={thumbnail} />
-      <BlogPostHeader {...blogHeader} />
+      <BlogHeaderMax {...blogHeader} />
       <MDXRenderer>{body}</MDXRenderer>
       {postTableOfContents === true &&
       tableOfContentsArray !== null &&

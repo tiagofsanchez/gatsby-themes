@@ -15,17 +15,15 @@ const TagsCatContainer = styled.div`
 `;
 
 //blogheader for the BLOG
-const blogHeaderForBlog = (
+export const BlogHeaderMinimal = ({
   title,
   date,
-  tags,
-  category,
   excerpt,
   slug,
   timeToRead,
-  thumbnail
-) => {
-  console.log(thumbnail)
+  thumbnail,
+}) => {
+  console.log(thumbnail);
   return (
     <PostHeaderContainer
       sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 1px" } }}
@@ -40,23 +38,6 @@ const blogHeaderForBlog = (
       >
         <h2 sx={{ marginBottom: `3px` }}>{title}</h2>
         <p sx={{ color: `primary`, my: `5px` }}>{date}</p>
-        {/* <TagsCatContainer>
-          <Card
-            variant="category"
-            sx={{ color: `white`, marginLeft: `0px`, p: `5px` , my: `2px`}}
-          >
-            {category}
-          </Card>
-          {tags.map((tag, index) => (
-            <Card
-              variant="tag"
-              sx={{ p: `5px`, my: `2px`, mx: `3px`, borderWidth: `1px` }}
-              key={index}
-            >
-              {tag}
-            </Card>
-          ))}
-        </TagsCatContainer> */}
         <p>{excerpt}</p>
       </Link>
     </PostHeaderContainer>
@@ -64,8 +45,8 @@ const blogHeaderForBlog = (
 };
 
 // blog header for the post page
-const blogHeaderForPostPage = (title, date, tags, category, thumbnail) => {
-  console.log(thumbnail)
+export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
+  console.log(thumbnail);
   return (
     <div>
       <h1 sx={{ my: `0px` }}>{title}</h1>
@@ -90,32 +71,3 @@ const blogHeaderForPostPage = (title, date, tags, category, thumbnail) => {
     </div>
   );
 };
-
-const BlogPostHeader = ({
-  title,
-  date,
-  tags,
-  category,
-  excerpt,
-  slug,
-  page,
-  timeToRead,
-  thumbnail,
-}) => {
-  if (page === true) {
-    return blogHeaderForPostPage(title, date, tags, category, timeToRead , thumbnail);
-  } else {
-    return blogHeaderForBlog(
-      title,
-      date,
-      tags,
-      category,
-      excerpt,
-      slug,
-      timeToRead,
-      thumbnail
-    );
-  }
-};
-
-export default BlogPostHeader;

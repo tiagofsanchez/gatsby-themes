@@ -5,7 +5,7 @@ import usePostsForIndexPage from "../hooks/usePostsForIndexPage";
 import useAllCategories from "../hooks/useAllCategories";
 import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
 
-import BlogPostHeader from "../components/shared/blogPostHeader";
+import {BlogHeaderMinimal} from "../components/shared/blogPostHeader";
 import CategoryListing from "../components/shared/categoryListing";
 import { Hero } from "../components/shared/hero";
 import SEO from "../components/shared/seo";
@@ -37,7 +37,7 @@ const IndexPage = () => {
         </h1>
         <div>
           {postsArray.map((blogPost) => {
-            return <BlogPostHeader {...blogPost} key={blogPost.title} />;
+            return <BlogHeaderMinimal  {...blogPost} key={blogPost.title} />;
           })}
         </div>
       </section>
