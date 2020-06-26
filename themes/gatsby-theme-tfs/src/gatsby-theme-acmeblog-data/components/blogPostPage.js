@@ -14,6 +14,7 @@ import BlogPostPage from '../../components/pages/blogPostPage'
         tableOfContentsArray: data.post.tableOfContents.items,
         basePath: pageContext.basePath,
         thumbnail: data.post.frontmatter.thumbnail, 
+        timeToRead: data.post.timeToRead,
       };
       
       return <BlogPostPage {...post} />;

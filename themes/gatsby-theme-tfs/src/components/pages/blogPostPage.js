@@ -30,10 +30,12 @@ const BlogPostPage = ({
   tags,
   tableOfContentsArray,
   thumbnail,
+  timeToRead
 }) => {
-  const blogHeader = { title, date, tags, category, page: true };
+  const blogHeader = { title, date, tags, category, timeToRead , page: true };
   const { postTableOfContents } = useAcmeBlogConfig();
-  console.log(thumbnail)
+  // console.log(thumbnail)
+  // console.log(timeToRead)
   return (
     <div>
       <SEO description={excerpt} title={title} image={thumbnail}/>

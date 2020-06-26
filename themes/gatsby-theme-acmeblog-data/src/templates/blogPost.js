@@ -8,6 +8,7 @@ export const blogPost = graphql`
     post: mdx(fields: { slug: { eq: $slug } }) {
       body
       tableOfContents
+      timeToRead
       frontmatter {
         title
         tags

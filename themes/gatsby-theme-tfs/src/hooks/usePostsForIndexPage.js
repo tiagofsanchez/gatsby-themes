@@ -9,6 +9,7 @@ const usePostsForIndexPage = () => {
         sort: { order: DESC, fields: frontmatter___date }
       ) {
         nodes {
+          timeToRead
           frontmatter {
             title
             date (formatString: "MMMM DD, YYYY")
@@ -32,6 +33,7 @@ const usePostsForIndexPage = () => {
       tags: post.frontmatter.tags,
       excerpt: post.excerpt,
       slug: post.fields.slug,
+      timeToRead: post.timeToRead
     };
     postsArray.push(postObject);
     return postsArray;

@@ -15,7 +15,8 @@ const TagsCatContainer = styled.div`
 `;
 
 //blogheader for the BLOG
-const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
+const blogHeaderForBlog = (title, date, tags, category, excerpt, slug, timeToRead) => {
+  console.log(timeToRead)
   return (
     <PostHeaderContainer
       sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 1px" } }}
@@ -30,7 +31,7 @@ const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
       >
         <h2 sx={{ marginBottom: `3px` }}>{title}</h2>
         <p sx={{ color: `primary`, my: `5px` }}>{date}</p>
-        <TagsCatContainer>
+        {/* <TagsCatContainer>
           <Card
             variant="category"
             sx={{ color: `white`, marginLeft: `0px`, p: `5px` , my: `2px`}}
@@ -46,7 +47,7 @@ const blogHeaderForBlog = (title, date, tags, category, excerpt, slug) => {
               {tag}
             </Card>
           ))}
-        </TagsCatContainer>
+        </TagsCatContainer> */}
         <p>{excerpt}</p>
       </Link>
     </PostHeaderContainer>
@@ -90,11 +91,12 @@ const BlogPostHeader = ({
   excerpt,
   slug,
   page,
+  timeToRead
 }) => {
   if (page === true) {
-    return blogHeaderForPostPage(title, date, tags, category);
+    return blogHeaderForPostPage(title, date, tags, category , timeToRead);
   } else {
-    return blogHeaderForBlog(title, date, tags, category, excerpt, slug);
+    return blogHeaderForBlog(title, date, tags, category, excerpt, slug , timeToRead);
   }
 };
 
