@@ -14,6 +14,8 @@ const CategoryPostsPage = ({ data }) => {
       tags: post.frontmatter.tags,
       excerpt: post.excerpt,
       slug: post.fields.slug,
+      timeToRead: post.timeToRead,
+      thumbnail: post.frontmatter.thumbnail,
     };
     postsArray.push(postObject);
     return postsArray;

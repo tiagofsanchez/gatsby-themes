@@ -11,6 +11,7 @@ export const allBlogposts = graphql`
         fields {
           slug
         }
+        timeToRead
         frontmatter {
           title
           tags

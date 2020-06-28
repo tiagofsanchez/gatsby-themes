@@ -77,7 +77,7 @@ export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
       </ThumbnailContainer>
       <div>
         <h1 sx={{ my: `0px` }}>{title}</h1>
-        <p sx={{ color: `primary`, my: `5px` }}>{date}</p>
+        <p sx={{ color: `primary`, my: `5px` , textAlign: `center`}}>{date}</p>
       </div>
       <TagsCatContainer>
         <Card
