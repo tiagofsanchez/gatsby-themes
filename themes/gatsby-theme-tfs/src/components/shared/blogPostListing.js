@@ -1,5 +1,5 @@
 import React from "react";
-import { BlogHeaderMax, BlogHeaderMinimal } from "./blogPostHeader";
+import { BlogHeaderMinimal } from "./blogPostHeader";
 
 const BlogPostListing = ({ posts }) => {
   //NOTE: the map() could be outside the return to improve readability

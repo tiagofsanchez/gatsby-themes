@@ -1,14 +1,20 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import styled from "@emotion/styled"
 
 import usePostsForIndexPage from "../hooks/usePostsForIndexPage";
 import useAllCategories from "../hooks/useAllCategories";
 import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
 
-import {BlogHeaderMinimal} from "../components/shared/blogPostHeader";
+import { BlogHeaderMinimal } from "../components/shared/blogPostHeader";
 import CategoryListing from "../components/shared/categoryListing";
 import { Hero } from "../components/shared/hero";
 import SEO from "../components/shared/seo";
+
+const GridContainer = styled.div`
+display: grid; 
+grid-gap: 50px;
+`
 
 const IndexPage = () => {
   const postsArray = usePostsForIndexPage();
@@ -16,7 +22,7 @@ const IndexPage = () => {
   const { categoryPath, blogPath } = useAcmeBlogConfig();
 
   return (
-    <div>
+    <GridContainer>
       <SEO />
       <Hero />
       <section >
@@ -41,7 +47,7 @@ const IndexPage = () => {
           })}
         </div>
       </section>
-    </div>
+    </GridContainer>
   );
 };
 export default IndexPage;

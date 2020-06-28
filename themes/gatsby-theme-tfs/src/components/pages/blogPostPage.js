@@ -34,7 +34,6 @@ const BlogPostPage = ({
     page: true,
   };
 
-  console.log(thumbnail);
   return (
     <BlogContainer>
       <SEO description={excerpt} title={title} image={thumbnail} />
