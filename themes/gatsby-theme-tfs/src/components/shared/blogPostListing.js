@@ -19,7 +19,6 @@ const BlogPostListing = ({ posts }) => {
             timeToRead: post.timeToRead,
             thumbnail: post.thumbnail,
           };
-          console.log(blogPost)
           return (
             <div key={index}>
               <BlogHeaderMinimal {...blogPost} />

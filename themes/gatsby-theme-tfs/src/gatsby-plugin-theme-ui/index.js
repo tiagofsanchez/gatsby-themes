@@ -60,6 +60,7 @@ const theme = {
         ...prism,
         fontSize: 16,
         fontFamily: "monospace",
+        whiteSpace:"pre-wrap",
         maxWidth: "100%",
         overflowX: "auto",
         p: 3,
