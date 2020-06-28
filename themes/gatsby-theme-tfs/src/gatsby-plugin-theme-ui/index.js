@@ -2,9 +2,7 @@ import prism from "@theme-ui/prism/presets/night-owl.json";
 
 const theme = {
   initialColorModeName: "light",
-  breakpoints: [
-    '40em', '56em', '64em',
-  ],
+  breakpoints: ["40em", "56em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     text: "#2d3748",
@@ -54,18 +52,20 @@ const theme = {
       code: {
         fontSize: 20,
         fontFamily: "body",
-        px: 2
+        px: 2,
       },
       pre: {
         ...prism,
         fontSize: 16,
         fontFamily: "monospace",
-        whiteSpace:"pre-wrap",
+        whiteSpace: "pre-wrap",
+        wordBreak: "break-all",
+        wordWrap: "break-word",
         maxWidth: "100%",
         overflowX: "auto",
         p: 3,
         my: 4,
-        boxShadow: `1px 2px 10px rgba(0, 0, 0, 0.5)`
+        boxShadow: `1px 2px 10px rgba(0, 0, 0, 0.5)`,
       },
       h1: {
         fontSize: 44,
@@ -100,18 +100,18 @@ const theme = {
       p: {
         fontSize: 20,
         fontFamily: "body",
-        lineHeight: 1.7
+        lineHeight: 1.7,
       },
-      ul: { 
+      ul: {
         my: 2,
       },
-      ol: { 
-        my:2
+      ol: {
+        my: 2,
       },
-      li: { 
+      li: {
         fontSize: 20,
         fontFamily: "body",
-        lineHeight:1.7
+        lineHeight: 1.7,
       },
       a: {
         color: `link`,
@@ -187,13 +187,13 @@ const theme = {
       width: `100%`,
     },
     main: {
-      width: [`90%`, `80%` , `70%` ],
+      width: [`90%`, `80%`, `70%`],
       margin: `0 auto`,
     },
     footer: {
-      width: [`90%`, `80%` , `70%` ],
+      width: [`90%`, `80%`, `70%`],
       margin: `auto`,
-      bottom: `0`
+      bottom: `0`,
     },
   },
   cards: {

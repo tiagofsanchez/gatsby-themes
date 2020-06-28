@@ -11,11 +11,19 @@ export const category = graphql`
     ) {
       nodes {
         excerpt
+        timeToRead
         frontmatter {
           title
           tags
           date (formatString: "MMMM DD, YYYY")
           category
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 2000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         fields {
           slug

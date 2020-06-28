@@ -19,10 +19,10 @@ const IndexPage = () => {
     <div>
       <SEO />
       <Hero />
-      <section style={{ marginTop: `80px` }}>
+      <section >
         <h1>
           {" "}
-          The <span sx={{ color: `highlight` }}>topics</span> you write or like
+          The <span sx={{ color: `highlight` }}>stuff</span> I like to write about
         </h1>
         <CategoryListing
           categoriesArray={categoriesArray}
@@ -30,7 +30,7 @@ const IndexPage = () => {
           blogPath={blogPath}
         />
       </section>
-      <section style={{ marginTop: `80px`, marginBottom: `100px` }}>
+      <section>
         <h1>
           {" "}
           Lastest <span sx={{ color: `highlight` }}>posts</span> bellow

@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import Img from "gatsby-image";
 
 const PostHeaderContainer = styled.div`
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 4px;
 `;
 
