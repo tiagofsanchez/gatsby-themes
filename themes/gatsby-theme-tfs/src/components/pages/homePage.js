@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
+import SEO from '../shared/seo'
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 import BlogPostListing from "../shared/blogPostListing";
 
@@ -17,8 +18,9 @@ const HomePage = ({ posts }) => {
   const { tagsPath, blogPath } = useAcmeBlogConfig();
   return (
     <div>
+      <SEO title="Blog"/>
       <Flex>
-        <h1>Blog</h1>
+        <h1>Digital garden</h1>
         <Link to={`${blogPath}${tagsPath}`} style={{ textDecoration: `none` }}>
           <h4
             sx={{ color: `primary`, margin: "0px" }}

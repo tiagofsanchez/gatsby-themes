@@ -11,7 +11,7 @@ import { TinyHero } from "../shared/hero";
 const BlogContainer = styled.div`
   display: grid;
   grid-template-columns: auto;
-  grid-gap:50px;
+  grid-gap: 50px;
 `;
 
 const BlogPostPage = ({
@@ -36,7 +36,12 @@ const BlogPostPage = ({
 
   return (
     <BlogContainer>
-      <SEO description={excerpt} title={title} image={thumbnail} />
+      <SEO
+        description={excerpt}
+        title={title}
+        image={thumbnail.childImageSharp.fluid.src}
+        article={true}
+      />
       <BlogHeaderMax {...blogHeader} />
       <div>
         <MDXRenderer>{body}</MDXRenderer>

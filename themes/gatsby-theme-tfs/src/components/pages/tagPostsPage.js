@@ -23,7 +23,7 @@ const TagPostsPage = ({ data }) => {
 
   return (
     <div>
-      <SEO />
+       <SEO title={`Tag: ${data.pageContext.tag}`}/>
       <h1>
         All posts tagged with{" "}
         <span sx={{ color: `highlight` }}>{data.pageContext.tag}</span> tag

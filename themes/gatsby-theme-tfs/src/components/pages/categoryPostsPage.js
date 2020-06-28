@@ -23,7 +23,7 @@ const CategoryPostsPage = ({ data }) => {
   
   return (
     <div>
-      <SEO />
+       <SEO title={`Category: ${data.pageContext.category}`}/>
       <h1>
         All posts from{" "}
         <span sx={{ color: `highlight` }}>{data.pageContext.category}</span>{" "}

@@ -12,7 +12,7 @@ export const blogPost = graphql`
       frontmatter {
         title
         tags
-        date (formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM DD, YYYY")
         category
         thumbnail {
           childImageSharp {

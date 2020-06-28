@@ -1,10 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import useSiteLogo from '../../hooks/useSiteLogo'
+import useSiteMetadata from "../../hooks/useSiteMetadata";
+import useSiteLogo from "../../hooks/useSiteLogo";
 
-
-const SEO = ({ title, description, image, children }) => {
+const SEO = ({ title, description, image, article }) => {
   const {
     siteTitle,
     siteUrl,
@@ -12,7 +12,7 @@ const SEO = ({ title, description, image, children }) => {
     siteLanguage,
     author,
   } = useSiteMetadata();
-  const logo = useSiteLogo()
+  const logo = useSiteLogo();
 
   const seo = {
     title: title || siteTitle,
@@ -21,21 +21,28 @@ const SEO = ({ title, description, image, children }) => {
     image: `${siteUrl}${image || logo}`,
   };
 
-  console.log(seo)
+  console.log(seo);
   return (
     <Helmet
+      htmlAttributes={{ siteLanguage }}
       title={seo.title}
       defaultTitle={seo.title}
-      titleTemplate={`%s | ${siteTitle}`}
+      titleTemplate={` ${siteTitle} - %s`}
     >
       <html lang={siteLanguage} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-      <meta property="og:title" content={seo.title} />
+
       <meta property="og:url" content={seo.url} />
+      {article === true ? (
+        <meta property="og:type" content="article" />
+      ) : (
+        <meta property="og:type" content="website" />
+      )}
+      <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
       <meta property="og:image" content={seo.image} />
-      <meta property="og:type" content="website" />
+
       <meta property="og:image:alt" content={seo.description} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
@@ -45,9 +52,22 @@ const SEO = ({ title, description, image, children }) => {
       <meta name="twitter:image:alt" content={seo.description} />
       <meta name="twitter:creator" content={author} />
       <meta name="gatsby-theme" content="gatsby-theme-acme" />
-      {children}
     </Helmet>
   );
+};
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  article: PropTypes.bool,
+};
+
+SEO.defaultProps = {
+  title: null,
+  description: null,
+  image: null,
+  article: false,
 };
 
 export default SEO;

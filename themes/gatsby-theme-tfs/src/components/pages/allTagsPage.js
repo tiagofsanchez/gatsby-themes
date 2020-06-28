@@ -5,7 +5,7 @@ import SEO from "../shared/seo";
 const AllTagsPage = ({ allTagsArray }) => {
   return (
     <>
-      <SEO />
+      <SEO title="All tags"/>
       <h1>Tags</h1>
       <TagsListing allTagsArray={allTagsArray} />
     </>
