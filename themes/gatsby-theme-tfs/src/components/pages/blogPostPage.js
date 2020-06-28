@@ -2,12 +2,17 @@
 import { jsx } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import PropTypes from "prop-types";
-import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
+import styled from "@emotion/styled";
 
 import SEO from "../shared/seo";
-import {BlogHeaderMax} from "../shared/blogPostHeader";
-import PostTableOfContents from "../shared/postTableOfContents";
-import { TinyHero } from '../shared/hero'
+import { BlogHeaderMax } from "../shared/blogPostHeader";
+import { TinyHero } from "../shared/hero";
+
+const BlogContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap:50px;
+`;
 
 const BlogPostPage = ({
   title,
@@ -16,26 +21,29 @@ const BlogPostPage = ({
   date,
   category,
   tags,
-  tableOfContentsArray,
   thumbnail,
   timeToRead,
 }) => {
-  const blogHeader = { title, date, tags, category, timeToRead, thumbnail , page: true };
-  const { postTableOfContents } = useAcmeBlogConfig();
-  console.log(thumbnail)
+  const blogHeader = {
+    title,
+    date,
+    tags,
+    category,
+    timeToRead,
+    thumbnail,
+    page: true,
+  };
+
+  console.log(thumbnail);
   return (
-    <div sx={{ width: `auto`, marginBottom: `100px` }}>
+    <BlogContainer>
       <SEO description={excerpt} title={title} image={thumbnail} />
       <BlogHeaderMax {...blogHeader} />
-      <MDXRenderer>{body}</MDXRenderer>
-      {postTableOfContents === true &&
-      tableOfContentsArray !== null &&
-      tableOfContentsArray !== undefined ? (
-        <PostTableOfContents tableOfContentsArray={tableOfContentsArray} />
-      ) : null}
-      <br/>
+      <div>
+        <MDXRenderer>{body}</MDXRenderer>
+      </div>
       <TinyHero />
-    </div>
+    </BlogContainer>
   );
 };
 
@@ -45,7 +53,6 @@ BlogPostPage.propTypes = {
   date: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
-  tableOfContentsArray: PropTypes.array.isRequired,
 };
 
 export default BlogPostPage;

@@ -2,10 +2,30 @@
 import { jsx, Card } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
+import Img from "gatsby-image";
 
 const PostHeaderContainer = styled.div`
   padding: 10px 20px;
   border-radius: 4px;
+`;
+
+const ThumbnailContainer = styled.div`
+  width: ${(props) => (props.big ? "200px" : "35px")};
+  margin: ${(props) => (props.big ? "auto" : null)};
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
+  align-items: center;
+`;
+
+const GridRow = styled.div`
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 15px;
+  justify-items: center;
 `;
 
 const TagsCatContainer = styled.div`
@@ -14,16 +34,13 @@ const TagsCatContainer = styled.div`
   margin: 0px;
 `;
 
-//blogheader for the BLOG
 export const BlogHeaderMinimal = ({
   title,
   date,
-  excerpt,
   slug,
   timeToRead,
   thumbnail,
 }) => {
-  console.log(thumbnail);
   return (
     <PostHeaderContainer
       sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 1px" } }}
@@ -36,21 +53,32 @@ export const BlogHeaderMinimal = ({
         }}
         to={slug}
       >
-        <h2 sx={{ marginBottom: `3px` }}>{title}</h2>
-        <p sx={{ color: `primary`, my: `5px` }}>{date}</p>
-        <p>{excerpt}</p>
+        <Grid>
+          <ThumbnailContainer>
+            <Img fluid={thumbnail.childImageSharp.fluid} />
+          </ThumbnailContainer>
+          <div>
+            <h2 sx={{ marginBottom: `3px` }}>{title}</h2>
+            <p sx={{ color: `primary`, my: `5px` }}>
+              {date} . {timeToRead} minutes
+            </p>
+          </div>
+        </Grid>
       </Link>
     </PostHeaderContainer>
   );
 };
 
-// blog header for the post page
 export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
-  console.log(thumbnail);
   return (
-    <div>
-      <h1 sx={{ my: `0px` }}>{title}</h1>
-      <p sx={{ color: `primary`, my: `5px` }}>{date}</p>
+    <GridRow>
+      <ThumbnailContainer big={true}>
+        <Img fluid={thumbnail.childImageSharp.fluid} />
+      </ThumbnailContainer>
+      <div>
+        <h1 sx={{ my: `0px` }}>{title}</h1>
+        <p sx={{ color: `primary`, my: `5px` }}>{date}</p>
+      </div>
       <TagsCatContainer>
         <Card
           variant="category"
@@ -68,6 +96,6 @@ export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
           </Card>
         ))}
       </TagsCatContainer>
-    </div>
+    </GridRow>
   );
 };
