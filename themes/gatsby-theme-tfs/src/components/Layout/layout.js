@@ -28,4 +28,5 @@ const Layout = ({ children }) => {
     </Grid>
   );
 };
+
 export default Layout;
