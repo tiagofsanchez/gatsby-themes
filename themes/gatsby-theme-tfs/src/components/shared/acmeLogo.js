@@ -6,8 +6,7 @@ import PropTypes from "prop-types";
 
 const ImageWrapper = styled.div`
   width: ${(props) => props.width};
-  margin-right: 15px;
-
+  border-radius: 50%;
 `;
 
 const AcmeLogo = ({ width }) => {

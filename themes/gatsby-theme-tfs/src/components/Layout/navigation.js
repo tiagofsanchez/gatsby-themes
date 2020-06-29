@@ -17,9 +17,11 @@ const MobileMenu = styled.div`
   position: fixed;
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
+  padding-top: 10px;
   bottom: 0;
   width: 100%;
-  height: 45px;
+  height: 60px;
   left: 0;
   z-index: 100;
   border-top: 1px solid;
