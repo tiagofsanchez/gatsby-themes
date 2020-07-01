@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 
 import SEO from "../shared/seo";
 import { BlogHeaderMax } from "../shared/blogPostHeader";
-import { TinyHero } from "../shared/hero";
+
 
 const BlogContainer = styled.div`
   display: grid;
@@ -46,7 +46,6 @@ const BlogPostPage = ({
       <div>
         <MDXRenderer>{body}</MDXRenderer>
       </div>
-      <TinyHero />
     </BlogContainer>
   );
 };

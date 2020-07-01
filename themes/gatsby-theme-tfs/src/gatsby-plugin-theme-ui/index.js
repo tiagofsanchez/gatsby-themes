@@ -8,7 +8,7 @@ const theme = {
     text: "#2d3748",
     background: "#eeeeee",
     togglebg: "#1A202C",
-    hover: "white",
+    hover: "#d4d4d4",
     primary: "black",
     secondary: "white",
     link: "#d23669",
@@ -19,7 +19,7 @@ const theme = {
         text: "#cbd5e0",
         background: "#1A202C",
         togglebg: "#eeeeee",
-        hover: "black",
+        hover: "#15181f",
         primary: "White",
         secondary: "black",
         link: "#d23669",
@@ -50,14 +50,13 @@ const theme = {
       lineHeight: "body",
       fontWeight: "body",
       code: {
-        fontSize: 20,
+        ...prism,
+        fontSize: 16,
         fontFamily: "body",
         px: 2,
       },
       pre: {
         ...prism,
-        fontSize: 16,
-        fontFamily: "monospace",
         whiteSpace: "pre-wrap",
         wordBreak: "break-all",
         wordWrap: "break-word",
@@ -137,22 +136,15 @@ const theme = {
         borderSpacing: 0,
         [[`th`, `td`]]: {
           textAlign: `left`,
-          py: `4px`,
+          py: `8px`,
           pr: `4px`,
           pl: 0,
           borderColor: `muted`,
+          border: `1px`,
           borderBottomStyle: `solid`,
         },
       },
-      th: {
-        verticalAlign: `bottom`,
-        borderBottomWidth: `2px`,
-        color: `heading`,
-      },
-      td: {
-        verticalAlign: `top`,
-        borderBottomWidth: `1px`,
-      },
+
       img: {
         maxWidth: "100%",
         height: "auto",
@@ -184,10 +176,11 @@ const theme = {
   },
   layout: {
     header: {
-      width: `100%`,
+      width: `90%`,
+      margin: `0 auto`,
     },
     main: {
-      width: [`90%`, `80%`, `70%`],
+      width: [`90%`, `80%`, `800px`],
       margin: `0 auto`,
     },
     footer: {
@@ -218,6 +211,31 @@ const theme = {
       bg: `highlight`,
       color: `white`,
       p: `6px`,
+    },
+  },
+  forms: {
+    label: {
+      fontSize: 2,
+      fontWeight: "bold",
+    },
+    input: {
+      fontSize: 3,
+      borderColor: "gray",
+      padding: `10px`,
+      mb: `3`,
+      "&:focus": {
+        borderColor: "highlight",
+        boxShadow: (t) => `0 0 0 3px ${t.colors.highlight}`,
+        outline: "none",
+      },
+    },
+  },
+  buttons: {
+    primary: {
+      fontSize: 3,
+      padding: `10px`,
+      color: "white",
+      bg: "highlight",
     },
   },
 };

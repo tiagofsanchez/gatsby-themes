@@ -43,7 +43,7 @@ export const BlogHeaderMinimal = ({
 }) => {
   return (
     <PostHeaderContainer
-      sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 1px" } }}
+      sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 0" } }}
     >
       <Link
         style={{
@@ -76,7 +76,7 @@ export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
         <Img fluid={thumbnail.childImageSharp.fluid} />
       </ThumbnailContainer>
       <div>
-        <h1 sx={{ my: `0px` }}>{title}</h1>
+        <h1 sx={{ my: `0px` , textAlign: `center`}}>{title}</h1>
         <p sx={{ color: `primary`, my: `5px` , textAlign: `center`}}>{date}</p>
       </div>
       <TagsCatContainer>

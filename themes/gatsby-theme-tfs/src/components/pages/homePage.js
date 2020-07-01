@@ -20,7 +20,7 @@ const HomePage = ({ posts }) => {
     <div>
       <SEO title="Blog"/>
       <Flex>
-        <h1>Digital garden</h1>
+        <h1>Articles</h1>
         <Link to={`${blogPath}${tagsPath}`} style={{ textDecoration: `none` }}>
           <h4
             sx={{ color: `primary`, margin: "0px" }}

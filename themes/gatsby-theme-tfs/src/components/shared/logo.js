@@ -9,7 +9,7 @@ const ImageWrapper = styled.div`
   border-radius: 50%;
 `;
 
-const AcmeLogo = ({ width }) => {
+const Logo = ({ width }) => {
   const data = useStaticQuery(graphql`
     {
       logo: file(relativePath: { eq: "logo.png" }) {
@@ -28,8 +28,8 @@ const AcmeLogo = ({ width }) => {
   ) : null;
 };
 
-AcmeLogo.propTypes = {
+Logo.propTypes = {
   width: PropTypes.string,
 };
 
-export default AcmeLogo;
+export default Logo;

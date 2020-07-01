@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
 
 import useSiteMetadata from "../../hooks/useSiteMetadata";
-import Logo from "../shared/acmeLogo";
+import Logo from "./logo";
 
 const HeroContainer = styled.div`
   display: grid;
@@ -17,6 +17,12 @@ const TinyHeroContainer = styled.div`
   grid-template-columns: auto 1fr;
   align-items: center;
   grid-gap: 15px;
+`;
+
+const FormHeroContainer = styled.div`
+display: grid;
+place-items: center;
+grid-gap: 20px;
 `;
 
 export const Hero = () => {
@@ -40,5 +46,14 @@ export const TinyHero = () => {
       <Logo width="50px" />
       <p sx={{ my: `0` }}>{siteDescription}</p>
     </TinyHeroContainer>
+  );
+};
+
+export const FormHero = ({ blurb }) => {
+  return (
+    <FormHeroContainer>
+      <Logo width="80px" />
+      <p sx={{ my: `0` }}>{blurb}</p>
+    </FormHeroContainer>
   );
 };
