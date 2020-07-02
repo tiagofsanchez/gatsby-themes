@@ -41,7 +41,6 @@ yarn add gatsby-theme-acmeblog
 |`postTableOfContents`|`false`| If you would like to have a table of contents in your posts page change it to `true`|
 
 
-
 ### How to use theme options
 
 In `gatsby-config.js` you will be able to define the options
