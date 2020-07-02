@@ -2,7 +2,7 @@
 title: "And I decided to start coding"
 date: 2019-08-21
 category: "Code"
-thumbnail: "../images/garden.png"
+thumbnail: "../thumbnails/garden.png"
 tags:
   - react
   - front-end

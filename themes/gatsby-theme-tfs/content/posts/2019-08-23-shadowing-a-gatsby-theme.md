@@ -2,7 +2,7 @@
 title: "Shadowing a Gatsby Theme"
 date: 2020-07-02
 category: "Code"
-thumbnail: "../images/gatsby-logo.png"
+thumbnail: "../thumbnails/gatsby-logo.png"
 tags:
   - blog
   - gatsby
@@ -200,3 +200,5 @@ Another afterthought on the back of this are a couple of entries on the wishlist
 There seems to be a lot of work to do...and lots more to learn.
 
 Cheers! And see you around!
+
+![Hello](../images/digitalGardenPerformance.png)
