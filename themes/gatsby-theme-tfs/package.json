@@ -27,6 +27,7 @@
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-theme-acmeblog-data": "*",
     "gatsby-transformer-sharp": "^2.5.3",
+    "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",

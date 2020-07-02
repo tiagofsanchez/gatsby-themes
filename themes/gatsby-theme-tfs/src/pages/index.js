@@ -23,17 +23,13 @@ const IndexPage = () => {
   const categoriesArray = useAllCategories();
   const { categoryPath, blogPath } = useAcmeBlogConfig();
 
-  console.log(selectedPostsArray);
-
   return (
     <GridContainer>
       <SEO />
       <Hero />
       <section>
         <h1>
-          {" "}
-          The <span sx={{ color: `highlight` }}>stuff</span> I like to write
-          about
+          The stuff I like to write about
         </h1>
         <CategoryListing
           categoriesArray={categoriesArray}
@@ -43,7 +39,7 @@ const IndexPage = () => {
       </section>
       <section>
         <h1>
-          Most <span sx={{ color: `highlight` }}>popular</span> posts
+          Most popular posts
         </h1>
         {selectedPostsArray.map((blogPost) => {
             return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
@@ -52,7 +48,7 @@ const IndexPage = () => {
       <section>
         <h1>
           {" "}
-          My latest <span sx={{ color: `highlight` }}>posts</span>
+          My latest posts
         </h1>
         <div>
           {postsArray.map((blogPost) => {

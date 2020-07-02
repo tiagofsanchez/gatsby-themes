@@ -1,6 +1,6 @@
 ---
 title: "Shadowing a Gatsby Theme"
-date: 2019-08-23
+date: 2020-07-02
 category: "Code"
 thumbnail: "../images/gatsby-logo.png"
 tags:

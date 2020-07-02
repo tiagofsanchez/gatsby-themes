@@ -2,6 +2,7 @@
 import { jsx, Card } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
+import moment from "moment";
 import Img from "gatsby-image";
 
 const PostHeaderContainer = styled.div`
@@ -16,7 +17,7 @@ const ThumbnailContainer = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-gap: 20px;
   align-items: center;
 `;
@@ -41,6 +42,8 @@ export const BlogHeaderMinimal = ({
   timeToRead,
   thumbnail,
 }) => {
+  const newest = moment(date) > moment().subtract(1, "months");
+
   return (
     <PostHeaderContainer
       sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 0" } }}
@@ -63,6 +66,7 @@ export const BlogHeaderMinimal = ({
               {date} . {timeToRead} minutes
             </p>
           </div>
+          {newest && <p sx={{ color: `highlight`, fontWeight: `900` }}>new</p>}
         </Grid>
       </Link>
     </PostHeaderContainer>
@@ -76,8 +80,8 @@ export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
         <Img fluid={thumbnail.childImageSharp.fluid} />
       </ThumbnailContainer>
       <div>
-        <h1 sx={{ my: `0px` , textAlign: `center`}}>{title}</h1>
-        <p sx={{ color: `primary`, my: `5px` , textAlign: `center`}}>{date}</p>
+        <h1 sx={{ my: `0px`, textAlign: `center` }}>{title}</h1>
+        <p sx={{ color: `primary`, my: `5px`, textAlign: `center` }}>{date}</p>
       </div>
       <TagsCatContainer>
         <Card
