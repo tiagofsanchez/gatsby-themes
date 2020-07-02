@@ -6895,10 +6895,10 @@ gatsby-theme-acmeblog-data@*:
     mkdirp "^1.0.4"
     prop-types "^15.7.2"
 
-gatsby-theme-tfs@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-tfs/-/gatsby-theme-tfs-1.0.0.tgz#015ec765f8806e0fdfadb53462165c4ca60e78dc"
-  integrity sha512-dok58AAfajykGq5pgRXf+rITgcflBMxtD/JdJ1dDe+GKll4b8RyvXUtZ+oOhTYwX2dIxjDdc4qGluJVjNnkdlQ==
+gatsby-theme-tfs@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-tfs/-/gatsby-theme-tfs-1.0.2.tgz#14c6a8b1d018cc22ee675b9ff2f107ff56083b8e"
+  integrity sha512-n6uMsVCJ8/7jPsjvFh7hx387Vbjk71MjgCo8IpL8JMP0S/p7Oz1KXQE4cr+fyhgBCdbWxxyE6dg3BSG/YQ3vPw==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
@@ -6912,6 +6912,7 @@ gatsby-theme-tfs@^1.0.0:
     gatsby-plugin-theme-ui "^0.3.0"
     gatsby-theme-acmeblog-data "*"
     gatsby-transformer-sharp "^2.5.3"
+    moment "^2.27.0"
     react "^16.13.1"
     react-dom "^16.13.1"
     react-helmet "^6.1.0"
