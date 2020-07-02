@@ -7,7 +7,7 @@ tags:
   - react
   - front-end
   - e-learning
-publish: "yes"
+selected: "yes"
 ---
 
 A couple of months back I have decided to learn how to code and it has been a journey sprinkled with amazing moments, but full with hard brick walls encounters, doubts and uncertainty. Learning something new takes a lot of time, being patient and, some would say, a little bit of obsession. That new thing is, by nature and virtue, something that you are not familiar with.

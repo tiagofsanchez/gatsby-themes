@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 import usePostsForIndexPage from "../hooks/usePostsForIndexPage";
 import useAllCategories from "../hooks/useAllCategories";
 import useAcmeBlogConfig from "../hooks/useAcmeBlogConfig";
+import useSelectedPostsForIndexPage from "../hooks/useSelectedPostsForIndexPage";
 
 import { BlogHeaderMinimal } from "../components/shared/blogPostHeader";
 import CategoryListing from "../components/shared/categoryListing";
@@ -12,23 +13,27 @@ import { Hero } from "../components/shared/hero";
 import SEO from "../components/shared/seo";
 
 const GridContainer = styled.div`
-display: grid; 
-grid-gap: 50px;
-`
+  display: grid;
+  grid-gap: 50px;
+`;
 
 const IndexPage = () => {
   const postsArray = usePostsForIndexPage();
+  const selectedPostsArray = useSelectedPostsForIndexPage();
   const categoriesArray = useAllCategories();
   const { categoryPath, blogPath } = useAcmeBlogConfig();
+
+  console.log(selectedPostsArray);
 
   return (
     <GridContainer>
       <SEO />
       <Hero />
-      <section >
+      <section>
         <h1>
           {" "}
-          The <span sx={{ color: `highlight` }}>stuff</span> I like to write about
+          The <span sx={{ color: `highlight` }}>stuff</span> I like to write
+          about
         </h1>
         <CategoryListing
           categoriesArray={categoriesArray}
@@ -38,12 +43,20 @@ const IndexPage = () => {
       </section>
       <section>
         <h1>
+          Most <span sx={{ color: `highlight` }}>popular</span> posts
+        </h1>
+        {selectedPostsArray.map((blogPost) => {
+            return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
+          })}
+      </section>
+      <section>
+        <h1>
           {" "}
-          Lastest <span sx={{ color: `highlight` }}>posts</span> bellow
+          My latest <span sx={{ color: `highlight` }}>posts</span>
         </h1>
         <div>
           {postsArray.map((blogPost) => {
-            return <BlogHeaderMinimal  {...blogPost} key={blogPost.title} />;
+            return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
           })}
         </div>
       </section>

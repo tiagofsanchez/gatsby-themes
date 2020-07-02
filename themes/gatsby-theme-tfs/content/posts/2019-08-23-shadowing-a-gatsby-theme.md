@@ -7,7 +7,7 @@ tags:
   - blog
   - gatsby
   - react
-publish: "yes"
+selected: "yes"
 ---
 
 This is, I hope, one of many posts where I will try to explain the challenges of setting a very simple blog with Gatsby from a newbie perspective.
