@@ -27,12 +27,13 @@ yarn add gatsby-theme-tfs
 |----------|-------------|------|
 | `blogPath` |  `/blog` | defines the url (slug) for the blog posts overview page |
 | `postsContentPath` |    `content/posts`   |   location of all the posts files |
-| `postsContentThumbnail` | `content/images` |    location of all the thumbnails images used in the posts |
+| `postsContentThumbnail` | `content/thumbnail` |    location of all the thumbnails images used in the posts |
 |`pagesContentPath`| `content/pages`| location of other pages that you would like to build using `mdx`|
-|`otherImagesContentPath`| `images` | location for any other images that you would like to post in your |
+|`otherImagesContentPath`| `content/images` | location for any other images that you would like to post in your |
 |`tagsPath`| `/tags`| defines the url (slug) for all existing tags, shown in a overview tags page and used for listing all posts with a certain tag (prepending it to the tag itself, e.g. `/blog/tags/yourtag`) |
 |`categoryPath`|`/category` | defines the url (slug) used for listing all posts with a certain category (prepending it to the category itself, e.g. `/blog/category/yourcategory`)  |
 |`postTableOfContents`|`false`| If you would like to have a table of contents in your posts page change it to `true`|
+
 
 
 ### How to use theme options
