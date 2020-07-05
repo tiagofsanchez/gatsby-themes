@@ -42,6 +42,7 @@ const Header = () => {
       <NavContainer>
         <Nav navigation={navigation} />
         <Button
+          aria-label='toggle color theme'
           onClick={changeModehandler}
           style={{
             padding: `0px`,
