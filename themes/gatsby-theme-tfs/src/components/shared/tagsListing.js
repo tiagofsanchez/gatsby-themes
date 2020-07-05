@@ -23,6 +23,7 @@ const TagsListing = ({ allTagsArray }) => {
               as={Link}
               sx={{ variant: `links.secondary`, display: `flex` }}
               to={`${blogPath}${tagsPath}/${_.kebabCase(tag.fieldValue)}`}
+              aria-label={`${tag.fieldValue} post tag`}
             >
               <Card variant="tag" sx={{ marginRight: `-10px` }}>
                 <h4 sx={{my:`0px`}}>{tag.fieldValue}</h4>
