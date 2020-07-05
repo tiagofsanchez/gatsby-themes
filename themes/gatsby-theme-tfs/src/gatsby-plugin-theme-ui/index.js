@@ -64,7 +64,7 @@ const theme = {
         overflowX: "auto",
         p: 3,
         my: 4,
-        boxShadow: `1px 2px 10px rgba(0, 0, 0, 0.5)`,
+        borderRadius: `4px`,
       },
       h1: {
         fontSize: 44,

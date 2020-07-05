@@ -13,7 +13,7 @@ const NavItems = styled.nav`
   }
 `;
 
-const MobileMenu = styled.div`
+const MobileMenu = styled.nav`
   position: fixed;
   display: flex;
   justify-content: space-around;
@@ -38,30 +38,59 @@ const FlexMenu = styled.div`
   padding: 0px 20px 0px 20px;
 `;
 
+const activeStyle = { borderBottom: `2px solid` };
+
 const Navigation = ({ navigation }) => {
   return (
     <div>
       <NavItems>
         {navigation.map((url) => (
-          <div key={url.title}>
-            <Link to={url.slug} style={{ textDecoration: `none` }}>
-              <h4 sx={{ color: `primary` }}>{url.title}</h4>
-            </Link>
-          </div>
+          <Link
+            key={url.title}
+            to={url.slug}
+            aria-label={`${url.title} page`}
+            sx={{ borderBottom: `none` }}
+            activeStyle={activeStyle}
+          >
+            <h4 sx={{ color: `primary`, margin: `0` }}>{url.title}</h4>
+          </Link>
         ))}
       </NavItems>
       <MobileMenu sx={{ bg: `background` }}>
         <FlexMenu>
-          <Link to="/" sx={{ borderBottom: `0px` }}>
-            <p sx={{ color: `primary`, margin: `0px`, fontWeight: `600` }}>
+          <Link
+            to="/"
+            sx={{ borderBottom: `0px` }}
+            aria-label={`home page`}
+            activeStyle={activeStyle}
+          >
+            <p
+              sx={{
+                color: `primary`,
+                margin: `0px`,
+                fontWeight: `600`,
+                textDecoration: `none`,
+              }}
+            >
               home
             </p>
           </Link>
           {navigation.map((nav) => (
-            <Link key={nav.title} to={nav.slug} sx={{ borderBottom: `0px` }}>
-              <nav sx={{ color: `primary`, margin: `0px`, fontWeight: `600` }}>
+            <Link
+              key={nav.title}
+              to={nav.slug}
+              sx={{ borderBottom: `0px` }}
+              activeStyle={activeStyle}
+            >
+              <p
+                sx={{
+                  margin: `0`,
+                  color: `primary`,
+                  fontWeight: `600`,
+                }}
+              >
                 {nav.title}
-              </nav>
+              </p>
             </Link>
           ))}
         </FlexMenu>

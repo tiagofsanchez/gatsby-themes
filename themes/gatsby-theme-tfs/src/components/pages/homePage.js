@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx} from "theme-ui";
+import { jsx } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
-import SEO from '../shared/seo'
+import SEO from "../shared/seo";
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 import BlogPostListing from "../shared/blogPostListing";
 
@@ -18,10 +18,14 @@ const HomePage = ({ posts }) => {
   const { tagsPath, blogPath } = useAcmeBlogConfig();
   return (
     <div>
-      <SEO title="Blog"/>
+      <SEO title="Blog" />
       <Flex>
         <h1>Articles</h1>
-        <Link to={`${blogPath}${tagsPath}`} style={{ textDecoration: `none` }}>
+        <Link
+          to={`${blogPath}${tagsPath}`}
+          sx={{ variant: `links.secondary` }}
+          aria-label="All post tags"
+        >
           <h4
             sx={{ color: `primary`, margin: "0px" }}
             to={`${blogPath}${tagsPath}`}

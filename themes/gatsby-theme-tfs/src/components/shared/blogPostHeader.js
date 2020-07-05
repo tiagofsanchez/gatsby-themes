@@ -20,6 +20,7 @@ const Grid = styled.div`
   grid-template-columns: auto 1fr auto;
   grid-gap: 20px;
   align-items: center;
+  
 `;
 
 const GridRow = styled.div`
@@ -27,6 +28,7 @@ const GridRow = styled.div`
   grid-template-rows: auto;
   grid-gap: 15px;
   justify-items: center;
+
 `;
 
 const TagsCatContainer = styled.div`
@@ -55,6 +57,7 @@ export const BlogHeaderMinimal = ({
           fontWeight: `normal`,
         }}
         to={slug}
+        aria-label={`post title: ${title}`}
       >
         <Grid>
           <ThumbnailContainer>
@@ -75,7 +78,7 @@ export const BlogHeaderMinimal = ({
 
 export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
   return (
-    <GridRow>
+    <GridRow >
       <ThumbnailContainer big={true}>
         <Img fluid={thumbnail.childImageSharp.fluid} />
       </ThumbnailContainer>

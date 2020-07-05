@@ -18,6 +18,7 @@ const CatListing = ({ categoriesArray, categoryPath, blogPath }) => {
           key={cat.fieldValue}
           to={`${blogPath}${categoryPath}/${_.kebabCase(cat.fieldValue)}`}
           sx={{borderBottom: 'none'}}
+          aria-label={`${cat.fieldValue} category`}
         >
           <Card variant="category" sx={{marginTop: `10px`}}>
             <h3 sx={{ color: `white`, my: `0px` }}>{cat.fieldValue}</h3>

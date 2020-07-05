@@ -35,14 +35,18 @@ const Header = () => {
   return (
     <HeaderContainer>
       <FlexBox>
-        <Link to="/" sx={{variant: `links.primary`}}>  
+        <Link
+          to="/"
+          sx={{ variant: `links.primary` }}
+          aria-label={`${siteTitle} home page`}
+        >
           {siteTitle}
         </Link>
       </FlexBox>
       <NavContainer>
         <Nav navigation={navigation} />
         <Button
-          aria-label='toggle color theme'
+          aria-label="toggle color theme"
           onClick={changeModehandler}
           style={{
             padding: `0px`,

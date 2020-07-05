@@ -12,9 +12,10 @@ import CategoryListing from "../components/shared/categoryListing";
 import { Hero } from "../components/shared/hero";
 import SEO from "../components/shared/seo";
 
+
 const GridContainer = styled.div`
   display: grid;
-  grid-gap: 50px;
+  grid-gap: 70px;
 `;
 
 const IndexPage = () => {
