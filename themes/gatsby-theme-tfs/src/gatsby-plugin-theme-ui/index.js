@@ -2,7 +2,7 @@ import prism from "@theme-ui/prism/presets/night-owl.json";
 
 const theme = {
   initialColorModeName: "light",
-  breakpoints: ["40em", "56em", "64em"],
+  breakpoints: ["40em", "1200px", "1400px"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     text: "#2d3748",
@@ -176,7 +176,7 @@ const theme = {
   },
   layout: {
     header: {
-      width: [`90%`, `90%`, `1000px`],
+      width: [`90%`, `90%`, `1100px`],
       margin: `0 auto`,
     },
     main: {
