@@ -72,7 +72,7 @@ const Navigation = ({ navigation }) => {
                 textDecoration: `none`,
               }}
             >
-              home
+              Home
             </p>
           </Link>
           {navigation.map((nav) => (

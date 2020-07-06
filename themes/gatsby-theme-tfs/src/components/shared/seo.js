@@ -21,6 +21,8 @@ const SEO = ({ title, description, image, article }) => {
     image: `${siteUrl}${image || logo}`,
   };
 
+  console.log(seo);
+  
   return (
     <Helmet
       htmlAttributes={{ siteLanguage }}

@@ -176,7 +176,7 @@ const theme = {
   },
   layout: {
     header: {
-      width: `90%`,
+      width: [`90%`, `90%`, `1000px`],
       margin: `0 auto`,
     },
     main: {
