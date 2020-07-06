@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router"
 import useSiteMetadata from "../../hooks/useSiteMetadata";
 import useSiteLogo from "../../hooks/useSiteLogo";
 
@@ -13,11 +14,11 @@ const SEO = ({ title, description, image, article }) => {
     author,
   } = useSiteMetadata();
   const logo = useSiteLogo();
-
+  const { pathname } = useLocation()
   const seo = {
     title: title || siteTitle,
     description: description || siteDescription,
-    url: siteUrl,
+    url: `${siteUrl}${pathname}`,
     image: `${siteUrl}${image || logo}`,
   };
 
