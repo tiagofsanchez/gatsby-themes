@@ -27,5 +27,30 @@ export const blogPost = graphql`
       }
       excerpt
     }
+    postsArray: allMdx(
+      filter: { frontmatter: { title: { nin: "" } } }
+      sort: { order: DESC, fields: frontmatter___date }
+      ) {
+      nodes {
+        excerpt
+        timeToRead
+        frontmatter {
+          category
+          title
+          date(formatString: "MMMM DD, YYYY")
+          category
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 2000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        fields {
+          slug
+        }
+      }
+    }
   }
 `;

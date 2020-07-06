@@ -1,25 +1,36 @@
-import React from "react"; 
-import BlogPostPage from '../../components/pages/blogPostPage'
+import React from "react";
+import BlogPostPage from "../../components/pages/blogPostPage";
 
- const MinBlogPost = ({data, pageContext}) => {
+const MinBlogPost = ({ data, pageContext }) => {
+  
+  const category = data.post.frontmatter.category;
+  const title = data.post.frontmatter.title;
+  const alternatives = [];
+  data.postsArray.nodes.map((post) => {
+    if ((post.frontmatter.category === category) && (post.frontmatter.title !== title)) {
+      alternatives.push(post);
+    }
+    return alternatives;
+  });
 
-    const post = {
-        body: data.post.body,
-        excerpt: data.post.excerpt,
-        title: data.post.frontmatter.title,
-        date: data.post.frontmatter.date,
-        category: data.post.frontmatter.category,
-        tags: data.post.frontmatter.tags,
-        slug: data.post.fields.slug,
-        tableOfContentsArray: data.post.tableOfContents.items,
-        basePath: pageContext.basePath,
-        thumbnail: data.post.frontmatter.thumbnail, 
-        timeToRead: data.post.timeToRead,
-        prevPostSlug: pageContext.prev, 
-        nextPostSlug: pageContext.next,
-      };
-      
-      return <BlogPostPage {...post} />;
-    };
+  const post = {
+    body: data.post.body,
+    excerpt: data.post.excerpt,
+    title,
+    date: data.post.frontmatter.date,
+    category,
+    tags: data.post.frontmatter.tags,
+    slug: data.post.fields.slug,
+    tableOfContentsArray: data.post.tableOfContents.items,
+    basePath: pageContext.basePath,
+    thumbnail: data.post.frontmatter.thumbnail,
+    timeToRead: data.post.timeToRead,
+    prevPostSlug: pageContext.prev,
+    nextPostSlug: pageContext.next,
+    alternatives,
+  };
 
- export default MinBlogPost   
+  return <BlogPostPage {...post} />;
+};
+
+export default MinBlogPost;

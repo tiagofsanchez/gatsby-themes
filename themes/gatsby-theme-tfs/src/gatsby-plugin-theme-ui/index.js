@@ -190,6 +190,14 @@ const theme = {
     },
   },
   cards: {
+    alternative: { 
+      color: `primary`,
+      borderRadius: `4px`,
+      bg: `hover`,
+      p: `40px`,
+      maxWidth: `250px`,
+      height: `250px`
+    },
     category: {
       bg: `highlight`,
       mx: `10px`,
