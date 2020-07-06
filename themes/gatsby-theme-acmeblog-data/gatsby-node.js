@@ -129,11 +129,15 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     component: homePageComponent,
   });
 
-  blogPostArray.forEach((node) => {
+  blogPostArray.forEach((node , index ) => {
     createPage({
       path: node.fields.slug,
       component: blogPostComponent,
-      context: { slug: node.fields.slug},
+      context: { 
+        slug: node.fields.slug, 
+        prev: index=== 0 ? null : blogPostArray[index-1].fields.slug,
+        next: index === (blogPostArray.length - 1 ) ? null: blogPostArray[index+1].fields.slug
+       },
     });
   });
 

@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
 
 import useSiteMetadata from "../../hooks/useSiteMetadata";
-import Logo from "./logo";
+import Avatar from "./avatar";
 
 const HeroContainer = styled.div`
   display: grid;
@@ -30,7 +30,7 @@ export const Hero = () => {
 
   return (
     <HeroContainer>
-      <Logo width="200px" />
+      <Avatar width="200px" />
       <h1 sx={{ my: `0` }}>
         <span sx={{ color: `highlight` }}>Ola!</span> I'm Tiago!
       </h1>
@@ -43,7 +43,7 @@ export const TinyHero = () => {
   const { siteDescription } = useSiteMetadata();
   return (
     <TinyHeroContainer>
-      <Logo width="50px" />
+      <Avatar width="50px" />
       <p sx={{ my: `0` }}>{siteDescription}</p>
     </TinyHeroContainer>
   );
@@ -52,7 +52,7 @@ export const TinyHero = () => {
 export const FormHero = ({ blurb }) => {
   return (
     <FormHeroContainer>
-      <Logo width="80px" />
+      <Avatar width="80px" />
       <p sx={{ my: `0` }}>{blurb}</p>
     </FormHeroContainer>
   );

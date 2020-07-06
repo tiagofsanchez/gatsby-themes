@@ -15,6 +15,8 @@ import BlogPostPage from '../../components/pages/blogPostPage'
         basePath: pageContext.basePath,
         thumbnail: data.post.frontmatter.thumbnail, 
         timeToRead: data.post.timeToRead,
+        prevPostSlug: pageContext.prev, 
+        nextPostSlug: pageContext.next,
       };
       
       return <BlogPostPage {...post} />;
