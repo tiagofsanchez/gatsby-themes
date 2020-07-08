@@ -1,29 +1,30 @@
 import prism from "@theme-ui/prism/presets/night-owl.json";
 
 const theme = {
-  initialColorModeName: "light",
+  initialColorModeName: `dark`,
+  useLocalStorage: false,
   breakpoints: ["740px", "1200px", "1400px"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
-    text: "#2d3748",
-    background: "#eeeeee",
-    togglebg: "#1A202C",
-    hover: "#d4d4d4",
-    primary: "black",
-    secondary: "white",
+    text: "#cbd5e0",
+    background: "#1A202C",
+    togglebg: "#eeeeee",
+    hover: "#15181f",
+    primary: "White",
+    secondary: "black",
     link: "#d23669",
-    linkbg: "#1A202C",
+    linkbg: "#eeeeee",
     highlight: "#d23669",
     modes: {
-      dark: {
-        text: "#cbd5e0",
-        background: "#1A202C",
-        togglebg: "#eeeeee",
-        hover: "#15181f",
-        primary: "White",
-        secondary: "black",
+      light: {
+        text: "#2d3748",
+        background: "#eeeeee",
+        togglebg: "#1A202C",
+        hover: "#d4d4d4",
+        primary: "black",
+        secondary: "white",
         link: "#d23669",
-        linkbg: "#eeeeee",
+        linkbg: "#1A202C",
         highlight: "#d23669",
       },
     },
@@ -104,9 +105,9 @@ const theme = {
         color: "primary",
         my: 3,
       },
-      hr: { 
+      hr: {
         borderColor: `hover`,
-        height: `0.5px`
+        height: `0.5px`,
       },
       p: {
         fontSize: 20,
@@ -187,13 +188,13 @@ const theme = {
       width: `90%`,
       margin: `0 auto`,
     },
-    blogHeader: { 
+    blogHeader: {
       width: [`100%`, `100%`, `1100px`],
       margin: `0 auto`,
     },
     container: {
       width: [`100%`, `90%`, `800px`],
-      margin: `0 auto`
+      margin: `0 auto`,
     },
     footer: {
       width: [`90%`, `80%`, `70%`],
@@ -202,19 +203,18 @@ const theme = {
     },
   },
   cards: {
-    alternative: { 
+    alternative: {
       display: `grid`,
       color: `primary`,
       borderRadius: `4px`,
       bg: `hover`,
       p: `20px`,
-      maxWidth: [`auto` ,`320px`,`320px`],
-      height: [`auto`,`220px`,`220px`],
+      maxWidth: [`auto`, `320px`, `320px`],
+      height: [`auto`, `220px`, `220px`],
       fontWeight: `body`,
-      "&:hover": { 
-        boxShadow:`2px 2px #d23669` 
-      }
-      
+      "&:hover": {
+        boxShadow: `2px 2px #d23669`,
+      },
     },
     category: {
       bg: `highlight`,

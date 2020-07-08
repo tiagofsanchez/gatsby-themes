@@ -28,9 +28,10 @@ const Header = () => {
   const [colorMode, setColorMode] = useColorMode();
   const { siteTitle, navigation } = useSiteMetadata();
   const changeModehandler = () => {
-    setColorMode(colorMode === "dark" ? "default" : "dark");
+    setColorMode(colorMode === "default" ? "light" : "default");
   };
 
+  console.log(colorMode)
   return (
     <HeaderContainer>
       <FlexBox>
