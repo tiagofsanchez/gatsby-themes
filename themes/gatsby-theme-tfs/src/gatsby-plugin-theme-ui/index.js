@@ -96,6 +96,18 @@ const theme = {
         color: "primary",
         my: 3,
       },
+      h5: {
+        fontSize: 20,
+        fontFamily: "heading",
+        lineHeight: 1.7,
+        fontWeight: "bold",
+        color: "primary",
+        my: 3,
+      },
+      hr: { 
+        borderColor: `hover`,
+        height: `0.5px`
+      },
       p: {
         fontSize: 20,
         fontFamily: "body",
@@ -144,7 +156,6 @@ const theme = {
           borderBottomStyle: `solid`,
         },
       },
-
       img: {
         maxWidth: "100%",
         height: "auto",
@@ -152,13 +163,6 @@ const theme = {
         display: `block`,
         margin: `auto`,
       },
-    },
-    h1: {
-      fontSize: 44,
-      fontFamily: "heading",
-      fontWeight: "bold",
-      color: "primary",
-      my: 4,
     },
   },
   links: {
@@ -186,7 +190,6 @@ const theme = {
     blogHeader: { 
       width: [`100%`, `100%`, `1100px`],
       margin: `0 auto`,
-      bg: `hover`,
       padding: `40px`,
       borderRadius: `4px`
     },
@@ -206,8 +209,13 @@ const theme = {
       borderRadius: `4px`,
       bg: `hover`,
       p: `40px`,
-      maxWidth: `250px`,
-      height: `250px`
+      maxWidth: [`auto` , `220px`,`220px`],
+      height: [`auto`,`300px`,`300px`],
+      fontWeight: `body`,
+      "&:hover": { 
+        boxShadow:`2px 2px #d23669` 
+      }
+      
     },
     category: {
       bg: `highlight`,

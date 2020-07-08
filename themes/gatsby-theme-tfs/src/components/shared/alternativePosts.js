@@ -7,15 +7,15 @@ import Img from "gatsby-image";
 
 const AlternativeContainer = styled.section`
 display: grid; 
-grid-gap: 40px;
+
 `
 
 const GridCard = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
   grid-gap: 10px;
-  justify-content: center;
   text-align: center;
+  justify-content: center;
 `;
 
 const ImgContainer = styled.div`
@@ -23,22 +23,29 @@ const ImgContainer = styled.div`
   margin: auto;
 `;
 
-const AlternativePosts = ({ alternatives }) => {
+const AlternativePosts = ({ alternatives , category }) => {
   return (
-    <AlternativeContainer>
-      <h2 sx={{textAlign: `center`}}>Might also like</h2>
+    <AlternativeContainer> 
+      <h1 sx={{textAlign: `center`}}>More posts about <span sx={{ color: `highlight`}}>{category}</span></h1>
       <GridCard>
         {alternatives.map((post) => {
           const title = post.frontmatter.title;
+          const timeToRead = post.timeToRead
           const slug = post.fields.slug;
           const img = post.frontmatter.thumbnail.childImageSharp.fluid;
           return (
-            <Link key={title} to={slug} aria-label={title} sx={{variant: `links.secondary`}}>
+            <Link
+              key={title}
+              to={slug}
+              aria-label={title}
+              sx={{ variant: `links.secondary` }}
+            >
               <Card sx={{ variant: `cards.alternative` }}>
                 <ImgContainer>
                   <Img fluid={img} />
                 </ImgContainer>
-                <h4>{title}</h4>
+                <h5 sx={{marginBottom: `0px`}}>{title}</h5>
+                <p sx={{margin: `0px` , fontWeight: `100`}}>{timeToRead} minutes read</p>
               </Card>
             </Link>
           );
