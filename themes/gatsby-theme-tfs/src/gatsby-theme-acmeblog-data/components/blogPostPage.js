@@ -27,7 +27,7 @@ const MinBlogPost = ({ data, pageContext }) => {
     timeToRead: data.post.timeToRead,
     prevPostSlug: pageContext.prev,
     nextPostSlug: pageContext.next,
-    alternatives: alternatives.slice(0,4),
+    alternatives: alternatives.slice(0,6),
   };
 
   return <BlogPostPage {...post} />;

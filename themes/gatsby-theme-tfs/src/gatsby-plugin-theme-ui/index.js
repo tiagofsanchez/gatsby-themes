@@ -2,7 +2,7 @@ import prism from "@theme-ui/prism/presets/night-owl.json";
 
 const theme = {
   initialColorModeName: "light",
-  breakpoints: ["40em", "1200px", "1400px"],
+  breakpoints: ["740px", "1200px", "1400px"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     text: "#2d3748",
@@ -203,12 +203,13 @@ const theme = {
   },
   cards: {
     alternative: { 
+      display: `grid`,
       color: `primary`,
       borderRadius: `4px`,
       bg: `hover`,
-      p: `40px`,
-      maxWidth: [`auto` , `220px`,`220px`],
-      height: [`auto`,`300px`,`300px`],
+      p: `20px`,
+      maxWidth: [`auto` ,`320px`,`320px`],
+      height: [`auto`,`220px`,`220px`],
       fontWeight: `body`,
       "&:hover": { 
         boxShadow:`2px 2px #d23669` 
