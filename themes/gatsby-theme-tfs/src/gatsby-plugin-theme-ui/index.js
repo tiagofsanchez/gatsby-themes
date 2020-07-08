@@ -190,8 +190,6 @@ const theme = {
     blogHeader: { 
       width: [`100%`, `100%`, `1100px`],
       margin: `0 auto`,
-      padding: `40px`,
-      borderRadius: `4px`
     },
     container: {
       width: [`100%`, `90%`, `800px`],

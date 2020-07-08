@@ -47,17 +47,24 @@ const BlogPostPage = ({
         image={thumbnail.childImageSharp.fluid.src}
         article={true}
       />
-      <div sx={{ variant: `layout.blogHeader` , bg: `hover` }}>
+      <div
+        sx={{
+          variant: `layout.blogHeader`,
+          bg: `hover`,
+          padding: `40px`,
+          borderRadius: `4px`,
+        }}
+      >
         <BlogHeaderMax {...blogHeader} />
       </div>
       <div sx={{ variant: `layout.container` }}>
         <MDXRenderer>{body}</MDXRenderer>
       </div>
-      <div sx={{variant: `layout.blogHeader`}}>
+      <div sx={{ variant: `layout.blogHeader` }}>
         {alternatives.length !== 0 ? (
-           <div>
-           <hr/>
-          <AlternativePosts alternatives={alternatives} category={category}/>
+          <div>
+            <hr />
+            <AlternativePosts alternatives={alternatives} category={category} />
           </div>
         ) : null}
       </div>
