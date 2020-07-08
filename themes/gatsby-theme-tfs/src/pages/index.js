@@ -25,7 +25,7 @@ const IndexPage = () => {
   const { categoryPath, blogPath } = useAcmeBlogConfig();
 
   return (
-    <GridContainer>
+    <GridContainer sx={{variant: `layout.container`}}>
       <SEO />
       <Hero />
       <section>

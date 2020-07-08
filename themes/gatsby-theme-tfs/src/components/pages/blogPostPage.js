@@ -6,16 +6,13 @@ import styled from "@emotion/styled";
 
 import SEO from "../shared/seo";
 import { BlogHeaderMax } from "../shared/blogPostHeader";
-import AlternativePosts from '../shared/alternativePosts'
-
+import AlternativePosts from "../shared/alternativePosts";
 
 const BlogContainer = styled.div`
   display: grid;
   grid-template-columns: auto;
   grid-gap: 50px;
 `;
-
-
 
 const BlogPostPage = ({
   title,
@@ -28,7 +25,7 @@ const BlogPostPage = ({
   timeToRead,
   prevPostSlug,
   nextPostSlug,
-  alternatives
+  alternatives,
 }) => {
   const blogHeader = {
     title,
@@ -41,7 +38,6 @@ const BlogPostPage = ({
   };
 
   console.log(alternatives);
-  
 
   return (
     <BlogContainer>
@@ -51,11 +47,15 @@ const BlogPostPage = ({
         image={thumbnail.childImageSharp.fluid.src}
         article={true}
       />
-      <BlogHeaderMax {...blogHeader} />
-      <div>
+      <div sx={{ variant: `layout.blogHeader` }}>
+        <BlogHeaderMax {...blogHeader} />
+      </div>
+      <div sx={{ variant: `layout.container` }}>
         <MDXRenderer>{body}</MDXRenderer>
       </div>
-      { alternatives.length !== 0 ?  <AlternativePosts alternatives={alternatives}/> : null}
+      {alternatives.length !== 0 ? (
+        <AlternativePosts alternatives={alternatives} />
+      ) : null}
     </BlogContainer>
   );
 };

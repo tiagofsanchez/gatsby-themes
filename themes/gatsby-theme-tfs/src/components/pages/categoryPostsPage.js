@@ -22,7 +22,7 @@ const CategoryPostsPage = ({ data }) => {
   });
   
   return (
-    <div>
+    <div sx={{variant: `layout.container`}}>
        <SEO title={`Category: ${data.pageContext.category}`}/>
       <h1>
         All posts from{" "}

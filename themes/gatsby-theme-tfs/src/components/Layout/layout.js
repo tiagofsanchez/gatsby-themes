@@ -10,7 +10,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-gap: 80px;
-  padding: 20px;
+  
   height: 100vh;
 `;
 

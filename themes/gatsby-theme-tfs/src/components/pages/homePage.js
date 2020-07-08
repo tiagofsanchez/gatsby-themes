@@ -17,7 +17,7 @@ const Flex = styled.div`
 const HomePage = ({ posts }) => {
   const { tagsPath, blogPath } = useAcmeBlogConfig();
   return (
-    <div>
+    <div sx={{variant: `layout.container`}}>
       <SEO title="Blog" />
       <Flex>
         <h1>Articles</h1>

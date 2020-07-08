@@ -180,8 +180,19 @@ const theme = {
       margin: `0 auto`,
     },
     main: {
-      width: [`90%`, `80%`, `800px`],
+      width: `90%`,
       margin: `0 auto`,
+    },
+    blogHeader: { 
+      width: [`100%`, `100%`, `1100px`],
+      margin: `0 auto`,
+      bg: `hover`,
+      padding: `40px`,
+      borderRadius: `4px`
+    },
+    container: {
+      width: [`100%`, `90%`, `800px`],
+      margin: `0 auto`
     },
     footer: {
       width: [`90%`, `80%`, `70%`],

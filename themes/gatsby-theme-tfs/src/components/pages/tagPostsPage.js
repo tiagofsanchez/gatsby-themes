@@ -22,7 +22,7 @@ const TagPostsPage = ({ data }) => {
   });
 
   return (
-    <div>
+    <div sx={{variant: `layout.container`}}>
        <SEO title={`Tag: ${data.pageContext.tag}`}/>
       <h1>
         All posts tagged with{" "}
