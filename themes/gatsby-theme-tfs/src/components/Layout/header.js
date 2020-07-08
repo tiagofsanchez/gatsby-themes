@@ -31,7 +31,6 @@ const Header = () => {
     setColorMode(colorMode === "default" ? "light" : "default");
   };
 
-  console.log(colorMode)
   return (
     <HeaderContainer>
       <FlexBox>

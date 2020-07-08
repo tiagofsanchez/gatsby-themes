@@ -17,7 +17,7 @@ const Flex = styled.div`
 const HomePage = ({ posts }) => {
   const { tagsPath, blogPath } = useAcmeBlogConfig();
   return (
-    <div sx={{variant: `layout.container`}}>
+    <div sx={{ variant: `layout.container` }}>
       <SEO title="Blog" />
       <Flex>
         <h1>Articles</h1>
@@ -30,7 +30,7 @@ const HomePage = ({ posts }) => {
             sx={{ color: `primary`, margin: "0px" }}
             to={`${blogPath}${tagsPath}`}
           >
-            All tags
+            All tags &rarr;
           </h4>
         </Link>
       </Flex>

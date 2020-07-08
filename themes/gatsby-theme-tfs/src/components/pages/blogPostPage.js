@@ -23,8 +23,7 @@ const BlogPostPage = ({
   tags,
   thumbnail,
   timeToRead,
-  prevPostSlug,
-  nextPostSlug,
+  slug,
   alternatives,
 }) => {
   const blogHeader = {
@@ -32,12 +31,11 @@ const BlogPostPage = ({
     date,
     tags,
     category,
+    slug,
     timeToRead,
     thumbnail,
     page: true,
   };
-
-  console.log(alternatives);
 
   return (
     <BlogContainer>
@@ -63,7 +61,7 @@ const BlogPostPage = ({
       <div sx={{ variant: `layout.blogHeader` }}>
         {alternatives.length !== 0 ? (
           <div>
-            <hr />
+            <hr sx={{width: `50%`}}/>
             <AlternativePosts alternatives={alternatives} category={category} />
           </div>
         ) : null}

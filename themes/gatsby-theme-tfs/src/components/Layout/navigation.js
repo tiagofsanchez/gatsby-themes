@@ -49,7 +49,7 @@ const Navigation = ({ navigation }) => {
             key={url.title}
             to={url.slug}
             aria-label={`${url.title} page`}
-            sx={{ borderBottom: `none` }}
+            sx={{ variant: `links.secondary` }}
             activeStyle={activeStyle}
           >
             <h4 sx={{ color: `primary`, margin: `0` }}>{url.title}</h4>
@@ -60,7 +60,7 @@ const Navigation = ({ navigation }) => {
         <FlexMenu>
           <Link
             to="/"
-            sx={{ borderBottom: `0px` }}
+            sx={{ borderBottom: `0px` , variant: `links.secondary`  }}
             aria-label={`home page`}
             activeStyle={activeStyle}
           >
@@ -79,7 +79,7 @@ const Navigation = ({ navigation }) => {
             <Link
               key={nav.title}
               to={nav.slug}
-              sx={{ borderBottom: `0px` }}
+              sx={{ borderBottom: `0px` , variant: `links.secondary` }}
               activeStyle={activeStyle}
             >
               <p

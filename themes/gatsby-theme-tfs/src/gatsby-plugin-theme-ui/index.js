@@ -127,9 +127,12 @@ const theme = {
       },
       a: {
         color: `link`,
-        fontWeight: "bold",
         textDecoration: "none",
         borderBottom: "2px dashed",
+        "&:hover": {
+          color: `link`,
+          borderBottom: `solid`,
+        },
       },
       blockquote: {
         borderLeftColor: `highlight`,
@@ -174,9 +177,15 @@ const theme = {
       color: "highlight",
       my: 4,
       borderBottom: "none",
+      "&:hover": {
+        borderBottom: "none",
+      },
     },
     secondary: {
       borderBottom: "none",
+      "&:hover": {
+        borderBottom: "none",
+      },
     },
   },
   layout: {
@@ -218,15 +227,15 @@ const theme = {
     },
     category: {
       bg: `highlight`,
-      mx: `10px`,
+      m: `10px 5px`,
       display: `inline-block`,
-      p: `10px 15px 10px 15px`,
+      p: `15px`,
       borderRadius: `4px`,
     },
     tag: {
-      p: `5px 15px 5px 15px`,
+      p: `15px`,
       borderRadius: `4px`,
-      m: 2,
+      m: `10px 5px`,
       display: `inline-block`,
       border: `2px solid`,
       borderColor: "highlight",

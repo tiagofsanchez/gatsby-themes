@@ -26,13 +26,12 @@ const GridRow = styled.div`
   display: grid;
   grid-template-rows: auto;
   grid-gap: 15px;
-  justify-items: center;
 `;
 
 const TagsCatContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0px;
+  justify-content: center
 `;
 
 export const BlogHeaderMinimal = ({
@@ -74,7 +73,9 @@ export const BlogHeaderMinimal = ({
   );
 };
 
-export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
+export const BlogHeaderMax = ({ title, date, tags, category, thumbnail , slug }) => {
+  const newSlug = slug.slice(6).slice(0,-1)
+  console.log(`https://github.com/tiagofsanchez/tiagofsanchez/blob/master/content/posts/${newSlug}.md`);
   return (
     <GridRow>
       <ThumbnailContainer big={true}>
@@ -87,14 +88,13 @@ export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
       <TagsCatContainer>
         <Card
           variant="category"
-          sx={{ color: `white`, marginLeft: `0px`, p: `5px`, my: `2px` }}
+          sx={{ color: `white` }}
         >
           {category}
         </Card>
         {tags.map((tag, index) => (
           <Card
             variant="tag"
-            sx={{ p: `5px`, my: `2px`, mx: `3px`, borderWidth: `1px` }}
             key={index}
           >
             {tag}

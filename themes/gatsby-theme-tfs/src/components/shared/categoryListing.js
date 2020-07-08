@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 const Flex = styled.div`
 display: flex; 
 flex-wrap: wrap;
+justify-content: center;
 `
 
 const _ = require("lodash");
@@ -17,10 +18,10 @@ const CatListing = ({ categoriesArray, categoryPath, blogPath }) => {
         <Link
           key={cat.fieldValue}
           to={`${blogPath}${categoryPath}/${_.kebabCase(cat.fieldValue)}`}
-          sx={{borderBottom: 'none'}}
           aria-label={`${cat.fieldValue} category`}
+          sx={{variant: `links.secondary`}}
         >
-          <Card variant="category" sx={{marginTop: `10px`}}>
+          <Card variant="category">
             <h3 sx={{ color: `white`, my: `0px` }}>{cat.fieldValue}</h3>
           </Card>
         </Link>
