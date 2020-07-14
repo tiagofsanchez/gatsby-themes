@@ -135,8 +135,8 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       component: blogPostComponent,
       context: { 
         slug: node.fields.slug, 
-        prev: index=== 0 ? null : blogPostArray[index-1].fields.slug,
-        next: index === (blogPostArray.length - 1 ) ? null: blogPostArray[index+1].fields.slug
+        // prev: index=== 0 ? null : blogPostArray[index-1].fields.slug,
+        // next: index === (blogPostArray.length - 1 ) ? null: blogPostArray[index+1].fields.slug
        },
     });
   });

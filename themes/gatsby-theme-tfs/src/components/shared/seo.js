@@ -22,7 +22,7 @@ const SEO = ({ title, description, image, article }) => {
     image: `${siteUrl}${image || logo}`,
   };
 
-  console.log(seo);
+  // console.log(seo);
   
   return (
     <Helmet

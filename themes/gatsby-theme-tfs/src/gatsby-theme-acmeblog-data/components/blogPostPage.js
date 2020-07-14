@@ -1,7 +1,7 @@
 import React from "react";
 import BlogPostPage from "../../components/pages/blogPostPage";
 
-const MinBlogPost = ({ data, pageContext }) => {
+const MinBlogPost = ({ data , pageContext}) => {
   
   const category = data.post.frontmatter.category;
   const title = data.post.frontmatter.title;
@@ -25,8 +25,6 @@ const MinBlogPost = ({ data, pageContext }) => {
     basePath: pageContext.basePath,
     thumbnail: data.post.frontmatter.thumbnail,
     timeToRead: data.post.timeToRead,
-    prevPostSlug: pageContext.prev,
-    nextPostSlug: pageContext.next,
     alternatives: alternatives.slice(0,6),
   };
 

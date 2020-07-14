@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Card, Badge, Link as TLink , jsx} from "theme-ui";
+import { Card, Badge, Link as TLink, jsx } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 
@@ -26,9 +26,8 @@ const TagsListing = ({ allTagsArray }) => {
               aria-label={`${tag.fieldValue} post tag`}
             >
               <Card variant="tag" sx={{ marginRight: `-10px` }}>
-                <h4 sx={{my:`0px`}}>{tag.fieldValue}</h4>
+                <h4 sx={{ my: `0px` }}>{tag.fieldValue}</h4>
               </Card>
-
               <div>
                 <Badge variant="number" style={{ fontSize: `16px` }}>
                   {tag.totalCount}
