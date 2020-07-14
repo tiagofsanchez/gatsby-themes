@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import moment from "moment";
 import Img from "gatsby-image";
 
+
 const PostHeaderContainer = styled.div`
   padding: 10px;
   border-radius: 4px;
@@ -31,7 +32,7 @@ const GridRow = styled.div`
 const TagsCatContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center
+  justify-content: center;
 `;
 
 export const BlogHeaderMinimal = ({
@@ -42,7 +43,6 @@ export const BlogHeaderMinimal = ({
   thumbnail,
 }) => {
   const newest = moment(new Date(date)) > moment().subtract(1, "months");
-
   return (
     <PostHeaderContainer
       sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 0" } }}
@@ -73,9 +73,14 @@ export const BlogHeaderMinimal = ({
   );
 };
 
-export const BlogHeaderMax = ({ title, date, tags, category, thumbnail , slug }) => {
-  const newSlug = slug.slice(6).slice(0,-1)
-  console.log(`https://github.com/tiagofsanchez/tiagofsanchez/blob/master/content/posts/${newSlug}.md`);
+export const BlogHeaderMax = ({
+  title,
+  date,
+  tags,
+  category,
+  thumbnail,
+}) => {
+ ;
   return (
     <GridRow>
       <ThumbnailContainer big={true}>
@@ -86,17 +91,11 @@ export const BlogHeaderMax = ({ title, date, tags, category, thumbnail , slug })
         <p sx={{ color: `primary`, my: `5px`, textAlign: `center` }}>{date}</p>
       </div>
       <TagsCatContainer>
-        <Card
-          variant="category"
-          sx={{ color: `white` }}
-        >
+        <Card variant="category" sx={{ color: `white` }}>
           {category}
         </Card>
         {tags.map((tag, index) => (
-          <Card
-            variant="tag"
-            key={index}
-          >
+          <Card variant="tag" key={index}>
             {tag}
           </Card>
         ))}

@@ -25,7 +25,8 @@ exports.sourceNodes =({actions, createContentDigest}, options) => {
     otherImagesContentPath,
     tagsPath, 
     categoryPath,
-    postTableOfContents
+    postTableOfContents, 
+    githubUrl
   } = withDefaults(options)
 
   const acmeBlogConfig = { 
@@ -36,7 +37,8 @@ exports.sourceNodes =({actions, createContentDigest}, options) => {
     otherImagesContentPath, 
     tagsPath, 
     categoryPath,
-    postTableOfContents
+    postTableOfContents,
+    githubUrl
   }
 
   createNode({

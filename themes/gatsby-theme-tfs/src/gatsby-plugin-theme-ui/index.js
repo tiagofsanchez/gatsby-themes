@@ -187,6 +187,13 @@ const theme = {
         borderBottom: "none",
       },
     },
+    edit: { 
+      borderBottom: `none`, 
+      fontSize: 15,
+      "&:hover": {
+        borderBottom: "none",
+      },
+    }
   },
   layout: {
     header: {

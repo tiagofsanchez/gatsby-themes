@@ -45,6 +45,7 @@ module.exports = {
       resolve: "gatsby-theme-acmeblog-data",
       options: {
         postTableOfContents: false,
+        githubUrl: `https://github.com/tiagofsanchez/tiagofsanchez/blob/master/`
       },
     },
   ],

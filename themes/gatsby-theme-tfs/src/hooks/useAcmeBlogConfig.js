@@ -12,6 +12,7 @@ const useAcmeBlogConfig = () => {
         categoryPath
         tagsPath,
         postTableOfContents
+        githubUrl
       }
     }
   `);

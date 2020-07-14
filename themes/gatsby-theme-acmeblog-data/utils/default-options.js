@@ -8,6 +8,7 @@ module.exports = (themeOptions) => {
   const tagsPath = themeOptions.tagsPath || `/tags`
   const categoryPath = themeOptions.categoryPath || `/category`
   const postTableOfContents = themeOptions.postTableOfContents || false
+  const githubUrl = themeOptions = themeOptions.githubUrl || ``
 
   return {
     blogPath,
@@ -17,6 +18,7 @@ module.exports = (themeOptions) => {
     otherImagesContentPath,
     tagsPath,
     categoryPath,
-    postTableOfContents
+    postTableOfContents,
+    githubUrl
   };
 };

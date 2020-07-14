@@ -38,6 +38,7 @@ yarn add gatsby-theme-acmeblog-data
 |`tagsPath`| `/tags`| defines the url (slug) for all existing tags, shown in a overview tags page and used for listing all posts with a certain tag (prepending it to the tag itself, e.g. `/blog/tags/yourtag`) |
 |`categoryPath`|`/category` | defines the url (slug) used for listing all posts with a certain category (prepending it to the category itself, e.g. `/blog/category/yourcategory`)  |
 |`postTableOfContents`|`false`| If you would like to have a table of contents in your posts page change it to `true`|
+|`githubUrl`|``| in case you are using github and want to create an edit link for your posts |
 
 
 ### How to use theme options
@@ -56,7 +57,8 @@ module.exports = {
         postsContentPath: "myblog/posts", // the default will be content/posts
         pagesContentPath: "myblog/pages", // the default will be content/pages
         otherImagesContentPath: "mysuperimages", // the default will be images
-        postTableOfContents: true //the default is false
+        postTableOfContents: true //the default is false,
+        githuUrl: `https://github.com/tiagofsanchez/tiagofsanchez/blob/master/` // else defaults to '' and doesn't render
       }
     },
   ],
