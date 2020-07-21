@@ -23,7 +23,8 @@ const IndexPage = () => {
   const selectedPostsArray = useSelectedPostsForIndexPage();
   const categoriesArray = useAllCategories();
   const { categoryPath, blogPath } = useAcmeBlogConfig();
-
+  console.log(postsArray);
+  console.log(selectedPostsArray)
   return (
     <GridContainer sx={{variant: `layout.container`}}>
       <SEO />
