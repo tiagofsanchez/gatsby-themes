@@ -4,7 +4,7 @@ const usePostsForIndexPage = () => {
   const data = useStaticQuery(graphql`
     {
       posts: allMdx(
-        filter: { frontmatter: { date: { ne: null } } }
+        filter: { frontmatter: { title: { ne: "" } } }
         limit: 6
         sort: { order: DESC, fields: frontmatter___date }
       ) {

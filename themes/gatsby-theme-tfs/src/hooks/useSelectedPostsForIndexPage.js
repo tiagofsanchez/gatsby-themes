@@ -4,7 +4,7 @@ const useSelectedPostsForIndexPage = () => {
   const data = useStaticQuery(graphql`
     {
       posts: allMdx(
-        filter: { frontmatter: { date: { ne: null }, selected: { eq: "yes" } } }
+        filter: { frontmatter: { title: { ne: "" }, selected: { eq: "yes" } } }
         limit: 5
         sort: { order: DESC, fields: frontmatter___date }
       ) {
