@@ -40,7 +40,7 @@ const IndexPage = () => {
       </section>
       <section>
         <h1>
-          Most popular posts
+          My selection
         </h1>
         {selectedPostsArray.map((blogPost) => {
             return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;

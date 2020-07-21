@@ -10,7 +10,7 @@
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.22.1",
+    "gatsby": "^2.24.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
