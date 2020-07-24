@@ -6,13 +6,13 @@ import moment from "moment";
 import Img from "gatsby-image";
 
 
-const PostHeaderContainer = styled.div`
+const PostHeaderContainerMinimal = styled.div`
   padding: 10px;
   border-radius: 4px;
 `;
 
 const ThumbnailContainer = styled.div`
-  width: ${(props) => (props.big ? "200px" : "35px")};
+  width: ${(props) => (props.big ? "200px" : "40px")};
   margin: ${(props) => (props.big ? "auto" : null)};
 `;
 
@@ -23,17 +23,83 @@ const Grid = styled.div`
   align-items: center;
 `;
 
-const GridRow = styled.div`
+const PostHeaderContainer = styled.div`
+width: 100%
+`
+const Desktop = styled.div`
   display: grid;
   grid-template-rows: auto;
   grid-gap: 15px;
+  @media (max-width: 600px) { 
+    display: none
+  }
 `;
+
+const Mobile = styled.div`
+display: grid;
+grid-template-columns: auto 1fr;
+align-items: center;
+grid-gap: 20px;
+@media(min-width: 600px) { 
+  display: none
+}
+ `
 
 const TagsCatContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 `;
+
+
+export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
+         return (
+           <PostHeaderContainer>
+             <Desktop>
+               <ThumbnailContainer big={true}>
+                 <Img fluid={thumbnail.childImageSharp.fluid} />
+               </ThumbnailContainer>
+               <div>
+                 <h1 sx={{ my: `0px`, textAlign: `center` }}>{title}</h1>
+                 <p sx={{ color: `primary`, my: `5px`, textAlign: `center` }}>
+                   {date}
+                 </p>
+               </div>
+               <TagsCatContainer>
+                 <Card variant="category" sx={{ color: `white` }}>
+                   {category}
+                 </Card>
+                 {tags.map((tag, index) => (
+                   <Card variant="tag" key={index}>
+                     {tag}
+                   </Card>
+                 ))}
+               </TagsCatContainer>
+             </Desktop>
+             <Mobile>
+               <ThumbnailContainer>
+                 <Img fluid={thumbnail.childImageSharp.fluid} />
+               </ThumbnailContainer>
+               <div>
+                 <h3 sx={{my:0}}>{title}</h3>
+                 <p sx={{ color: `primary`, my: `5px`}}>
+                   {date}
+                 </p>
+               </div>
+               {/* <TagsCatContainer sx={{gridColumn: `span 2`, justifyContent:`start`}}>
+                 <Card variant="category" sx={{ color: `white` }}>
+                   {category}
+                 </Card>
+                 {tags.map((tag, index) => (
+                   <Card variant="tag" key={index}>
+                     {tag}
+                   </Card>
+                 ))}
+               </TagsCatContainer> */}
+             </Mobile>
+           </PostHeaderContainer>
+         );
+       };
 
 export const BlogHeaderMinimal = ({
   title,
@@ -44,7 +110,7 @@ export const BlogHeaderMinimal = ({
 }) => {
   const newest = moment(new Date(date)) > moment().subtract(1, "months");
   return (
-    <PostHeaderContainer
+    <PostHeaderContainerMinimal
       sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 0" } }}
     >
       <Link
@@ -69,37 +135,6 @@ export const BlogHeaderMinimal = ({
           {newest && <p sx={{ color: `highlight`, fontWeight: `900` }}>new</p>}
         </Grid>
       </Link>
-    </PostHeaderContainer>
-  );
-};
-
-export const BlogHeaderMax = ({
-  title,
-  date,
-  tags,
-  category,
-  thumbnail,
-}) => {
- ;
-  return (
-    <GridRow>
-      <ThumbnailContainer big={true}>
-        <Img fluid={thumbnail.childImageSharp.fluid} />
-      </ThumbnailContainer>
-      <div>
-        <h1 sx={{ my: `0px`, textAlign: `center` }}>{title}</h1>
-        <p sx={{ color: `primary`, my: `5px`, textAlign: `center` }}>{date}</p>
-      </div>
-      <TagsCatContainer>
-        <Card variant="category" sx={{ color: `white` }}>
-          {category}
-        </Card>
-        {tags.map((tag, index) => (
-          <Card variant="tag" key={index}>
-            {tag}
-          </Card>
-        ))}
-      </TagsCatContainer>
-    </GridRow>
+    </PostHeaderContainerMinimal>
   );
 };
