@@ -20,7 +20,6 @@ const Logo = styled.img`
 
 const Social = () => {
   const { externalLinks } = useSiteMetadata();
-  console.log(externalLinks);
   return (
     <ImageContainer>
       <a href={externalLinks[0].url} sx={{ variant: `links.secondary` }}>
