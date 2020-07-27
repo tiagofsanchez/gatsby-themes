@@ -26,11 +26,11 @@ const Social = () => {
         href={externalLinks[0].url}
         sx={{ variant: `links.secondary` }}
         aria-label="Tiago's Github"
-        alt="Tiago's Github"
       >
         <Logo
           sx={{ bg: `hover`, "&:hover": { bg: `background` } }}
           src={github}
+          alt="Tiago's Github"
         />
       </a>
       <p sx={{ m: `0` }}>.</p>
@@ -38,11 +38,11 @@ const Social = () => {
         href={externalLinks[1].url}
         sx={{ variant: `links.secondary` }}
         aria-label="Tiago's LinkedIn"
-        alt="Tiago's LinkedIn"
       >
         <Logo
           sx={{ bg: `hover`, "&:hover": { bg: `background` } }}
           src={linkedin}
+          alt="Tiago's LinkedIn"
         />
       </a>
       <p sx={{ m: `0` }}>.</p>
@@ -50,11 +50,11 @@ const Social = () => {
         href={externalLinks[2].url}
         sx={{ variant: `links.secondary` }}
         aria-label="Tiago's Instagram"
-        alt="Tiago's Instagram"
       >
         <Logo
           sx={{ bg: `hover`, "&:hover": { bg: `background` } }}
           src={instagram}
+          alt="Tiago's Instagram"
         />
       </a>
     </ImageContainer>
