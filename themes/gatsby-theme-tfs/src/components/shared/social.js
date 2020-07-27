@@ -22,15 +22,27 @@ const Social = () => {
   const { externalLinks } = useSiteMetadata();
   return (
     <ImageContainer>
-      <a href={externalLinks[0].url} sx={{ variant: `links.secondary` }}>
+      <a
+        href={externalLinks[0].url}
+        sx={{ variant: `links.secondary` }}
+        aria-label="Tiago's Github"
+      >
         <Logo sx={{ "&:hover": { bg: `hover` } }} src={github} />
       </a>
       <p sx={{ m: `0` }}>.</p>
-      <a href={externalLinks[1].url} sx={{ variant: `links.secondary` }}>
+      <a
+        href={externalLinks[1].url}
+        sx={{ variant: `links.secondary` }}
+        aria-label="Tiago's LinkedIn"
+      >
         <Logo sx={{ "&:hover": { bg: `hover` } }} src={linkedin} />
       </a>
       <p sx={{ m: `0` }}>.</p>
-      <a href={externalLinks[2].url} sx={{ variant: `links.secondary` }}>
+      <a
+        href={externalLinks[2].url}
+        sx={{ variant: `links.secondary` }}
+        aria-label="Tiago's Instagram"
+      >
         <Logo sx={{ "&:hover": { bg: `hover` } }} src={instagram} />
       </a>
     </ImageContainer>
