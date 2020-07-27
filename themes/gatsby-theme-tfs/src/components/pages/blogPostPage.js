@@ -16,11 +16,11 @@ const BlogContainer = styled.div`
 `;
 
 const EditLink = styled.a`
-display: flex; 
-justify-content: flex-end; 
-align-items: center;
-text-decoration: none;
-`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
+`;
 
 const BlogPostPage = ({
   title,
@@ -44,7 +44,7 @@ const BlogPostPage = ({
     thumbnail,
     page: true,
   };
-  
+
   const { githubUrl, postsContentPath } = useAcmeBlogConfig();
   const newSlug = slug.slice(6).slice(0, -1);
   const edit = `${githubUrl}${postsContentPath}/${newSlug}.md`;
@@ -57,16 +57,9 @@ const BlogPostPage = ({
         image={thumbnail.childImageSharp.fluid.src}
         article={true}
       />
-      <div
-        sx={{
-          variant: `layout.blogHeader`,
-          bg: `hover`,
-          padding: `40px`,
-          borderRadius: `4px`,
-        }}
-      >
-        <BlogHeaderMax {...blogHeader} />
-      </div>
+
+      <BlogHeaderMax {...blogHeader} />
+
       <div sx={{ variant: `layout.container` }}>
         {githubUrl && (
           <EditLink

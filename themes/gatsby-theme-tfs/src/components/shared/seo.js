@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import { useLocation } from "@reach/router"
+import { useLocation } from "@reach/router";
 import useSiteMetadata from "../../hooks/useSiteMetadata";
 import useSiteLogo from "../../hooks/useSiteLogo";
 
@@ -14,7 +14,7 @@ const SEO = ({ title, description, image, article }) => {
     author,
   } = useSiteMetadata();
   const logo = useSiteLogo();
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
   const seo = {
     title: title || siteTitle,
     description: description || siteDescription,
@@ -22,8 +22,6 @@ const SEO = ({ title, description, image, article }) => {
     image: `${siteUrl}${image || logo}`,
   };
 
-  // console.log(seo);
-  
   return (
     <Helmet
       htmlAttributes={{ siteLanguage }}
