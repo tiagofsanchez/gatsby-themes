@@ -20,12 +20,16 @@ module.exports = {
     ],
     externalLinks: [
       {
+        name: `Github`,
+        url: `https://github.com/tiagofsanchez`,
+      },
+      {
         name: `LinkedIn`,
         url: `https://www.linkedin.com/in/tiagofsanchez/`,
       },
       {
-        name: `Github`,
-        url: `https://github.com/tiagofsanchez`,
+        name: `Instagram`,
+        url: `https://www.instagram.com/copytiago/`,
       },
     ],
   },

@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 
 import useSiteMetadata from "../../hooks/useSiteMetadata";
 import Avatar from "./avatar";
+import Social from '../shared/social'
 
 const HeroContainer = styled.div`
   display: grid;
@@ -20,9 +21,9 @@ const TinyHeroContainer = styled.div`
 `;
 
 const FormHeroContainer = styled.div`
-display: grid;
-place-items: center;
-grid-gap: 20px;
+  display: grid;
+  place-items: center;
+  grid-gap: 20px;
 `;
 
 export const Hero = () => {
@@ -34,6 +35,7 @@ export const Hero = () => {
       <h1 sx={{ my: `0` }}>
         <span sx={{ color: `highlight` }}>Ola!</span> I'm Tiago!
       </h1>
+      <Social />
       <h3>{siteDescription}</h3>
     </HeroContainer>
   );
