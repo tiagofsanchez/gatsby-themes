@@ -36,7 +36,7 @@ export const Hero = () => {
         <span sx={{ color: `highlight` }}>Ola!</span> I'm Tiago!
       </h1>
       <Social />
-      <h3>{siteDescription}</h3>
+      <h4 sx={{textAlign: `center`}}>{siteDescription}</h4>
     </HeroContainer>
   );
 };
