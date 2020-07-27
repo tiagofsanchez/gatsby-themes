@@ -27,7 +27,7 @@ const Social = () => {
         sx={{ variant: `links.secondary` }}
         aria-label="Tiago's Github"
       >
-        <Logo sx={{ "&:hover": { bg: `hover` } }} src={github} />
+        <Logo sx={{ bg:`hover`, "&:hover": { bg: `background` } }} src={github} />
       </a>
       <p sx={{ m: `0` }}>.</p>
       <a
@@ -35,7 +35,7 @@ const Social = () => {
         sx={{ variant: `links.secondary` }}
         aria-label="Tiago's LinkedIn"
       >
-        <Logo sx={{ "&:hover": { bg: `hover` } }} src={linkedin} />
+        <Logo sx={{ bg:`hover`, "&:hover": { bg: `background` } }} src={linkedin} />
       </a>
       <p sx={{ m: `0` }}>.</p>
       <a
@@ -43,7 +43,7 @@ const Social = () => {
         sx={{ variant: `links.secondary` }}
         aria-label="Tiago's Instagram"
       >
-        <Logo sx={{ "&:hover": { bg: `hover` } }} src={instagram} />
+        <Logo sx={{ bg:`hover`, "&:hover": { bg: `background` } }} src={instagram} />
       </a>
     </ImageContainer>
   );
