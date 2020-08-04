@@ -13,7 +13,7 @@ const HeroContainer = styled.div`
   place-items: center;
   border-radius: 4px;
   padding: 80px;
-  @media (max-width: 740px) { 
+  @media (max-width: 800px) { 
     grid-template-columns: auto;
     padding: 40px;
     grid-gap: 20px;
