@@ -24,10 +24,10 @@ const IndexPage = () => {
   const categoriesArray = useAllCategories();
   const { categoryPath, blogPath } = useAcmeBlogConfig();
   return (
-    <GridContainer sx={{variant: `layout.container`}}>
+    <GridContainer >
       <SEO />
       <Hero />
-      <section>
+      <section sx={{variant:`layout.container`}}>
         <h1>
           The stuff I like to write about
         </h1>
@@ -37,7 +37,7 @@ const IndexPage = () => {
           blogPath={blogPath}
         />
       </section>
-      <section>
+      <section sx={{variant:`layout.container`}} >
         <h1>
           My selection
         </h1>
@@ -45,7 +45,7 @@ const IndexPage = () => {
             return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
           })}
       </section>
-      <section>
+      <section sx={{variant:`layout.container`}}>
         <h1>
           {" "}
           My latest posts

@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
       <header sx={{ variant: `layout.header` }}>
         <Header />
       </header>
-      <main sx={{ variant: `layout.main`, alignSelf: `grid-start` }}>
+      <main sx={{ variant: `layout.main`, alignSelf: `grid-start`}}>
         {children}
       </main>
       <footer sx={{ variant: `layout.footer` }}>

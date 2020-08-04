@@ -4,13 +4,20 @@ import styled from "@emotion/styled";
 
 import useSiteMetadata from "../../hooks/useSiteMetadata";
 import Avatar from "./avatar";
-import Social from '../shared/social'
+import Social from "../shared/social";
 
 const HeroContainer = styled.div`
   display: grid;
-  grid-template-columns: auto;
-  grid-gap: 5px;
+  grid-template-columns: 300px 1fr;
+  grid-gap: 10px;
   place-items: center;
+  border-radius: 4px;
+  padding: 80px;
+  @media (max-width: 740px) { 
+    grid-template-columns: auto;
+    padding: 40px;
+    grid-gap: 20px;
+  }
 `;
 
 const TinyHeroContainer = styled.div`
@@ -28,15 +35,16 @@ const FormHeroContainer = styled.div`
 
 export const Hero = () => {
   const { siteDescription } = useSiteMetadata();
-
   return (
-    <HeroContainer>
+    <HeroContainer sx={{ variant: `layout.blogHeader`, bg: `hover` }}>
       <Avatar width="200px" />
-      <h1 sx={{ my: `0` }}>
-        <span sx={{ color: `highlight` }}>Ola!</span> I'm Tiago!
-      </h1>
-      <Social />
-      <h4 sx={{textAlign: `center`}}>{siteDescription}</h4>
+      <div>
+        <h1 sx={{ my: `0` }}>
+          <span sx={{ color: `highlight` }}>Ola!</span> I'm Tiago!
+        </h1>
+        <h4>{siteDescription}</h4>
+        <Social />
+      </div>
     </HeroContainer>
   );
 };

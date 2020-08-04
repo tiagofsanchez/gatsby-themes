@@ -8,9 +8,7 @@ import linkedin from "../../logos/linkedin.svg";
 import instagram from "../../logos/instagram.svg";
 
 const ImageContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 5px;
+  display: flex;
 `;
 
 const Logo = styled.img`
