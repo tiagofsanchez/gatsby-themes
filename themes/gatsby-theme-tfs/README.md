@@ -1,4 +1,4 @@
-# gatsby-theme-acmeblog
+# gatsby-theme-tfs
 
 My blog theme.
 
