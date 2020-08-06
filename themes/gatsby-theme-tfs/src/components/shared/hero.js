@@ -36,7 +36,7 @@ const FormHeroContainer = styled.div`
 export const Hero = () => {
   const { siteDescription } = useSiteMetadata();
   return (
-    <HeroContainer sx={{ variant: `layout.blogHeader`, bg: `hover` }}>
+    <HeroContainer sx={{ bg: `hover` }}>
       <Avatar width="200px" />
       <div>
         <h1 sx={{ my: `0` }}>

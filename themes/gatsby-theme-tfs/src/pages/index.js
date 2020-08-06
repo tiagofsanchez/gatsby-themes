@@ -12,7 +12,6 @@ import CategoryListing from "../components/shared/categoryListing";
 import { Hero } from "../components/shared/hero";
 import SEO from "../components/shared/seo";
 
-
 const GridContainer = styled.div`
   display: grid;
   grid-gap: 70px;
@@ -24,32 +23,27 @@ const IndexPage = () => {
   const categoriesArray = useAllCategories();
   const { categoryPath, blogPath } = useAcmeBlogConfig();
   return (
-    <GridContainer >
+    <GridContainer>
       <SEO />
-      <Hero />
-      <section sx={{variant:`layout.container`}}>
-        <h1>
-          The stuff I like to write about
-        </h1>
+      <section sx={{ variant: `layout.blogHeader` }}>
+        <Hero />
+      </section>
+      <section sx={{ variant: `layout.container` }}>
+        <h1>The stuff I like to write about</h1>
         <CategoryListing
           categoriesArray={categoriesArray}
           categoryPath={categoryPath}
           blogPath={blogPath}
         />
       </section>
-      <section sx={{variant:`layout.container`}} >
-        <h1>
-          My selection
-        </h1>
+      <section sx={{ variant: `layout.container` }}>
+        <h1>My selection</h1>
         {selectedPostsArray.map((blogPost) => {
-            return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
-          })}
+          return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
+        })}
       </section>
-      <section sx={{variant:`layout.container`}}>
-        <h1>
-          {" "}
-          My latest posts
-        </h1>
+      <section sx={{ variant: `layout.container` }}>
+        <h1> My latest posts</h1>
         <div>
           {postsArray.map((blogPost) => {
             return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
