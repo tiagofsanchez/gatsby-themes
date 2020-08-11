@@ -100,7 +100,7 @@ export const BlogHeaderMinimal = ({
           <div>
             <h2 sx={{ marginBottom: `3px` }}>{title}</h2>
             <p sx={{ color: `primary`, my: `5px` }}>
-              {date} . {timeToRead} minutes
+              {date} . {timeToRead}
             </p>
           </div>
           {newest && <p sx={{ color: `highlight`, fontWeight: `900` }}>new</p>}

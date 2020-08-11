@@ -25,6 +25,12 @@ const usePostsForIndexPage = () => {
           }
           fields {
             slug
+            readingTime {
+              words
+              time
+              minutes
+              text
+            }
           }
           excerpt
         }
@@ -40,7 +46,7 @@ const usePostsForIndexPage = () => {
       tags: post.frontmatter.tags,
       excerpt: post.excerpt,
       slug: post.fields.slug,
-      timeToRead: post.timeToRead,
+      timeToRead: post.fields.readingTime.text,
       thumbnail: post.frontmatter.thumbnail,
     };
     postsArray.push(postObject);

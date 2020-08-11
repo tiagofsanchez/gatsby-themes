@@ -24,7 +24,7 @@ const MinBlogPost = ({ data , pageContext}) => {
     tableOfContentsArray: data.post.tableOfContents.items,
     basePath: pageContext.basePath,
     thumbnail: data.post.frontmatter.thumbnail,
-    timeToRead: data.post.timeToRead,
+    timeToRead: data.post.fields.readingTime.text,
     alternatives: alternatives.slice(0,6),
   };
 

@@ -14,7 +14,7 @@ const TagPostsPage = ({ data }) => {
       tags: post.frontmatter.tags,
       excerpt: post.excerpt,
       slug: post.fields.slug,
-      timeToRead: post.timeToRead,
+      timeToRead: post.fields.readingTime.text,
       thumbnail: post.frontmatter.thumbnail,
     };
     postsArray.push(postObject);
