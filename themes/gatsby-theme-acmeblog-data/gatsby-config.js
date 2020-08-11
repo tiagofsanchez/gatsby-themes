@@ -9,6 +9,7 @@ module.exports = (themeOptions) => {
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-remark-reading-time`,
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -19,6 +20,7 @@ module.exports = (themeOptions) => {
               maxWidth: 800,
             },
           },
+          `gatsby-remark-reading-time`
         ],
       },
     },

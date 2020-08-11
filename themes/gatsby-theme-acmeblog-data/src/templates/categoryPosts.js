@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import CategoryPostsPage from '../components/categoryPostsPage';
+import CategoryPostsPage from "../components/categoryPostsPage";
 
 export default CategoryPostsPage;
 
@@ -15,7 +15,7 @@ export const category = graphql`
         frontmatter {
           title
           tags
-          date (formatString: "MMMM DD, YYYY")
+          date(formatString: "MMMM DD, YYYY")
           category
           thumbnail {
             childImageSharp {
@@ -27,9 +27,14 @@ export const category = graphql`
         }
         fields {
           slug
+          readingTime {
+            words
+            time
+            minutes
+            text
+          }
         }
       }
     }
   }
 `;
-

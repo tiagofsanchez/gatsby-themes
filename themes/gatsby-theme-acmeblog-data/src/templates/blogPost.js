@@ -24,13 +24,19 @@ export const blogPost = graphql`
       }
       fields {
         slug
+        readingTime {
+          words
+          time
+          minutes
+          text
+        }
       }
       excerpt
     }
     postsArray: allMdx(
       filter: { frontmatter: { title: { nin: "" } } }
       sort: { order: DESC, fields: frontmatter___date }
-      ) {
+    ) {
       nodes {
         excerpt
         timeToRead

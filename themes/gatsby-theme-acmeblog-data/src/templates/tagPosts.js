@@ -27,6 +27,12 @@ export const tag = graphql`
         }
         fields {
           slug
+          readingTime {
+            words
+            time
+            minutes
+            text
+          }
         }
       }
     }
