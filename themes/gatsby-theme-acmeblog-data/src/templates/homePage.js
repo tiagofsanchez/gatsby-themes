@@ -10,6 +10,12 @@ export const allBlogposts = graphql`
         excerpt
         fields {
           slug
+          readingTime {
+            words
+            time
+            minutes
+            text
+          }
         }
         timeToRead
         frontmatter {

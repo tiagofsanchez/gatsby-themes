@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import TagPostsPage from '../components/tagPostsPage';
+import TagPostsPage from "../components/tagPostsPage";
 
 export default TagPostsPage;
 
@@ -15,7 +15,7 @@ export const tag = graphql`
         frontmatter {
           title
           tags
-          date (formatString: "MMMM DD, YYYY")
+          date(formatString: "MMMM DD, YYYY")
           category
           thumbnail {
             childImageSharp {
