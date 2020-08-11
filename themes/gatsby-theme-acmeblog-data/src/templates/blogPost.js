@@ -55,6 +55,12 @@ export const blogPost = graphql`
         }
         fields {
           slug
+          readingTime {
+            words
+            time
+            minutes
+            text
+          }
         }
       }
     }
