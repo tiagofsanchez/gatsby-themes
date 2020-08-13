@@ -17,7 +17,7 @@ module.exports = (themeOptions) => {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 800,
+              maxWidth: 1200,
               linkImagesToOriginal: false,
             },
           },
@@ -34,7 +34,7 @@ module.exports = (themeOptions) => {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 1200,
               linkImagesToOriginal: false,
             },
           },
