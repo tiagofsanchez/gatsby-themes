@@ -10,7 +10,6 @@ const categoryPostsComponent = require.resolve(
   "./src/templates/categoryPosts.js"
 );
 const homePageComponent = require.resolve("./src/templates/homePage.js");
-const allTagsComponent = require.resolve("./src/templates/allTags.js");
 const otherPages = require.resolve("./src/templates/otherPages.js");
 
 
@@ -143,10 +142,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     });
   });
 
-  createPage({
-    path: `${blogPath}${tagsPath}`,
-    component: allTagsComponent,
-  });
 
     //gets all the tags in one Array
     const tagsArray = [];
