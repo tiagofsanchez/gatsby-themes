@@ -18,6 +18,7 @@ module.exports = (themeOptions) => {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 800,
+              linkImagesToOriginal: false,
             },
           },
           `gatsby-remark-reading-time`
@@ -33,7 +34,8 @@ module.exports = (themeOptions) => {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1200,
+              maxWidth: 800,
+              linkImagesToOriginal: false,
             },
           },
         ],
