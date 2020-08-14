@@ -8,6 +8,7 @@ const GridContainer = styled.div`
   grid-template-columns: auto;
   grid-gap: 2px;
   padding: 29px 35px;
+  border-radius: 6px; 
 `;
 
 const Grid = styled.div`

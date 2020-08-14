@@ -7,6 +7,7 @@ const GridContainer = styled.div`
   grid-template-columns: auto;
   grid-gap: 2px;
   padding: 29px 35px;
+  border-radius: 6px; 
 `;
 
 const TotalPosts = styled.h1`
@@ -26,7 +27,7 @@ const GardenOverallStats = () => (
     <h4 sx={{ m: `0` }}>Garden stats</h4>
     <TotalPosts>99</TotalPosts>
     <div>
-      <hr sx={{ borderColor: `primary` }} />
+      <hr sx={{ borderColor: `primary`, width: `160px` }} />
     </div>
     <Grid>
       <h5>4500 words</h5>
