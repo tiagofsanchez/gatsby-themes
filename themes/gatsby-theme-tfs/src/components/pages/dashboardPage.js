@@ -6,6 +6,9 @@ import GardenOverallStats from "../shared/gardenOveralStats";
 import GardenCatStats from "../shared/gardenCatStats";
 import GardenFrequency from "../shared/gardenFrequency";
 import GardenTags from '../shared/gardenTags'
+import { BlogHeaderMinimal } from '../shared/blogPostHeader'
+import usePostsForIndexPage from "../../hooks/usePostsForIndexPage";
+
 
 const DashboardContainer = styled.div`
   display: grid;
@@ -25,6 +28,8 @@ const GridStats = styled.div`
 
 const DashboardPage = ({ data }) => {
   console.log(data);
+
+  const postsArray = usePostsForIndexPage();
   return (
     <section sx={{ variant: `layout.container` }}>
       <h1>Dashboard</h1>
@@ -36,6 +41,14 @@ const DashboardPage = ({ data }) => {
         <GardenFrequency />
         <GardenTags />
       </DashboardContainer>
+      <section>
+      <h1> My latest posts</h1>
+        <div>
+          {postsArray.map((blogPost) => {
+            return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
+          })}
+        </div>
+      </section>
     </section>
   );
 };
