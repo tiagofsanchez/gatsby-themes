@@ -98,7 +98,7 @@ const theme = {
         my: 3,
       },
       h5: {
-        fontSize: 20,
+        fontSize: 18,
         fontFamily: "heading",
         lineHeight: 1.7,
         fontWeight: "bold",
