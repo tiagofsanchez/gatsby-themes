@@ -3,6 +3,7 @@ import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
 
 import GardenOverallStats from '../shared/gardenOveralStats'
+import GardenCatStats from '../shared/gardenCatStats';
 
 const Grid = styled.div`
   display: grid;
@@ -22,7 +23,7 @@ const DashboardPage = ({ data }) => {
       <h1>Dashboard</h1>
       <Grid>
         <GardenOverallStats />
-        <div sx={{bg: `hover`}}></div>
+        <GardenCatStats />
       </Grid>
     </section>
   );

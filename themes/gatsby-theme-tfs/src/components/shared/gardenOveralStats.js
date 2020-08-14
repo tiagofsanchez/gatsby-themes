@@ -10,23 +10,21 @@ const GridContainer = styled.div`
 `;
 
 const TotalPosts = styled.h1`
-font-size: 150px;
-margin: 0;
-text-align: center;
-`
+  font-size: 150px;
+  margin: 0;
+  text-align: center;
+`;
 
 const Grid = styled.div`
-display: grid;
-grid-template-columns: repeat(2 ,auto);
-justify-items: center
-`
-
-
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+`;
 
 const GardenOverallStats = () => (
   <GridContainer sx={{ bg: `hover` }}>
     <h4 sx={{ m: `0` }}>Garden stats</h4>
-    <TotalPosts >99</TotalPosts>
+    <TotalPosts>99</TotalPosts>
     <div>
       <hr sx={{ borderColor: `primary` }} />
     </div>
