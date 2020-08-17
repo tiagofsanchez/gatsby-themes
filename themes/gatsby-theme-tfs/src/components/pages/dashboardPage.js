@@ -8,8 +8,6 @@ import GardenOverallStats from "../shared/gardenOveralStats";
 import GardenCatStats from "../shared/gardenCatStats";
 import GardenFrequency from "../shared/gardenFrequency";
 import GardenTags from "../shared/gardenTags";
-import { BlogHeaderMinimal } from "../shared/blogPostHeader";
-import usePostsForIndexPage from "../../hooks/usePostsForIndexPage";
 
 const Flex = styled.div`
   display: flex;
@@ -35,33 +33,27 @@ const GridStats = styled.div`
 
 const DashboardPage = ({ data }) => {
   const { blogPath } = useAcmeBlogConfig();
+  const { gardenOverallStats} = data
   console.log(data);
 
-  const postsArray = usePostsForIndexPage();
   return (
     <section sx={{ variant: `layout.container` }}>
       <Flex>
         <h1>Dashboard</h1>
         <Link to={blogPath} sx={{ variant: `links.secondary` }}>
-          <Button sx={{ variant: `buttons.secondary` }}>{blogPath.substr(1)}</Button>
+          <Button sx={{ variant: `buttons.secondary` }}>
+            {blogPath.substr(1)}
+          </Button>
         </Link>
       </Flex>
       <DashboardContainer>
         <GridStats>
-          <GardenOverallStats />
+          <GardenOverallStats gardenOverallStats={gardenOverallStats} />
           <GardenCatStats />
         </GridStats>
         <GardenFrequency />
         <GardenTags />
       </DashboardContainer>
-      <section>
-        <h1> My latest posts</h1>
-        <div>
-          {postsArray.map((blogPost) => {
-            return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
-          })}
-        </div>
-      </section>
     </section>
   );
 };

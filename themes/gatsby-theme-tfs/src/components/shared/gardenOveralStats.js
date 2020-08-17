@@ -7,7 +7,7 @@ const GridContainer = styled.div`
   grid-template-columns: auto;
   grid-gap: 2px;
   padding: 29px 35px;
-  border-radius: 6px; 
+  border-radius: 6px;
 `;
 
 const TotalPosts = styled.h1`
@@ -22,18 +22,21 @@ const Grid = styled.div`
   justify-items: center;
 `;
 
-const GardenOverallStats = () => (
-  <GridContainer sx={{ bg: `hover` }}>
-    <h4 sx={{ m: `0` }}>Garden stats</h4>
-    <TotalPosts>99</TotalPosts>
-    <div>
-      <hr sx={{ borderColor: `primary`, width: `160px` }} />
-    </div>
-    <Grid>
-      <h5>4500 words</h5>
-      <h5>500 min read</h5>
-    </Grid>
-  </GridContainer>
-);
+const GardenOverallStats = ( {gardenOverallStats} ) => {
+  const { totalPosts , totalMinRead, totalNumWords } = gardenOverallStats;
+  return (
+    <GridContainer sx={{ bg: `hover` }}>
+      <h4 sx={{ m: `0` }}>Garden stats</h4>
+      <TotalPosts>{totalPosts}</TotalPosts>
+      <div>
+        <hr sx={{ borderColor: `primary`, width: `160px` }} />
+      </div>
+      <Grid>
+        <h5>{totalNumWords}</h5>
+        <h5>{totalMinRead}</h5>
+      </Grid>
+    </GridContainer>
+  );
+};
 
 export default GardenOverallStats;
