@@ -33,7 +33,7 @@ const GridStats = styled.div`
 
 const DashboardPage = ({ data }) => {
   const { blogPath } = useAcmeBlogConfig();
-  const { gardenOverallStats} = data
+  const { gardenOverallStats , gardenCatStats} = data
   console.log(data);
 
   return (
@@ -49,7 +49,7 @@ const DashboardPage = ({ data }) => {
       <DashboardContainer>
         <GridStats>
           <GardenOverallStats gardenOverallStats={gardenOverallStats} />
-          <GardenCatStats />
+          <GardenCatStats gardenCatStats={gardenCatStats}/>
         </GridStats>
         <GardenFrequency />
         <GardenTags />
