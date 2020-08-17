@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { PieChart, Pie, Cell } from "recharts";
 import styled from "@emotion/styled";
+import { PieChart, Pie, Cell } from "recharts";
 
 const GridContainer = styled.div`
   display: grid;

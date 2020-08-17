@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Button } from "theme-ui";
+import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
@@ -18,6 +19,9 @@ const HomePage = ({ posts }) => {
       <SEO title="Blog" />
       <Flex>
         <h1>Articles</h1>
+        <Link to="/dashboard" sx={{ variant: `links.secondary` }}>
+          <Button sx={{ variant: `buttons.secondary` }}>Dashboard</Button>
+        </Link>
       </Flex>
       <BlogPostListing posts={posts} />
     </div>
