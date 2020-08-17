@@ -241,6 +241,12 @@ const theme = {
       p: `15px`,
       borderRadius: `4px`,
     },
+    ctg2: { 
+      fontSize: 2,
+      p: `2px 5px`,
+      border: `2px solid`,
+      borderRadius: `4px`,
+    },
     tag: {
       p: `15px`,
       borderRadius: `4px`,

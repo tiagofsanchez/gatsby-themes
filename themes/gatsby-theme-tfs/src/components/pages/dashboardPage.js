@@ -33,14 +33,18 @@ const GridStats = styled.div`
 
 const DashboardPage = ({ data }) => {
   const { blogPath } = useAcmeBlogConfig();
-  const { gardenOverallStats , gardenCatStats} = data
+  const { gardenOverallStats, gardenCatStats } = data;
   console.log(data);
 
   return (
     <section sx={{ variant: `layout.container` }}>
       <Flex>
         <h1>Dashboard</h1>
-        <Link to={blogPath} sx={{ variant: `links.secondary` }}>
+        <Link
+          to={blogPath}
+          sx={{ variant: `links.secondary` }}
+          aria-label={blogPath}
+        >
           <Button sx={{ variant: `buttons.secondary` }}>
             {blogPath.substr(1)}
           </Button>
@@ -49,7 +53,7 @@ const DashboardPage = ({ data }) => {
       <DashboardContainer>
         <GridStats>
           <GardenOverallStats gardenOverallStats={gardenOverallStats} />
-          <GardenCatStats gardenCatStats={gardenCatStats}/>
+          <GardenCatStats gardenCatStats={gardenCatStats} />
         </GridStats>
         <GardenFrequency />
         <GardenTags />

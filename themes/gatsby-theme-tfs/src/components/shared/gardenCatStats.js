@@ -1,7 +1,9 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Card } from "theme-ui";
+import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import { PieChart, Pie, Cell } from "recharts";
+import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
 const GridContainer = styled.div`
   display: grid;
@@ -11,15 +13,19 @@ const GridContainer = styled.div`
   border-radius: 6px;
 `;
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  justify-items: center;
+const Flex = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
 `;
 
 const COLORS = ["#d23669", "#DB5E87", "#E486A5", "#EDAEC3"];
+const _ = require("lodash");
 
 const GardenCatStats = ({ gardenCatStats }) => {
+  const { blogPath, categoryPath } = useAcmeBlogConfig();
+  console.log(gardenCatStats);
   return (
     <GridContainer sx={{ bg: `hover` }}>
       <h4 sx={{ m: `0` }}>Categories</h4>
@@ -41,10 +47,25 @@ const GardenCatStats = ({ gardenCatStats }) => {
           ))}
         </Pie>
       </PieChart>
-      <Grid>
-        <h5>4500 words</h5>
-        <h5>500 min read</h5>
-      </Grid>
+      <Flex>
+        {gardenCatStats.map((cat, index) => (
+          <Link
+            to={`${blogPath}${categoryPath}/${_.kebabCase(cat.name)}`}
+            sx={{ variant: `links.secondary` }}
+          >
+            <Card
+              sx={{
+                variant: `cards.ctg2`,
+                margin: `0px 5px`,
+                borderColor: `${COLORS[index % COLORS.length]}`,
+                color: `${COLORS[index % COLORS.length]}`,
+              }}
+            >
+              <p sx={{ my: `0px`, fontSize: 1 }}>{cat.name}</p>
+            </Card>
+          </Link>
+        ))}
+      </Flex>
     </GridContainer>
   );
 };

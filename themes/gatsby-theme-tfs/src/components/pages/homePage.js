@@ -19,7 +19,11 @@ const HomePage = ({ posts }) => {
       <SEO title="Blog" />
       <Flex>
         <h1>Articles</h1>
-        <Link to="/dashboard" sx={{ variant: `links.secondary` }}>
+        <Link
+          to="/dashboard"
+          sx={{ variant: `links.secondary` }}
+          aria-label="dashboard"
+        >
           <Button sx={{ variant: `buttons.secondary` }}>dashboard</Button>
         </Link>
       </Flex>
