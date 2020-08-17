@@ -1,14 +1,21 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Button } from "theme-ui";
 import styled from "@emotion/styled";
+import { Link } from "gatsby";
+import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
 import GardenOverallStats from "../shared/gardenOveralStats";
 import GardenCatStats from "../shared/gardenCatStats";
 import GardenFrequency from "../shared/gardenFrequency";
-import GardenTags from '../shared/gardenTags'
-import { BlogHeaderMinimal } from '../shared/blogPostHeader'
+import GardenTags from "../shared/gardenTags";
+import { BlogHeaderMinimal } from "../shared/blogPostHeader";
 import usePostsForIndexPage from "../../hooks/usePostsForIndexPage";
 
+const Flex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+`;
 
 const DashboardContainer = styled.div`
   display: grid;
@@ -27,12 +34,18 @@ const GridStats = styled.div`
 `;
 
 const DashboardPage = ({ data }) => {
+  const { blogPath } = useAcmeBlogConfig();
   console.log(data);
 
   const postsArray = usePostsForIndexPage();
   return (
     <section sx={{ variant: `layout.container` }}>
-      <h1>Dashboard</h1>
+      <Flex>
+        <h1>Dashboard</h1>
+        <Link to={blogPath} sx={{ variant: `links.secondary` }}>
+          <Button sx={{ variant: `buttons.secondary` }}>{blogPath.substr(1)}</Button>
+        </Link>
+      </Flex>
       <DashboardContainer>
         <GridStats>
           <GardenOverallStats />
@@ -42,7 +55,7 @@ const DashboardPage = ({ data }) => {
         <GardenTags />
       </DashboardContainer>
       <section>
-      <h1> My latest posts</h1>
+        <h1> My latest posts</h1>
         <div>
           {postsArray.map((blogPost) => {
             return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;

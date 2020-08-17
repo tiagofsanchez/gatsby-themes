@@ -20,7 +20,7 @@ const HomePage = ({ posts }) => {
       <Flex>
         <h1>Articles</h1>
         <Link to="/dashboard" sx={{ variant: `links.secondary` }}>
-          <Button sx={{ variant: `buttons.secondary` }}>Dashboard</Button>
+          <Button sx={{ variant: `buttons.secondary` }}>dashboard</Button>
         </Link>
       </Flex>
       <BlogPostListing posts={posts} />
