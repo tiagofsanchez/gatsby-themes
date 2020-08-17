@@ -33,8 +33,10 @@ const GridStats = styled.div`
 
 const DashboardPage = ({ data }) => {
   const { blogPath } = useAcmeBlogConfig();
-  const { gardenOverallStats, gardenCatStats } = data;
-  console.log(data);
+  const { gardenOverallStats, gardenCatStats , gardenFrequency, gardenTags , datesArray , dataGardenFrequency} = data;
+  // console.log(data);
+  // console.log(datesArray);
+  // console.log(dataGardenFrequency);
 
   return (
     <section sx={{ variant: `layout.container` }}>
@@ -55,8 +57,8 @@ const DashboardPage = ({ data }) => {
           <GardenOverallStats gardenOverallStats={gardenOverallStats} />
           <GardenCatStats gardenCatStats={gardenCatStats} />
         </GridStats>
-        <GardenFrequency />
-        <GardenTags />
+        <GardenFrequency gardenFrequency={gardenFrequency}/>
+        <GardenTags gardenTags={gardenTags}/>
       </DashboardContainer>
     </section>
   );

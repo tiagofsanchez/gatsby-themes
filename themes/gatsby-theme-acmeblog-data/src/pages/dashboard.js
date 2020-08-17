@@ -30,7 +30,7 @@ export const query = graphql`
         frontmatter {
           category
           title
-          date(formatString: "MMMM DD, YYYY")
+          date
           category
         }
         fields {

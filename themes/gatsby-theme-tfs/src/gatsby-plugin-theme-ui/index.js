@@ -248,7 +248,8 @@ const theme = {
       borderRadius: `4px`,
     },
     tag: {
-      p: `15px`,
+      fontSize: 2,
+      p: `2px 5px`,
       borderRadius: `4px`,
       m: `10px 5px`,
       display: `inline-block`,

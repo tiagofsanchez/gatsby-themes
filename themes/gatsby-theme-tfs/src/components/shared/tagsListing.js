@@ -26,10 +26,10 @@ const TagsListing = ({ allTagsArray }) => {
               aria-label={`${tag.fieldValue} post tag`}
             >
               <Card variant="tag" sx={{ marginRight: `-10px` }}>
-                <h4 sx={{ my: `0px` }}>{tag.fieldValue}</h4>
+                <p sx={{ my: `0px` , fontSize: 2, color: `text` }}>{tag.fieldValue}</p>
               </Card>
               <div>
-                <Badge variant="number" style={{ fontSize: `16px` }}>
+                <Badge variant="number">
                   {tag.totalCount}
                 </Badge>
               </div>
