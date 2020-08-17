@@ -33,7 +33,7 @@ const GridStats = styled.div`
 
 const DashboardPage = ({ data }) => {
   const { blogPath } = useAcmeBlogConfig();
-  const { gardenOverallStats, gardenCatStats , gardenFrequency, gardenTags , datesArray , dataGardenFrequency} = data;
+  const { gardenOverallStats, gardenCatStats , gardenFrequency, gardenTags } = data;
   // console.log(data);
   // console.log(datesArray);
   // console.log(dataGardenFrequency);

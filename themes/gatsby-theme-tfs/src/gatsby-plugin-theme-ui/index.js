@@ -252,7 +252,6 @@ const theme = {
       p: `2px 5px`,
       borderRadius: `4px`,
       m: `10px 5px`,
-      display: `inline-block`,
       border: `2px solid`,
       borderColor: "highlight",
     },

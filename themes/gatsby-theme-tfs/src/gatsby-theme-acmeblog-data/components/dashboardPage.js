@@ -3,7 +3,7 @@ import DashboardPage from "../../components/pages/dashboardPage";
 import moment from "moment";
 
 const MinBlogPost = ({ data }) => {
-  const { postsArray, catGroup , tagGroup } = data;  
+  const { postsArray, catGroup, tagGroup } = data;
 
   let gardenOverallStats = {};
   const totalPosts = postsArray.nodes.length;
@@ -32,56 +32,28 @@ const MinBlogPost = ({ data }) => {
   let datesArray = [];
   postsArray.nodes.map((post) => {
     const month = moment(post.frontmatter.date).format("MMMM[-]YYYY");
-    datesArray.push(month);
+    if (datesArray.length === 0) {
+      datesArray.push({
+        name: month,
+        pv: 0,
+      });
+    }
+    datesArray.map((item, index) => {
+      if (month=== item.name) {
+        console.log(index);
+        datesArray[index].pv = datesArray[index].pv + 1;
+      } else if (month !== item.name) {
+        datesArray.push({
+          name: month,
+          pv: 1,
+        });
+      }
+    });
     return datesArray;
   });
 
-//   console.log(datesArray);
+  console.log(datesArray);
 
-  let dataGardenFrequency = [];
-  dataGardenFrequency.map((item) => {
-    datesArray.map((date) => {
-      if (item.name !== date) {
-          console.log(date);
-        dataGardenFrequency.push({
-          name: date,
-          pv: 1,
-        });
-      } else {
-        dataGardenFrequency.pv = dataGardenFrequency.pv + 1;
-      }
-    });
-    return dataGardenFrequency;
-  });
-
-//   console.log(dataGardenFrequency);
-
-//   let dataGardenFrequency = [];
-//   datesArray.map((date) => {
-//     console.log(date);
-//     if (dataGardenFrequency.length === 0) {
-//       console.log(`adding:${date}`);  
-//       dataGardenFrequency.push({
-//         name: date,
-//         pv: 1,
-//       });
-//     }
-//     dataGardenFrequency.map((item) => {
-//       if (date !== item.name) {
-//         console.log(`${date} <> ${item.name}`);
-//         dataGardenFrequency.push({
-//           name: date,
-//           pv: 1,
-//         });
-//       } else if (date === item.name) { 
-//         dataGardenFrequency.pv = dataGardenFrequency.pv + 1;
-//       }
-//       return datesArray;
-//     });
-//     return dataGardenFrequency;
-//   });
-
-  
   const gardenFrequency = [
     { name: "Jan", pv: 2400 },
     { name: "Feb", pv: 2400 },
@@ -97,7 +69,7 @@ const MinBlogPost = ({ data }) => {
     { name: "Dec", pv: 2400 },
   ];
 
-  const gardenTags = tagGroup.group
+  const gardenTags = tagGroup.group;
 
   return (
     <DashboardPage
@@ -107,8 +79,6 @@ const MinBlogPost = ({ data }) => {
         gardenCatStats,
         gardenFrequency,
         gardenTags,
-        datesArray,
-        dataGardenFrequency,
       }}
     />
   );
