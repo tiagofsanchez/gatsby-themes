@@ -13,6 +13,13 @@ export const query = graphql`
         totalCount
       }
     }
+    catGroup: allMdx {
+      group(field: frontmatter___category) {
+        field
+        fieldValue
+        totalCount
+      }
+    }
     postsArray: allMdx(
       filter: { frontmatter: { title: { nin: "" } } }
       sort: { order: DESC, fields: frontmatter___date }
