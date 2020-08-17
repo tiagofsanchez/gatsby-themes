@@ -15,7 +15,7 @@ const GardenFrequency = ({gardenFrequency}) => {
   
   return ( 
     <FrequencyContainer sx={{ bg: `hover` }}>
-      <h4 sx={{ m: `0` }}>Gardening frequency</h4>
+      <h4 sx={{ m: `0` }}>Gardening frequency (2020)</h4>
       <ResponsiveContainer width="99%" height="100%">
         <BarChart
           data={gardenFrequency}

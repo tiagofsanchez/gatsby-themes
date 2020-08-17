@@ -5,6 +5,7 @@ import moment from "moment";
 const MinBlogPost = ({ data }) => {
   const { postsArray, catGroup, tagGroup } = data;
 
+  //GENERAL STATS
   let gardenOverallStats = {};
   const totalPosts = postsArray.nodes.length;
   let totalMin = 0;
@@ -20,6 +21,7 @@ const MinBlogPost = ({ data }) => {
   const totalNumWords = `${new Intl.NumberFormat().format(totalWords)} words`;
   gardenOverallStats = { totalPosts, totalMinRead, totalNumWords };
 
+  //CATEGORIES
   let gardenCatStats = [];
   catGroup.group.map((cat) => {
     gardenCatStats.push({
@@ -29,45 +31,36 @@ const MinBlogPost = ({ data }) => {
     return gardenCatStats;
   });
 
+  //FREQUENCY
   let datesArray = [];
   postsArray.nodes.map((post) => {
-    const month = moment(post.frontmatter.date).format("MMMM[-]YYYY");
-    if (datesArray.length === 0) {
-      datesArray.push({
-        name: month,
-        pv: 0,
-      });
-    }
-    datesArray.map((item, index) => {
-      if (month=== item.name) {
-        console.log(index);
-        datesArray[index].pv = datesArray[index].pv + 1;
-      } else if (month !== item.name) {
-        datesArray.push({
-          name: month,
-          pv: 1,
-        });
-      }
-    });
+    datesArray.push(moment(post.frontmatter.date).format("MMM[/]YY"));
     return datesArray;
   });
 
-  console.log(datesArray);
-
-  const gardenFrequency = [
-    { name: "Jan", pv: 2400 },
-    { name: "Feb", pv: 2400 },
-    { name: "Mar", pv: 2400 },
-    { name: "April", pv: 2400 },
-    { name: "May", pv: 2400 },
-    { name: "Jun", pv: 2400 },
-    { name: "July", pv: 2400 },
-    { name: "Aug", pv: 2400 },
-    { name: "Sept", pv: 2400 },
-    { name: "Oct", pv: 3000 },
-    { name: "Nov", pv: 2400 },
-    { name: "Dec", pv: 2400 },
+  let gardenFrequency = [
+    { name: "Jan/20", pv: 0 },
+    { name: "Feb/20", pv: 0 },
+    { name: "Mar/20", pv: 0 },
+    { name: "Apr/20", pv: 0 },
+    { name: "May/20", pv: 0 },
+    { name: "Jun/20", pv: 0 },
+    { name: "Jul/20", pv: 0 },
+    { name: "Aug/20", pv: 0 },
+    { name: "Sep/20", pv: 0 },
+    { name: "Oct/20", pv: 0 },
+    { name: "Nov/20", pv: 0 },
+    { name: "Dec/20", pv: 0 },
   ];
+
+  gardenFrequency.map((item, index) => { 
+    return datesArray.map(date => { 
+      if (date === item.name) {
+        gardenFrequency[index].pv = gardenFrequency[index].pv + 1
+      }
+      return gardenFrequency
+    })
+  })
 
   const gardenTags = tagGroup.group;
 

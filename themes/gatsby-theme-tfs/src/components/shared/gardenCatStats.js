@@ -31,6 +31,7 @@ const GardenCatStats = ({ gardenCatStats }) => {
       <PieChart width={160} height={215} sx={{ margin: `auto` }}>
         <Pie
           data={gardenCatStats}
+          dataKey="value"
           cx="50%"
           cy="50%"
           innerRadius={50}
@@ -40,6 +41,7 @@ const GardenCatStats = ({ gardenCatStats }) => {
         >
           {gardenCatStats.map((entry, index) => (
             <Cell
+              key={index}
               fill={COLORS[index % COLORS.length]}
               stroke={COLORS[index % COLORS.length]}
             />
@@ -49,6 +51,7 @@ const GardenCatStats = ({ gardenCatStats }) => {
       <Flex>
         {gardenCatStats.map((cat, index) => (
           <Link
+            key={cat.name}
             to={`${blogPath}${categoryPath}/${_.kebabCase(cat.name)}`}
             sx={{ variant: `links.secondary` }}
           >
