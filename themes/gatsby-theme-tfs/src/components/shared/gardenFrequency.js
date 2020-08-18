@@ -23,6 +23,7 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 5px;
   grid-template-columns: repeat(2, auto);
+  align-items: center;
 `;
 
 const GardenFrequency = ({ gardenPosts }) => {

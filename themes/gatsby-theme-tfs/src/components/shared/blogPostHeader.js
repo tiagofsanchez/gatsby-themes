@@ -37,13 +37,14 @@ const PostHeaderContainer = styled.div`
 const TagsCatContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   @media (max-width: 599px) {
     display: none;
   }
 `;
 
-export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
+export const BlogHeaderMax = ({ title, date, tags, timeToRead, thumbnail }) => {
   return (
     <PostHeaderContainer
       sx={{
@@ -56,15 +57,14 @@ export const BlogHeaderMax = ({ title, date, tags, category, thumbnail }) => {
       </ThumbnailContainer>
       <div>
         <h1 sx={{ my: `0px`, textAlign: `center` }}>{title}</h1>
-        <p sx={{ color: `primary`, my: `5px`, textAlign: `center` }}>{date}</p>
+        <p sx={{ color: `primary`, my: `5px`, textAlign: `center` }}>
+          {date} . {timeToRead}
+        </p>
       </div>
       <TagsCatContainer>
-        <Card variant="category" sx={{ color: `white` }}>
-          {category}
-        </Card>
         {tags.map((tag, index) => (
           <Card variant="tag" key={index}>
-            {tag}
+            <p sx={{ fontSize: 2, m: `0` }}>{tag}</p>
           </Card>
         ))}
       </TagsCatContainer>
