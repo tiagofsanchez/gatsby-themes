@@ -6,7 +6,6 @@ import styled from "@emotion/styled";
 const NavItems = styled.nav`
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-gap: 10px;
   place-contents: center;
   @media (max-width: 600px) {
     display: none;
@@ -38,7 +37,7 @@ const FlexMenu = styled.div`
   padding: 0px 20px 0px 20px;
 `;
 
-const activeStyle = { borderBottom: `2px solid` };
+const activeStyle = { borderRadius: `4px`, background:`rgba(194, 36, 93 , 0.4)`  };
 
 const Navigation = ({ navigation }) => {
   return (
@@ -52,7 +51,7 @@ const Navigation = ({ navigation }) => {
             sx={{ variant: `links.secondary` }}
             activeStyle={activeStyle}
           >
-            <h4 sx={{ color: `primary`, margin: `0` }}>{url.title}</h4>
+            <h5 sx={{ color: `primary`, margin: `0`, p: `10px` }}>{url.title}</h5>
           </Link>
         ))}
       </NavItems>
@@ -64,16 +63,17 @@ const Navigation = ({ navigation }) => {
             aria-label={`home page`}
             activeStyle={activeStyle}
           >
-            <p
+            <h5
               sx={{
                 color: `primary`,
                 margin: `0px`,
                 fontWeight: `600`,
                 textDecoration: `none`,
+                p: `0px 15px` ,
               }}
             >
               Home
-            </p>
+            </h5>
           </Link>
           {navigation.map((nav) => (
             <Link
@@ -82,15 +82,16 @@ const Navigation = ({ navigation }) => {
               sx={{ borderBottom: `0px` , variant: `links.secondary` }}
               activeStyle={activeStyle}
             >
-              <p
+              <h5
                 sx={{
                   margin: `0`,
                   color: `primary`,
                   fontWeight: `600`,
+                  p: `5px 10px` 
                 }}
               >
                 {nav.title}
-              </p>
+              </h5>
             </Link>
           ))}
         </FlexMenu>

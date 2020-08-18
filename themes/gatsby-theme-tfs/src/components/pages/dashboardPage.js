@@ -13,7 +13,7 @@ const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
 `;
 
 const DashboardContainer = styled.div`

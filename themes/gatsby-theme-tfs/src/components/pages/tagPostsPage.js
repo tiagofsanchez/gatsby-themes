@@ -1,5 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
+
 import BlogPostListing from "../shared/blogPostListing";
 import SEO from '../shared/seo';
 
@@ -25,8 +28,8 @@ const TagPostsPage = ({ data }) => {
     <div sx={{variant: `layout.container`}}>
        <SEO title={`Tag: ${data.pageContext.tag}`}/>
       <h1>
-        All posts tagged with{" "}
-        <span sx={{ color: `highlight` }}>{data.pageContext.tag}</span> tag
+        Tag . {" "}
+        <span sx={{ color: `highlight` }}>{data.pageContext.tag}</span>
       </h1>
       <section style={{ margin: `40px auto` }}>
         <BlogPostListing posts={postsArray} />

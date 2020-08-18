@@ -39,9 +39,6 @@ const TagsCatContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  @media (max-width: 599px) {
-    display: none;
-  }
 `;
 
 export const BlogHeaderMax = ({ title, date, tags, timeToRead, thumbnail }) => {
