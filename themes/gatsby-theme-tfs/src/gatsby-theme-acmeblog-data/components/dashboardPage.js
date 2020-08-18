@@ -32,35 +32,12 @@ const MinBlogPost = ({ data }) => {
   });
 
   //FREQUENCY
-  let datesArray = [];
+  let gardenPosts = [];
   postsArray.nodes.map((post) => {
-    datesArray.push(moment(post.frontmatter.date).format("MMM[/]YY"));
-    return datesArray;
+    gardenPosts.push(moment(post.frontmatter.date).format("MMM[/]YY"));
+    console.log(post.frontmatter.date)
+    return gardenPosts;
   });
-
-  let gardenFrequency = [
-    { name: "Jan/20", pv: 0 },
-    { name: "Feb/20", pv: 0 },
-    { name: "Mar/20", pv: 0 },
-    { name: "Apr/20", pv: 0 },
-    { name: "May/20", pv: 0 },
-    { name: "Jun/20", pv: 0 },
-    { name: "Jul/20", pv: 0 },
-    { name: "Aug/20", pv: 0 },
-    { name: "Sep/20", pv: 0 },
-    { name: "Oct/20", pv: 0 },
-    { name: "Nov/20", pv: 0 },
-    { name: "Dec/20", pv: 0 },
-  ];
-
-  gardenFrequency.map((item, index) => { 
-    return datesArray.map(date => { 
-      if (date === item.name) {
-        gardenFrequency[index].pv = gardenFrequency[index].pv + 1
-      }
-      return gardenFrequency
-    })
-  })
 
   const gardenTags = tagGroup.group;
 
@@ -70,7 +47,7 @@ const MinBlogPost = ({ data }) => {
         data,
         gardenOverallStats,
         gardenCatStats,
-        gardenFrequency,
+        gardenPosts,
         gardenTags,
       }}
     />

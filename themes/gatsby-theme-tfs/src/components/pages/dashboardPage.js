@@ -12,6 +12,7 @@ import GardenTags from "../shared/gardenTags";
 const Flex = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: baseline;
 `;
 
@@ -33,10 +34,7 @@ const GridStats = styled.div`
 
 const DashboardPage = ({ data }) => {
   const { blogPath } = useAcmeBlogConfig();
-  const { gardenOverallStats, gardenCatStats , gardenFrequency, gardenTags } = data;
-  // console.log(data);
-  // console.log(datesArray);
-  // console.log(dataGardenFrequency);
+  const { gardenOverallStats, gardenCatStats , gardenPosts , gardenTags } = data;
 
   return (
     <section sx={{ variant: `layout.container` }}>
@@ -57,7 +55,7 @@ const DashboardPage = ({ data }) => {
           <GardenOverallStats gardenOverallStats={gardenOverallStats} />
           <GardenCatStats gardenCatStats={gardenCatStats} />
         </GridStats>
-        <GardenFrequency gardenFrequency={gardenFrequency}/>
+        <GardenFrequency gardenPosts={gardenPosts}/>
         <GardenTags gardenTags={gardenTags}/>
       </DashboardContainer>
     </section>
