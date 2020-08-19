@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Button, Radio, Label } from "theme-ui";
+import { jsx, Radio, Label } from "theme-ui";
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from "recharts";
