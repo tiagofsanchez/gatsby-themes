@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Radio, Label } from "theme-ui";
+import { jsx, Radio, Label, useThemeUI } from "theme-ui";
 import { useState } from "react";
 import styled from "@emotion/styled";
-import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer, Text } from "recharts";
 import moment from "moment";
 
 const FrequencyContainer = styled.div`
@@ -28,29 +28,30 @@ const Grid = styled.div`
 
 const GardenFrequency = ({ gardenPosts }) => {
   const [year, setYear] = useState(2020);
+  const { theme } = useThemeUI();
 
   const changeYearBefore = () => setYear(2019);
   const changeYearCurrent = () => setYear(2020);
 
   let gardenFrequency = [
-    { name: moment(`${year}01`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}02`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}03`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}04`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}05`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}06`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}07`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}08`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}09`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}10`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}11`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
-    { name: moment(`${year}12`, "YYYYMM").format("MMM[/]YY"), pv: 0 },
+    { name: moment(`${year}01`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}02`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}03`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}04`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}05`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}06`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}07`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}08`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}09`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}10`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}11`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}12`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
   ];
 
   gardenFrequency.map((item, index) => {
     return gardenPosts.map((date) => {
       if (date === item.name) {
-        gardenFrequency[index].pv = gardenFrequency[index].pv + 1;
+        gardenFrequency[index].posts = gardenFrequency[index].posts + 1;
       }
       return gardenFrequency;
     });
@@ -81,9 +82,20 @@ const GardenFrequency = ({ gardenPosts }) => {
           data={gardenFrequency}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
-          <XAxis dataKey="name" />
-          <Tooltip />
-          <Bar dataKey="pv" fill="#DB5E87" />
+          <XAxis
+            dataKey="name"
+            tickLine={false}
+            tick={{ fontSize: 12 }}
+            tickFormatter={(value) => value.slice(0, 3)}
+          />
+          <Text dataKey="name"/>
+          <Tooltip
+            contentStyle={{
+              borderRadius: "4px",
+              backgroundColor: theme.colors.background,
+            }}
+          />
+          <Bar dataKey="posts" fill="#DB5E87" />
         </BarChart>
       </ResponsiveContainer>
     </FrequencyContainer>
