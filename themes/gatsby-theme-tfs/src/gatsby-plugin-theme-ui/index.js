@@ -211,7 +211,7 @@ const theme = {
       margin: `0 auto`,
     },
     container: {
-      width: [`100%`, `90%`, `970px`],
+      width: [`100%`, `90%`, `800px`],
       margin: `0 auto`,
     },
     footer: {
@@ -292,9 +292,7 @@ const theme = {
       fontSize: 2,
       padding: `6px 10px`,
       bg: `background`,
-      border: `1px solid`,
-      borderColor: `bg2`,
-      color: "primary",
+      color: "highlight",
       "&:hover": {
         bg: "bg2",
         cursor: `pointer`,
