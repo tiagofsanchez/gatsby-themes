@@ -42,6 +42,7 @@ const renderCustomizedLabel = ({
       x={x}
       y={y}
       fill="white"
+      style={{ padding: `20px` }}
       textAnchor={x > cx ? "start" : "end"}
       dominantBaseline="central"
     >

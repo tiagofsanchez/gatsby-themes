@@ -46,7 +46,7 @@ const DashboardPage = ({ data }) => {
           aria-label={blogPath}
         >
           <Button sx={{ variant: `buttons.secondary` }}>
-            {blogPath.substr(1)}
+            {blogPath.substr(1)} &rarr;
           </Button>
         </Link>
       </Flex>

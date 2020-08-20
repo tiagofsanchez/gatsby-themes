@@ -54,18 +54,10 @@ const TagPostsPage = ({ data }) => {
           aria-label={blogPath}
         >
           <Button sx={{ variant: `buttons.secondary` }}>
-            {blogPath.substr(1)}
+            {blogPath.substr(1)} &rarr;
           </Button>
         </Link>
-        <Link
-          to="/dashboard"
-          sx={{ variant: `links.secondary` }}
-          aria-label="dashboard"
-        >
-          <Button sx={{ variant: `buttons.secondary` }}>
-            dashboard
-          </Button>
-        </Link>
+
         </Grid>
       </Flex>
       <section style={{ margin: `40px auto` }}>

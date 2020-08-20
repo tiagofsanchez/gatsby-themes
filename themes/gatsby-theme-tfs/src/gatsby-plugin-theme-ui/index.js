@@ -294,7 +294,7 @@ const theme = {
       bg: `background`,
       color: "highlight",
       "&:hover": {
-        bg: "bg2",
+        fontWeight: "900", 
         cursor: `pointer`,
       },
     },

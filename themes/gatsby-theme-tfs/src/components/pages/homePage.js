@@ -24,7 +24,8 @@ const HomePage = ({ posts }) => {
           sx={{ variant: `links.secondary` }}
           aria-label="dashboard"
         >
-          <Button sx={{ variant: `buttons.secondary` }}>dashboard</Button>
+          <Button sx={{ variant: `buttons.secondary` }}>dashboard  &rarr;</Button>
+         
         </Link>
       </Flex>
       <BlogPostListing posts={posts} />

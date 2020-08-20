@@ -87,7 +87,7 @@ const Navigation = ({ navigation }) => {
                   margin: `0`,
                   color: `primary`,
                   fontWeight: `600`,
-                  p: `5px 10px` 
+                  p: `0px 10px` 
                 }}
               >
                 {nav.title}

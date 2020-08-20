@@ -56,16 +56,7 @@ const CategoryPostsPage = ({ data }) => {
           aria-label={blogPath}
         >
           <Button sx={{ variant: `buttons.secondary` }}>
-            {blogPath.substr(1)}
-          </Button>
-        </Link>
-        <Link
-          to="/dashboard"
-          sx={{ variant: `links.secondary` }}
-          aria-label="dashboard"
-        >
-          <Button sx={{ variant: `buttons.secondary` }}>
-            dashboard
+            {blogPath.substr(1)} &rarr;
           </Button>
         </Link>
         </Grid>
