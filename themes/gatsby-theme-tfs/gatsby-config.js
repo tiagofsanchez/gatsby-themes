@@ -36,6 +36,7 @@ module.exports = {
 
   plugins: [
     `@pauliescanlon/gatsby-mdx-embed`,
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
