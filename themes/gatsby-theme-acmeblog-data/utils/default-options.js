@@ -8,7 +8,7 @@ module.exports = (themeOptions) => {
   const tagsPath = themeOptions.tagsPath || `/tags`
   const categoryPath = themeOptions.categoryPath || `/category`
   const postTableOfContents = themeOptions.postTableOfContents || false
-  const githubUrl = themeOptions = themeOptions.githubUrl || ``
+  const githubUrl = themeOptions.githubUrl || ``
 
   return {
     blogPath,

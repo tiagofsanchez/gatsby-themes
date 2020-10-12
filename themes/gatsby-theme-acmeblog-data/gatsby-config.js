@@ -36,6 +36,7 @@ module.exports = (themeOptions) => {
             options: {
               maxWidth: 1200,
               linkImagesToOriginal: false,
+              backgroundColor: none,
             },
           },
         ],
