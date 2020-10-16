@@ -14,7 +14,7 @@ const Avatar = ({ width }) => {
     {
       logo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fluid(grayscale: true) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }

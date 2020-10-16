@@ -27,7 +27,7 @@ const SEO = ({ title, description, image, article }) => {
     titleTemplate= `${siteTitle} - 🍀 digital garden`
   } else { titleTemplate= ` ${siteTitle} - ${seo.title }`}
 
-
+  console.log(seo)
   return (
     <Helmet
       htmlAttributes={{ siteLanguage }}
