@@ -5,7 +5,10 @@ export default HomePage;
 
 export const allBlogposts = graphql`
   query allMyPosts {
-    posts: allMdx(sort: { order: DESC, fields: frontmatter___date }) {
+    posts: allMdx(
+      sort: { order: DESC, fields: frontmatter___date }
+      filter: { frontmatter: { date: { ne: null } } }
+    ) {
       nodes {
         excerpt
         fields {
@@ -17,6 +20,7 @@ export const allBlogposts = graphql`
             text
           }
         }
+        rawBody
         timeToRead
         frontmatter {
           title

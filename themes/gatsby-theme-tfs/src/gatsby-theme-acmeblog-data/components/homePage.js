@@ -13,7 +13,8 @@ const MinBlogPost = ({data}) => {
         excerpt: item.excerpt,
         slug: item.fields.slug,
         timeToRead: item.fields.readingTime.text,
-        thumbnail: item.frontmatter.thumbnail
+        thumbnail: item.frontmatter.thumbnail,
+        rawBody: item.rawBody
       };
       postsArray.push(post);
       return postsArray;
