@@ -6,7 +6,7 @@
     "gatsby-plugin",
     "gatsby-theme"
   ],
-  "version": "1.0.26",
+  "version": "1.0.28",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
@@ -33,7 +33,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "recharts": "^2.0.0",
+    "recharts": "^1.8.5",
     "remark-slug": "^6.0.0",
     "theme-ui": "^0.3.1",
     "typeface-ibm-plex-sans": "^0.0.75"

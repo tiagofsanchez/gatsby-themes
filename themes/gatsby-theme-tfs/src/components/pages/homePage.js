@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Button, Input } from "theme-ui";
-import { Link } from "gatsby";
+import { jsx, Input } from "theme-ui";
+// import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { useState } from "react";
@@ -41,7 +41,7 @@ const HomePage = ({ posts }) => {
       <SEO title="Blog" />
       <Flex>
         <h1>Articles</h1>
-        <Link
+        {/* <Link
           to="/dashboard"
           sx={{ variant: `links.secondary` }}
           aria-label="dashboard"
@@ -49,7 +49,7 @@ const HomePage = ({ posts }) => {
           <Button sx={{ variant: `buttons.secondary` }}>
             dashboard &rarr;
           </Button>
-        </Link>
+        </Link> */}
       </Flex>
       <p>Articles, thoughts and pretty much everything else.</p>
       <SearchContainer>
