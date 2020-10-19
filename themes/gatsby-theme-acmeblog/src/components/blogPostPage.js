@@ -32,7 +32,6 @@ const BlogPostPage = ({
 }) => {
   const blogHeader = { title, date, tags, category, page: true };
   const { postTableOfContents } = useAcmeBlogConfig();
-  console.log(thumbnail)
   return (
     <div>
       <SEO description={excerpt} title={title} image={thumbnail}/>

@@ -68,7 +68,7 @@ const GardenCatStats = ({ gardenCatStats }) => {
           fill="#8884d8"
           label={renderCustomizedLabel}
           labelLine={false}
-          animationDuration="1000"
+          animationDuration={1000}
         >
           {gardenCatStats.map((entry, index) => (
             <Cell

@@ -20,8 +20,7 @@ const SEO = ({ title, description, image, children }) => {
     url: siteUrl,
     image: `${siteUrl}${image || logo}`,
   };
-
-  console.log(seo)
+  
   return (
     <Helmet
       title={seo.title}

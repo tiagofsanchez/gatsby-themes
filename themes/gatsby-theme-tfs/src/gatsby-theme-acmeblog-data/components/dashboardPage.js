@@ -35,7 +35,6 @@ const MinBlogPost = ({ data }) => {
   let gardenPosts = [];
   postsArray.nodes.map((post) => {
     gardenPosts.push(moment(post.frontmatter.date).format("MMM[/]YY"));
-    console.log(post.frontmatter.date)
     return gardenPosts;
   });
 
