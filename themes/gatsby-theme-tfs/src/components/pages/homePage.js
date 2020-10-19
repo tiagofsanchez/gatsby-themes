@@ -17,30 +17,30 @@ const Flex = styled.div`
 `;
 
 const HomePage = ({ posts }) => {
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("");
 
-  const queryHandler = (e) => { 
-    const query = e.target.value
-    setQuery(query)
+  const queryHandler = (e) => {
+    const query = e.target.value;
+    setQuery(query);
+  };
+
+  let showPosts = posts;
+  if (query.length > 3) {
+    showPosts = posts.filter((post) =>
+      post.rawBody.toLowerCase().includes(query.toLowerCase())
+    );
   }
 
-  let showPosts = posts
-  if(query.length > 3) { 
-    showPosts = posts.filter(
-      post => post.rawBody.toLowerCase().includes(query.toLowerCase())
-    )
-  }
-
-  let isPosts = true
-  if(showPosts.length === 0) { 
-    isPosts = false
+  let isPosts = true;
+  if (showPosts.length === 0) {
+    isPosts = false;
   }
 
   return (
     <div sx={{ variant: `layout.container` }}>
       <SEO title="Blog" />
       <Flex>
-        <h1 >Articles</h1>
+        <h1>Articles</h1>
         <Link
           to="/dashboard"
           sx={{ variant: `links.secondary` }}
@@ -51,13 +51,19 @@ const HomePage = ({ posts }) => {
           </Button>
         </Link>
       </Flex>
-      <p>Articles, thoughts and pretty much everything else</p>
+      <p>Articles, thoughts and pretty much everything else.</p>
       <SearchContainer>
-        <Input 
-          placeholder="search for anything here ..." sx={{ mb: 5 }} 
-          onChange={queryHandler}/>
+        <Input
+          placeholder="search for anything here ..."
+          sx={{ mb: 5 }}
+          onChange={queryHandler}
+        />
       </SearchContainer>
-      {isPosts ? <BlogPostListing posts={showPosts} /> : <h4>Sorry, couldn't find anything... please try again!</h4>}
+      {isPosts ? (
+        <BlogPostListing posts={showPosts} />
+      ) : (
+        <h4>Sorry, couldn't find anything... please try again!</h4>
+      )}
     </div>
   );
 };
