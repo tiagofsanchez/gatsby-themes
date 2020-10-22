@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Input } from "theme-ui";
-// import { Link } from "gatsby";
+import { jsx, Input, Button } from "theme-ui";
+import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { useState } from "react";
