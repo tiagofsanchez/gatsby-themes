@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Card } from "theme-ui";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 
@@ -15,7 +16,7 @@ const GridCard = styled.div`
   text-align: center;
   justify-content: center;
   @media (max-width: 740px) {
-    grid-template-columns:1fr
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -27,9 +28,11 @@ const ImgContainer = styled.div`
 const AlternativePosts = ({ alternatives, category }) => {
   return (
     <AlternativeContainer>
-      <h1 sx={{ textAlign: `center` }}>
-        More posts about <span sx={{ color: `highlight` }}>{category}</span>
-      </h1>
+      {category && (
+        <h1 sx={{ textAlign: `center` }}>
+          More posts about <span sx={{ color: `highlight` }}>{category}</span>
+        </h1>
+      )}
       <GridCard>
         {alternatives.map((post) => {
           const title = post.frontmatter.title;
@@ -47,8 +50,8 @@ const AlternativePosts = ({ alternatives, category }) => {
                 <ImgContainer>
                   <Img fluid={img} />
                 </ImgContainer>
-                <h5 sx={{ margin: `0px` , alignSelf: `center`}}>{title}</h5>
-                <p sx={{ margin: `0px`, fontWeight: `100` , alignSelf: `end`}}>
+                <h5 sx={{ margin: `0px`, alignSelf: `center` }}>{title}</h5>
+                <p sx={{ margin: `0px`, fontWeight: `100`, alignSelf: `end` }}>
                   {timeToRead} minutes read
                 </p>
               </Card>
@@ -58,6 +61,12 @@ const AlternativePosts = ({ alternatives, category }) => {
       </GridCard>
     </AlternativeContainer>
   );
+};
+
+
+AlternativePosts.propTypes = {
+  alternatives: PropTypes.array.isRequired,
+  category: PropTypes.string,
 };
 
 export default AlternativePosts;

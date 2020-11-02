@@ -5,9 +5,13 @@ import styled from "@emotion/styled";
 import moment from "moment";
 import Img from "gatsby-image";
 
+import ReadMore from './readMore'
+
 const PostHeaderContainerMinimal = styled.div`
-  padding: 10px;
+  padding: 20px 10px;
   border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const ThumbnailContainer = styled.div`
@@ -73,6 +77,7 @@ export const BlogHeaderMinimal = ({
   title,
   date,
   slug,
+  excerpt,
   timeToRead,
   thumbnail,
 }) => {
@@ -91,16 +96,18 @@ export const BlogHeaderMinimal = ({
         aria-label={`post title: ${title}`}
       >
         <Grid>
-          <ThumbnailContainer small={true}>
+          <ThumbnailContainer small={true} sx={{ alignSelf: `baseline` }}>
             <Img fluid={thumbnail.childImageSharp.fluid} />
           </ThumbnailContainer>
           <div>
-            <h2 sx={{ marginBottom: `3px` }}>{title}</h2>
-            <p sx={{ color: `primary`, my: `5px` }}>
+            <h2 sx={{ marginBottom: `3px`, mt: `-8px` }}>{title}</h2>
+            <p sx={{ my: `5px`, opacity: `0.5` }}>
               {date} . {timeToRead}
             </p>
+            <p>{excerpt}</p>
+           <ReadMore />
           </div>
-          {newest && <p sx={{ color: `highlight`, fontWeight: `900` }}>new</p>}
+          {newest && <p sx={{ color: `highlight`, fontWeight: `900`, alignSelf: `flex-start` }}>new</p>}
         </Grid>
       </Link>
     </PostHeaderContainerMinimal>
