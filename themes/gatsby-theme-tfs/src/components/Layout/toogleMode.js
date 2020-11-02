@@ -7,20 +7,23 @@ const ToogleContainer = styled.div`
   height: 25px;
   border-radius: 15px;
   display: flex;
-  justify-content: ${props => props.mode === 'default' ? 'flex-start' : 'flex-end'};
   align-items: center;
 `;
+
 const Toogle = styled.div`
   width: 20px;
   height: 20px;
+  transform: ${(props) =>
+    props.mode === "default" ? "translateX(0px)" : "translateX(16px)"};
+  transition: transform 200ms ease-out;
   margin: auto 5px;
   border-radius: 50%;
 `;
 
 const ToogleMode = ({ mode }) => {
   return (
-    <ToogleContainer mode={mode} sx={{bg:`primary`}}>
-      <Toogle sx={{ bg: `background` }} />
+    <ToogleContainer sx={{ bg: `primary` }}>
+      <Toogle sx={{ bg: `background` }} mode={mode} />
     </ToogleContainer>
   );
 };
