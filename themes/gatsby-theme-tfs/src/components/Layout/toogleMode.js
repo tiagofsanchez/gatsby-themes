@@ -15,7 +15,7 @@ const Toogle = styled.div`
   height: 20px;
   transform: ${(props) =>
     props.mode === "default" ? "translateX(0px)" : "translateX(16px)"};
-  transition: transform 200ms ease-out;
+  transition: transform 100ms ease-out;
   margin: auto 5px;
   border-radius: 50%;
 `;

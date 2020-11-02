@@ -2,6 +2,9 @@
 import { useColorMode, Button, jsx } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
+import useSound from 'use-sound';
+import toggle from '../sounds/toggle.mp3'
+
 
 import useSiteMetadata from "../../hooks/useSiteMetadata";
 import ToogleMode from "./toogleMode";
@@ -27,7 +30,10 @@ const NavContainer = styled.div`
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode();
   const { siteTitle, navigation } = useSiteMetadata();
+  const [play] = useSound(toggle);
+
   const changeModehandler = () => {
+    play()
     setColorMode(colorMode === "default" ? "light" : "default");
   };
 
