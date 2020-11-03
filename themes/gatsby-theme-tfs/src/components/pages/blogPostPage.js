@@ -48,6 +48,7 @@ const BlogPostPage = ({
   const { githubUrl, postsContentPath } = useAcmeBlogConfig();
   const newSlug = slug.slice(6).slice(0, -1);
   const edit = `${githubUrl}${postsContentPath}/${newSlug}.md`;
+  console.log(alternatives)
 
   return (
     <BlogContainer>
