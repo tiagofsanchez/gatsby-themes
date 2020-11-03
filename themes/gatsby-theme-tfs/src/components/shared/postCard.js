@@ -8,19 +8,17 @@ import { Link } from "gatsby";
 import ReadMore from "../shared/readMore";
 
 const ImgContainer = styled.div`
-  width: 100px;
-  justify-self: center;
+  width: 50px;
 `;
 
 const Card = styled.div`
   display: grid;
-  grid-gap: 10px;
   padding: 20px;
   border-radius: 9px;
-  height: 300px;
+  height: 100%;
 `;
 
-const PostCard = ({ title, slug, img, }) => {
+const PostCard = ({ title, slug, img, excerpt }) => {
   return (
     <Link
       key={title}
@@ -33,7 +31,8 @@ const PostCard = ({ title, slug, img, }) => {
           <Img fluid={img} />
         </ImgContainer>
         <h2 sx={{ mb: `0px` }}>{title}</h2>
-        <div sx={{ justifyContent: `end`}}>
+        <p>{excerpt}</p>
+        <div sx={{ justifyContent: `end` }}>
           <ReadMore />
         </div>
       </Card>
