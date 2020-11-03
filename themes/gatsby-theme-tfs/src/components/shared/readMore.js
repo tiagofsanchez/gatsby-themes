@@ -17,7 +17,6 @@ const ReadMore = () => {
       }}
       sx={{
         fontWeight: `900`,
-        color: `primary`,
         width: `auto`,
         fontSize: 16,
         ":hover": { color: `highlight` },

@@ -5,7 +5,7 @@ const useSelectedPostsForIndexPage = () => {
     {
       posts: allMdx(
         filter: { frontmatter: { title: { ne: "" }, selected: { eq: "yes" } } }
-        limit: 5
+        limit: 6
         sort: { order: DESC, fields: frontmatter___date }
       ) {
         nodes {

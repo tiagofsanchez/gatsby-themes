@@ -5,6 +5,7 @@ const MinBlogPost = ({ data , pageContext}) => {
   
   const category = data.post.frontmatter.category;
   const title = data.post.frontmatter.title;
+  //This can be all done in graphQL
   const alternatives = [];
   data.postsArray.nodes.map((post) => {
     if ((post.frontmatter.category === category) && (post.frontmatter.title !== title)) {

@@ -11,11 +11,18 @@ import { BlogHeaderMinimal } from "../components/shared/blogPostHeader";
 import CategoryListing from "../components/shared/categoryListing";
 import { Hero } from "../components/shared/hero";
 import SEO from "../components/shared/seo";
-
+import PostCard from "../components/shared/postCard";
 
 const GridContainer = styled.div`
   display: grid;
   grid-gap: 70px;
+`;
+
+const MySelectionContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+  justify-content: center;
 `;
 
 const IndexPage = () => {
@@ -23,6 +30,7 @@ const IndexPage = () => {
   const selectedPostsArray = useSelectedPostsForIndexPage();
   const categoriesArray = useAllCategories();
   const { categoryPath, blogPath } = useAcmeBlogConfig();
+
   return (
     <GridContainer>
       <SEO />
@@ -39,9 +47,18 @@ const IndexPage = () => {
       </section>
       <section sx={{ variant: `layout.container` }}>
         <h1>My selection</h1>
-        {selectedPostsArray.map((blogPost) => {
-          return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;
-        })}
+        <MySelectionContainer>
+          {selectedPostsArray.map((post) => {
+            const blogPost = {
+              title: post.title,
+              timeToRead: post.timeToRead,
+              slug: post.slug,
+              excerpt: post.excerpt,
+              img: post.thumbnail.childImageSharp.fluid,
+            };
+            return <PostCard {...blogPost} key={post.title}/>;
+          })}
+        </MySelectionContainer>
       </section>
       <section sx={{ variant: `layout.container` }}>
         <h1> My latest posts</h1>
