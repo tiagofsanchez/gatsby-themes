@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
+import useSound from 'use-sound';
+import toggle from '../sounds/toggle.mp3'
 
 const ToogleContainer = styled.div`
   width: 48px;
@@ -21,9 +23,13 @@ const Toogle = styled.div`
 `;
 
 const ToogleMode = ({ mode }) => {
+  const [play] = useSound(toggle);
+  const soundHandler=()=>{
+    play()
+  }
   return (
     <ToogleContainer sx={{ bg: `primary` }}>
-      <Toogle sx={{ bg: `background` }} mode={mode} />
+      <Toogle sx={{ bg: `background` }} mode={mode} onClick={soundHandler}/>
     </ToogleContainer>
   );
 };
