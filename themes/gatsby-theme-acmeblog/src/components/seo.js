@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import useSiteMetadata from '..//hooks/useSiteMetadata'
+import useSiteMetadata from '../hooks/useSiteMetadata'
 import useSiteLogo from '../hooks/useSiteLogo'
 
 
@@ -11,14 +11,15 @@ const SEO = ({ title, description, image, children }) => {
     siteDescription,
     siteLanguage,
     author,
+    siteImage,
   } = useSiteMetadata();
-  const logo = useSiteLogo()
+  // const logo = useSiteLogo()
 
   const seo = {
     title: title || siteTitle,
     description: description || siteDescription,
     url: siteUrl,
-    image: `${siteUrl}${image || logo}`,
+    image: `${siteUrl}${image || siteImage}`,
   };
   
   return (

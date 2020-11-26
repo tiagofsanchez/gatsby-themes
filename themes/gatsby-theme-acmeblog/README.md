@@ -190,10 +190,4 @@ module.exports = {
 ```
 
 
-## Dev notes
-
-There are a couple of things that I still need to do
-
-- [ ] thumbnail is not totally implemented at `gatsby-theme-acmeblog`
-- [ ] table of contents that highlights the zone where user is
 

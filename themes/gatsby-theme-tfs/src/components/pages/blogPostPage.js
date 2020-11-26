@@ -33,6 +33,7 @@ const BlogPostPage = ({
   timeToRead,
   slug,
   alternatives,
+  tableOfContentsArray
 }) => {
   const blogHeader = {
     title,
@@ -45,9 +46,11 @@ const BlogPostPage = ({
     page: true,
   };
 
-  const { githubUrl, postsContentPath } = useAcmeBlogConfig();
+  const { githubUrl, postsContentPath , postTableOfContents } = useAcmeBlogConfig();
   const newSlug = slug.slice(6).slice(0, -1);
   const edit = `${githubUrl}${postsContentPath}/${newSlug}.md`;
+
+  console.log(tableOfContentsArray)
 
   return (
     <BlogContainer>
