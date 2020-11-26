@@ -8,6 +8,7 @@ import SEO from "../shared/seo";
 import { BlogHeaderMax } from "../shared/blogPostHeader";
 import AlternativePosts from "../shared/alternativePosts";
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
+import TableOfContents from "../shared/tableOfContents";
 
 const BlogContainer = styled.div`
   display: grid;
@@ -64,6 +65,8 @@ const BlogPostPage = ({
       <BlogHeaderMax {...blogHeader} />
 
       <div sx={{ variant: `layout.container` }}>
+        <TableOfContents tableOfContentsArray={tableOfContentsArray} />
+        
         {githubUrl && (
           <EditLink
             href={edit}
