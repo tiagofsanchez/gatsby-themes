@@ -8,6 +8,7 @@ import { IoIosArrowDropdown, IoIosArrowDropright } from "react-icons/io";
 
 const Container = styled.div`
   padding: 5px;
+  border-radius: 4px;
 `;
 
 const Grid = styled.div`
@@ -31,9 +32,12 @@ const TableOfContents = ({ tableOfContentsArray }) => {
   };
 
   return (
-    <Container>
+    <Container hideTable={hideTable}>
       <Link
-        sx={{ variant: `links.secondary` }}
+        sx={{
+          variant: `links.secondary`,
+          cursor: `pointer`,
+        }}
         aria-label="Toggle table of contents"
         onClick={onHideTableHandler}
       >

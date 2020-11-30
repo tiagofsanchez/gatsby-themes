@@ -18,7 +18,6 @@ const BlogContainer = styled.div`
 
 const EditLink = styled.a`
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   text-decoration: none;
 `;
@@ -34,7 +33,7 @@ const BlogPostPage = ({
   timeToRead,
   slug,
   alternatives,
-  tableOfContentsArray
+  tableOfContentsArray,
 }) => {
   const blogHeader = {
     title,
@@ -47,11 +46,15 @@ const BlogPostPage = ({
     page: true,
   };
 
-  const { githubUrl, postsContentPath , postTableOfContents } = useAcmeBlogConfig();
+  const {
+    githubUrl,
+    postsContentPath,
+    postTableOfContents,
+  } = useAcmeBlogConfig();
   const newSlug = slug.slice(6).slice(0, -1);
   const edit = `${githubUrl}${postsContentPath}/${newSlug}.md`;
 
-  console.log(tableOfContentsArray)
+  console.log(tableOfContentsArray);
 
   return (
     <BlogContainer>
@@ -61,25 +64,33 @@ const BlogPostPage = ({
         image={thumbnail.childImageSharp.fluid.src}
         article={true}
       />
+      <div>
+        <BlogHeaderMax {...blogHeader} />
 
-      <BlogHeaderMax {...blogHeader} />
-
-      <div sx={{ variant: `layout.container` }}>
-        <TableOfContents tableOfContentsArray={tableOfContentsArray} />
-        
-        {githubUrl && (
-          <EditLink
-            href={edit}
-            sx={{ variant: `links.edit`, textAlign: `center` }}
-            aria-label="Edit the post"
-          >
-            <span role="img" aria-label="pencil" sx={{ marginRight: `10px` }}>
-              ✏️
-            </span>
-            edit
-          </EditLink>
-        )}
-        <MDXRenderer>{body}</MDXRenderer>
+        <div sx={{ variant: `layout.container` }}>
+          {postTableOfContents && (
+            <TableOfContents tableOfContentsArray={tableOfContentsArray} />
+          )}
+          {githubUrl && (
+            <EditLink
+              href={edit}
+              sx={{ variant: `links.edit`, textAlign: `center` }}
+              aria-label="Edit the post"
+            >
+              <span
+                role="img"
+                aria-label="pencil"
+                sx={{ marginRight: `15px`, marginLeft: `10px` }}
+              >
+                ✏️
+              </span>
+              edit
+            </EditLink>
+          )}
+        </div>
+        <div sx={{ variant: `layout.container` }}>
+          <MDXRenderer sx={{ variant: `layout.container` }}>{body}</MDXRenderer>
+        </div>
       </div>
       <div sx={{ variant: `layout.blogHeader` }}>
         {alternatives.length !== 0 ? (
