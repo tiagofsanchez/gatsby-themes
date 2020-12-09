@@ -2,7 +2,15 @@
 import { jsx, Radio, Label, useThemeUI } from "theme-ui";
 import { useState } from "react";
 import styled from "@emotion/styled";
-import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer, Text } from "recharts";
+import PropTypes from "prop-types";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Text,
+} from "recharts";
 import moment from "moment";
 
 const FrequencyContainer = styled.div`
@@ -26,12 +34,18 @@ const Grid = styled.div`
   align-items: center;
 `;
 
+const currentYear = moment().year();
+
 const GardenFrequency = ({ gardenPosts }) => {
-  const [year, setYear] = useState(2020);
+  const [year, setYear] = useState(currentYear);
   const { theme } = useThemeUI();
 
-  const changeYearBefore = () => setYear(2019);
-  const changeYearCurrent = () => setYear(2020);
+  let yearArray = [];
+  for (let i = 2019; i <= currentYear; i++) {
+    yearArray.push(i);
+  }
+
+  const changeYear = (e) => setYear(e.target.value);
 
   let gardenFrequency = [
     { name: moment(`${year}01`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
@@ -62,19 +76,17 @@ const GardenFrequency = ({ gardenPosts }) => {
       <Flex>
         <h4 sx={{ m: `0` }}>Gardening frequency</h4>
         <Grid>
-          <Label>
-            <Radio name="dark-mode" value="true" onClick={changeYearBefore} />
-            2019
-          </Label>
-          <Label>
-            <Radio
-              name="dark-mode"
-              value="false"
-              onClick={changeYearCurrent}
-              defaultChecked={true}
-            />
-            2020
-          </Label>
+          {yearArray.map((y) => (
+            <Label>
+              <Radio
+                name="year-toogle"
+                value={y}
+                onClick={changeYear}
+                defaultChecked={y === currentYear ? true : false}
+              />
+              {y}
+            </Label>
+          ))}
         </Grid>
       </Flex>
       <ResponsiveContainer width="99%" height="100%">
@@ -88,7 +100,7 @@ const GardenFrequency = ({ gardenPosts }) => {
             tick={{ fontSize: 12 }}
             tickFormatter={(value) => value.slice(0, 3)}
           />
-          <Text dataKey="name"/>
+          <Text dataKey="name" />
           <Tooltip
             contentStyle={{
               borderRadius: "4px",
@@ -100,6 +112,10 @@ const GardenFrequency = ({ gardenPosts }) => {
       </ResponsiveContainer>
     </FrequencyContainer>
   );
+};
+
+GardenFrequency.protoTypes = {
+  gardenPosts: PropTypes.array.isRequired,
 };
 
 export default GardenFrequency;

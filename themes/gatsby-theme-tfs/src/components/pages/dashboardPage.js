@@ -2,6 +2,7 @@
 import { jsx, Button } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
+import PropTypes from "prop-types";
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
 import GardenOverallStats from "../shared/gardenOveralStats";
@@ -34,7 +35,7 @@ const GridStats = styled.div`
 
 const DashboardPage = ({ data }) => {
   const { blogPath } = useAcmeBlogConfig();
-  const { gardenOverallStats, gardenCatStats , gardenPosts , gardenTags } = data;
+  const { gardenOverallStats, gardenCatStats, gardenPosts, gardenTags } = data;
 
   return (
     <section sx={{ variant: `layout.container` }}>
@@ -55,11 +56,15 @@ const DashboardPage = ({ data }) => {
           <GardenOverallStats gardenOverallStats={gardenOverallStats} />
           <GardenCatStats gardenCatStats={gardenCatStats} />
         </GridStats>
-        <GardenFrequency gardenPosts={gardenPosts}/>
-        <GardenTags gardenTags={gardenTags}/>
+        <GardenFrequency gardenPosts={gardenPosts} />
+        <GardenTags gardenTags={gardenTags} />
       </DashboardContainer>
     </section>
   );
+};
+
+DashboardPage.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export default DashboardPage;
