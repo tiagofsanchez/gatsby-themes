@@ -53,6 +53,9 @@ const renderCustomizedLabel = ({
 
 const GardenCatStats = ({ gardenCatStats }) => {
   const { blogPath, categoryPath } = useAcmeBlogConfig();
+
+  console.log('Render: Categories')
+
   return (
     <GridContainer sx={{ bg: `hover` }}>
       <h4 sx={{ m: `0` }}>Categories</h4>

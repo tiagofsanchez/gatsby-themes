@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Radio, Label, useThemeUI } from "theme-ui";
-import { useState } from "react";
+import { useState, memo } from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import {
@@ -36,9 +36,10 @@ const Grid = styled.div`
 
 const currentYear = moment().year();
 
-const GardenFrequency = ({ gardenPosts }) => {
+const GardenFrequency = memo(({ gardenPosts }) => {
   const [year, setYear] = useState(currentYear);
   const { theme } = useThemeUI();
+  console.log(`render: frequency`);
 
   let yearArray = [];
   for (let i = 2019; i <= currentYear; i++) {
@@ -77,7 +78,7 @@ const GardenFrequency = ({ gardenPosts }) => {
         <h4 sx={{ m: `0` }}>Gardening frequency</h4>
         <Grid>
           {yearArray.map((y) => (
-            <Label>
+            <Label key={y}>
               <Radio
                 name="year-toogle"
                 value={y}
@@ -112,7 +113,7 @@ const GardenFrequency = ({ gardenPosts }) => {
       </ResponsiveContainer>
     </FrequencyContainer>
   );
-};
+});
 
 GardenFrequency.protoTypes = {
   gardenPosts: PropTypes.array.isRequired,

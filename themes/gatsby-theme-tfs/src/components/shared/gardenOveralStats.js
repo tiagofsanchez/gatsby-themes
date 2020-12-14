@@ -24,6 +24,9 @@ const Grid = styled.div`
 
 const GardenOverallStats = ( {gardenOverallStats} ) => {
   const { totalPosts , totalMinRead, totalNumWords } = gardenOverallStats;
+
+  console.log(`Render: Overall stats`)
+
   return (
     <GridContainer sx={{ bg: `hover` }}>
       <h4 sx={{ m: `0` }}>Garden stats</h4>
