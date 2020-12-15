@@ -22,9 +22,7 @@ const Flex = styled.div`
 const COLORS = ["#d23669", "#DB5E87", "#E486A5", "#EDAEC3"];
 const _ = require("lodash");
 
-
 const gardenCatStatsV = ({ gardenCatStats , blogPath , categoryPath}) => {
-  
 
   return (
     <Container sx={{ bg: `hover` }}>

@@ -6,11 +6,10 @@ import PropTypes from "prop-types";
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
 import GardenOverallStats from "../shared/gardenOveralStats";
-import GardenCatStatsV from '../shared/gardenCatStatsV';
+import GardenCatStatsV from "../shared/gardenCatStatsV";
 // import GardenCatStats from "../shared/gardenCatStats";
 // import GardenFrequency from "../shared/gardenFrequency";
 import GardenTags from "../shared/gardenTags";
-
 
 const Flex = styled.div`
   display: flex;
@@ -36,10 +35,10 @@ const GridStats = styled.div`
 `;
 
 const DashboardPage = ({ data }) => {
-  const { blogPath , categoryPath , tagsPath } = useAcmeBlogConfig();
+  const { blogPath, categoryPath, tagsPath } = useAcmeBlogConfig();
   const { gardenOverallStats, gardenCatStats, gardenPosts, gardenTags } = data;
 
-  console.log(`render: Dashboard`)
+  console.log(`render: Dashboard`);
 
   return (
     <section sx={{ variant: `layout.container` }}>
@@ -58,11 +57,19 @@ const DashboardPage = ({ data }) => {
       <DashboardContainer>
         <GridStats>
           <GardenOverallStats gardenOverallStats={gardenOverallStats} />
-          <GardenCatStatsV gardenCatStats={gardenCatStats} blogPath={blogPath} categoryPath={categoryPath} />
+          <GardenCatStatsV
+            gardenCatStats={gardenCatStats}
+            blogPath={blogPath}
+            categoryPath={categoryPath}
+          />
           {/* <GardenCatStats gardenCatStats={gardenCatStats} /> */}
         </GridStats>
         {/* <GardenFrequency gardenPosts={gardenPosts} /> */}
-        <GardenTags gardenTags={gardenTags} blogPath={blogPath} tagsPath={tagsPath}/>
+        <GardenTags
+          gardenTags={gardenTags}
+          blogPath={blogPath}
+          tagsPath={tagsPath}
+        />
       </DashboardContainer>
     </section>
   );
