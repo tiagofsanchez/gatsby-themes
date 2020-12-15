@@ -25,8 +25,8 @@ const MinBlogPost = ({ data }) => {
   let gardenCatStats = [];
   catGroup.group.map((cat) => {
     gardenCatStats.push({
-      name: cat.fieldValue,
-      value: cat.totalCount,
+      x: cat.fieldValue,
+      y: cat.totalCount,
     });
     return gardenCatStats;
   });

@@ -11,8 +11,7 @@ const Flex = styled.div`
   flex-wrap: wrap;
 `;
 
-const TagsListing = ({ allTagsArray }) => {
-  const { blogPath, tagsPath } = useAcmeBlogConfig();
+const TagsListing = ({ allTagsArray , blogPath , tagsPath }) => {
 
   return (
     <div>
