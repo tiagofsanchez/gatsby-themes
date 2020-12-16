@@ -22,11 +22,14 @@ const MinBlogPost = ({ data }) => {
   gardenOverallStats = { totalPosts, totalMinRead, totalNumWords };
 
   //CATEGORIES
+  let totalCountCat = 0;
+  catGroup.group.map((cat) => (totalCountCat = totalCountCat + cat.totalCount));
+  
   let gardenCatStats = [];
   catGroup.group.map((cat) => {
     gardenCatStats.push({
       x: cat.fieldValue,
-      y: cat.totalCount,
+      y: Math.round((cat.totalCount / totalCountCat) * 100),
     });
     return gardenCatStats;
   });

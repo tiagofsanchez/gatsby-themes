@@ -3,8 +3,6 @@ import { Card, Badge, Link as TLink, jsx } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 
-import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
-
 const _ = require("lodash");
 const Flex = styled.div`
   display: flex;

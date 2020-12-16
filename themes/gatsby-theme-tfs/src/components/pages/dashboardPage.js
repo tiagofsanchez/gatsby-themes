@@ -7,7 +7,6 @@ import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
 import GardenOverallStats from "../shared/gardenOveralStats";
 import GardenCatStatsV from "../shared/gardenCatStatsV";
-// import GardenCatStats from "../shared/gardenCatStats";
 // import GardenFrequency from "../shared/gardenFrequency";
 import GardenTags from "../shared/gardenTags";
 
@@ -62,7 +61,6 @@ const DashboardPage = ({ data }) => {
             blogPath={blogPath}
             categoryPath={categoryPath}
           />
-          {/* <GardenCatStats gardenCatStats={gardenCatStats} /> */}
         </GridStats>
         {/* <GardenFrequency gardenPosts={gardenPosts} /> */}
         <GardenTags

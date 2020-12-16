@@ -22,8 +22,7 @@ const Flex = styled.div`
 const COLORS = ["#d23669", "#DB5E87", "#E486A5", "#EDAEC3"];
 const _ = require("lodash");
 
-const gardenCatStatsV = ({ gardenCatStats , blogPath , categoryPath}) => {
-
+const gardenCatStatsV = ({ gardenCatStats, blogPath, categoryPath }) => {
   return (
     <Container sx={{ bg: `hover` }}>
       <h4 sx={{ m: `0` }}>Categories</h4>
@@ -31,7 +30,14 @@ const gardenCatStatsV = ({ gardenCatStats , blogPath , categoryPath}) => {
         <VictoryPie
           colorScale={COLORS}
           data={gardenCatStats}
-          labels={() => null}
+          labels={({ datum }) => `${datum.y}%`}
+          labelRadius={50}
+          style={{
+            labels: {
+              fontSize: 32,
+              fill: "white",
+            },
+          }}
         />
       </div>
       <Flex>
