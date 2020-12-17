@@ -3,7 +3,7 @@ import { jsx, Button } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
-import { FaArrowAltCircleRight, FaDatabase } from "react-icons/fa";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import { RiDashboard2Fill } from "react-icons/ri";
 
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
