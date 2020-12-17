@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import { FaArrowAltCircleRight, FaDatabase } from "react-icons/fa";
+import { RiDashboard2Fill } from "react-icons/ri";
 
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 import GardenOverallStats from "../shared/gardenOveralStats";
@@ -21,6 +22,7 @@ const Flex = styled.div`
 const DashboardContainer = styled.div`
   display: grid;
   grid-gap: 10px;
+  margin-top: 20px;
 `;
 
 const GridStats = styled.div`
@@ -43,7 +45,7 @@ const DashboardPage = ({ data }) => {
   return (
     <section sx={{ variant: `layout.container` }}>
       <Flex>
-        <FaDatabase size={50} />
+        <RiDashboard2Fill size={50} />
         <Link
           to={blogPath}
           sx={{ variant: `links.secondary` }}
