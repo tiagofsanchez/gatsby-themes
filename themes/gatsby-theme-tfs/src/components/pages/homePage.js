@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { FaArrowAltCircleRight, FaMicroblog } from "react-icons/fa";
 
 import SEO from "../shared/seo";
 import BlogPostListing from "../shared/blogPostListing";
@@ -40,14 +41,22 @@ const HomePage = ({ posts }) => {
     <div sx={{ variant: `layout.container` }}>
       <SEO title="Blog" />
       <Flex>
-        <h1>Articles</h1>
+        <FaMicroblog size={50} />
+
         <Link
           to="/dashboard"
           sx={{ variant: `links.secondary` }}
           aria-label="dashboard"
         >
-          <Button sx={{ variant: `buttons.secondary` }}>
-            dashboard &rarr;
+          <Button
+            sx={{
+              variant: `buttons.secondary`,
+              display: `grid`,
+              gridTemplateColumns: `repeat(2, auto)`,
+              gridGap: `5px`,
+            }}
+          >
+            dashboard <FaArrowAltCircleRight />
           </Button>
         </Link>
       </Flex>

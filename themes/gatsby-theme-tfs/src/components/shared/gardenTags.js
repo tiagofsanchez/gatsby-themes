@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
-import TagsListing from '../shared/tagsListing'
+import TagsListing from "../shared/tagsListing";
 
 const TagsContainer = styled.div`
   border-radius: 6px;
@@ -12,14 +12,17 @@ const TagsContainer = styled.div`
   height: auto;
 `;
 
-const GardenTags = ({ gardenTags , blogPath , tagsPath }) => {
-
-  console.log(`Render: tags`)
+const GardenTags = ({ gardenTags, blogPath, tagsPath }) => {
+  console.log(`Render: tags`);
 
   return (
     <TagsContainer sx={{ bg: `hover` }}>
       <h4 sx={{ m: `0` }}>Tags</h4>
-      <TagsListing  allTagsArray={gardenTags} blogPath={blogPath} tagsPath={tagsPath} /> 
+      <TagsListing
+        allTagsArray={gardenTags}
+        blogPath={blogPath}
+        tagsPath={tagsPath}
+      />
     </TagsContainer>
   );
 };

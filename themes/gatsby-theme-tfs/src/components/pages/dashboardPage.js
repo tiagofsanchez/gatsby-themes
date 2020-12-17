@@ -3,8 +3,9 @@ import { jsx, Button } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
-import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
+import { FaArrowAltCircleRight, FaDatabase } from "react-icons/fa";
 
+import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 import GardenOverallStats from "../shared/gardenOveralStats";
 import GardenCatStatsV from "../shared/gardenCatStatsV";
 // import GardenFrequency from "../shared/gardenFrequency";
@@ -42,14 +43,21 @@ const DashboardPage = ({ data }) => {
   return (
     <section sx={{ variant: `layout.container` }}>
       <Flex>
-        <h1>Dashboard</h1>
+        <FaDatabase size={50} />
         <Link
           to={blogPath}
           sx={{ variant: `links.secondary` }}
           aria-label={blogPath}
         >
-          <Button sx={{ variant: `buttons.secondary` }}>
-            {blogPath.substr(1)} &rarr;
+          <Button
+            sx={{
+              variant: `buttons.secondary`,
+              display: `grid`,
+              gridTemplateColumns: `repeat(2, auto)`,
+              gridGap: `5px`,
+            }}
+          >
+            {blogPath.substr(1)} <FaArrowAltCircleRight />
           </Button>
         </Link>
       </Flex>
