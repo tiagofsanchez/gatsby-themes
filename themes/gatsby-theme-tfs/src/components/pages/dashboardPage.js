@@ -9,6 +9,7 @@ import { RiDashboard2Fill } from "react-icons/ri";
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 import GardenOverallStats from "../shared/gardenOveralStats";
 import GardenCatStatsV from "../shared/gardenCatStatsV";
+import GardenFrequencyV from "../shared/gardenFrequencyV";
 // import GardenFrequency from "../shared/gardenFrequency";
 import GardenTags from "../shared/gardenTags";
 
@@ -72,6 +73,7 @@ const DashboardPage = ({ data }) => {
             categoryPath={categoryPath}
           />
         </GridStats>
+        <GardenFrequencyV gardenPosts={gardenPosts} />
         {/* <GardenFrequency gardenPosts={gardenPosts} /> */}
         <GardenTags
           gardenTags={gardenTags}
