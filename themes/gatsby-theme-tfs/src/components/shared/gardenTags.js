@@ -13,8 +13,6 @@ const TagsContainer = styled.div`
 `;
 
 const GardenTags = ({ gardenTags, blogPath, tagsPath }) => {
-  console.log(`Render: tags`);
-
   return (
     <TagsContainer sx={{ bg: `hover` }}>
       <h4 sx={{ m: `0` }}>Tags</h4>

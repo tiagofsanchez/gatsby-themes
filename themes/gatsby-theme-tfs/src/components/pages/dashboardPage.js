@@ -41,8 +41,6 @@ const DashboardPage = ({ data }) => {
   const { blogPath, categoryPath, tagsPath } = useAcmeBlogConfig();
   const { gardenOverallStats, gardenCatStats, gardenPosts, gardenTags } = data;
 
-  console.log(`render: Dashboard`);
-
   return (
     <section sx={{ variant: `layout.container` }}>
       <Flex>

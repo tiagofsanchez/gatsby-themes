@@ -3,7 +3,7 @@ import { jsx, Radio, Label, useThemeUI } from "theme-ui";
 import { useState } from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
-import { VictoryBar, VictoryLabel, VictoryChart, VictoryAxis } from "victory";
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryLabel } from "victory";
 import moment from "moment";
 
 const FrequencyContainer = styled.div`
@@ -29,7 +29,6 @@ const currentYear = moment().year();
 const GardenFrequencyV = ({ gardenPosts }) => {
   const [year, setYear] = useState(currentYear);
   const { theme } = useThemeUI();
-  console.log(`render: frequency`);
 
   //   So that the dashboard presents all years since the 2019 onwards
   let yearArray = [];
@@ -63,8 +62,6 @@ const GardenFrequencyV = ({ gardenPosts }) => {
     });
   });
 
-  console.log(gardenFrequency);
-
   return (
     <FrequencyContainer sx={{ bg: `hover` }}>
       <Flex>
@@ -83,10 +80,12 @@ const GardenFrequencyV = ({ gardenPosts }) => {
           ))}
         </Grid>
       </Flex>
-      <VictoryChart>
+      <VictoryChart height={250}>
         <VictoryBar
           data={gardenFrequency}
           barRatio={1.2}
+          labels={({ datum }) => (datum.posts == 0 ? "" : datum.posts)}
+          labelComponent={<VictoryLabel dy={14} />}
           x="name"
           y="posts"
           style={{
@@ -95,10 +94,9 @@ const GardenFrequencyV = ({ gardenPosts }) => {
             },
             labels: {
               fill: theme.colors.primary,
+              fontSize: 12,
             },
           }}
-          // labels={({ datum }) => `${datum.name.slice(0, 3)}`}
-          // labelComponent={<VictoryLabel dy={220} />}
         />
         <VictoryAxis
           tickFormat={gardenFrequency}
@@ -109,7 +107,7 @@ const GardenFrequencyV = ({ gardenPosts }) => {
               fontSize: 12,
               opacity: 0.5,
             },
-            axis: { stroke: theme.colors.primary, opacity: 0.5 },
+            axis: { stroke: theme.colors.hover },
           }}
         />
       </VictoryChart>

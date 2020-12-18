@@ -22,10 +22,8 @@ const Grid = styled.div`
   justify-items: center;
 `;
 
-const GardenOverallStats = ( {gardenOverallStats} ) => {
-  const { totalPosts , totalMinRead, totalNumWords } = gardenOverallStats;
-
-  console.log(`Render: Overall stats`)
+const GardenOverallStats = ({ gardenOverallStats }) => {
+  const { totalPosts, totalMinRead, totalNumWords } = gardenOverallStats;
 
   return (
     <GridContainer sx={{ bg: `hover` }}>

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Card } from "theme-ui";
+import { jsx, Card, useThemeUI } from "theme-ui";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import { VictoryPie } from "victory";
@@ -22,7 +22,9 @@ const Flex = styled.div`
 const COLORS = ["#d23669", "#DB5E87", "#E486A5", "#EDAEC3"];
 const _ = require("lodash");
 
-const gardenCatStatsV = ({ gardenCatStats, blogPath, categoryPath }) => {
+const GardenCatStatsV = ({ gardenCatStats, blogPath, categoryPath }) => {
+  const { theme } = useThemeUI();
+
   return (
     <Container sx={{ bg: `hover` }}>
       <h4 sx={{ m: `0` }}>Categories</h4>
@@ -35,7 +37,7 @@ const gardenCatStatsV = ({ gardenCatStats, blogPath, categoryPath }) => {
           style={{
             labels: {
               fontSize: 32,
-              fill: "white",
+              fill: theme.colors.primary,
             },
           }}
         />
@@ -64,4 +66,4 @@ const gardenCatStatsV = ({ gardenCatStats, blogPath, categoryPath }) => {
   );
 };
 
-export default gardenCatStatsV;
+export default GardenCatStatsV;
