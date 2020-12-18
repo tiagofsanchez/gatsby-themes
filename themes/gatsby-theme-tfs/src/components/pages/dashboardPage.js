@@ -1,17 +1,15 @@
 /** @jsx jsx */
-import { jsx, Button } from "theme-ui";
+import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
 import PropTypes from "prop-types";
-import { FaArrowAltCircleRight } from "react-icons/fa";
 import { RiDashboard2Fill } from "react-icons/ri";
 
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 import GardenOverallStats from "../shared/gardenOveralStats";
 import GardenCatStatsV from "../shared/gardenCatStatsV";
 import GardenFrequencyV from "../shared/gardenFrequencyV";
-// import GardenFrequency from "../shared/gardenFrequency";
 import GardenTags from "../shared/gardenTags";
+import PageToggle from "../shared/pageToggle";
 
 const Flex = styled.div`
   display: flex;
@@ -45,22 +43,7 @@ const DashboardPage = ({ data }) => {
     <section sx={{ variant: `layout.container` }}>
       <Flex>
         <RiDashboard2Fill size={50} />
-        <Link
-          to={blogPath}
-          sx={{ variant: `links.secondary` }}
-          aria-label={blogPath}
-        >
-          <Button
-            sx={{
-              variant: `buttons.secondary`,
-              display: `grid`,
-              gridTemplateColumns: `repeat(2, auto)`,
-              gridGap: `5px`,
-            }}
-          >
-            {blogPath.substr(1)} <FaArrowAltCircleRight />
-          </Button>
-        </Link>
+        <PageToggle link={blogPath.substr(1)} />
       </Flex>
       <DashboardContainer>
         <GridStats>
@@ -72,7 +55,6 @@ const DashboardPage = ({ data }) => {
           />
         </GridStats>
         <GardenFrequencyV gardenPosts={gardenPosts} />
-        {/* <GardenFrequency gardenPosts={gardenPosts} /> */}
         <GardenTags
           gardenTags={gardenTags}
           blogPath={blogPath}

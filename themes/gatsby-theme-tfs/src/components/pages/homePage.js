@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { jsx, Input, Button } from "theme-ui";
-import { Link } from "gatsby";
+import { jsx, Input } from "theme-ui";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { FaArrowAltCircleRight, FaMicroblog } from "react-icons/fa";
+import { FaMicroblog } from "react-icons/fa";
 
 import SEO from "../shared/seo";
 import BlogPostListing from "../shared/blogPostListing";
+import PageToggle from "../shared/pageToggle";
 
 const SearchContainer = styled.div``;
 
@@ -42,23 +42,7 @@ const HomePage = ({ posts }) => {
       <SEO title="Blog" />
       <Flex>
         <FaMicroblog size={50} />
-
-        <Link
-          to="/dashboard"
-          sx={{ variant: `links.secondary` }}
-          aria-label="dashboard"
-        >
-          <Button
-            sx={{
-              variant: `buttons.secondary`,
-              display: `grid`,
-              gridTemplateColumns: `repeat(2, auto)`,
-              gridGap: `5px`,
-            }}
-          >
-            dashboard <FaArrowAltCircleRight />
-          </Button>
-        </Link>
+        <PageToggle link="dashboard" />
       </Flex>
       <p>Articles, thoughts and pretty much everything else.</p>
       <SearchContainer>

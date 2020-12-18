@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryLabel } from "victory";
 import moment from "moment";
 
+
 const FrequencyContainer = styled.div`
   border-radius: 6px;
   padding: 29px 35px;
@@ -39,14 +40,14 @@ const GardenFrequencyV = ({ gardenPosts }) => {
   const changeYear = (e) => setYear(e.target.value);
 
   let gardenFrequency = [
-    { name: moment(`${year}01`, "YYYYMM").format("MMM[/]YY"), posts: 10 },
-    { name: moment(`${year}02`, "YYYYMM").format("MMM[/]YY"), posts: 6 },
+    { name: moment(`${year}01`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
+    { name: moment(`${year}02`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
     { name: moment(`${year}03`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
     { name: moment(`${year}04`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
     { name: moment(`${year}05`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
     { name: moment(`${year}06`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
     { name: moment(`${year}07`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
-    { name: moment(`${year}08`, "YYYYMM").format("MMM[/]YY"), posts: 10 },
+    { name: moment(`${year}08`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
     { name: moment(`${year}09`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
     { name: moment(`${year}10`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
     { name: moment(`${year}11`, "YYYYMM").format("MMM[/]YY"), posts: 0 },
@@ -84,7 +85,7 @@ const GardenFrequencyV = ({ gardenPosts }) => {
         <VictoryBar
           data={gardenFrequency}
           barRatio={1.2}
-          labels={({ datum }) => (datum.posts == 0 ? "" : datum.posts)}
+          labels={({ datum }) => (datum.posts === 0 ? "" : datum.posts)}
           labelComponent={<VictoryLabel dy={14} />}
           x="name"
           y="posts"
@@ -99,7 +100,6 @@ const GardenFrequencyV = ({ gardenPosts }) => {
           }}
         />
         <VictoryAxis
-          tickFormat={gardenFrequency}
           tickFormat={(t) => `${t.slice(0, 3)}`}
           style={{
             tickLabels: {

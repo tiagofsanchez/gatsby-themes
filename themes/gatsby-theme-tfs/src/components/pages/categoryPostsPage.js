@@ -1,24 +1,17 @@
 /** @jsx jsx */
-import { jsx, Button } from "theme-ui";
+import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
-import { FaArrowAltCircleRight } from "react-icons/fa";
 
 import BlogPostListing from "../shared/blogPostListing";
 import SEO from "../shared/seo";
 import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
+import PageToggle from "../shared/pageToggle";
 
 const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-`;
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 5px;
 `;
 
 const CategoryPostsPage = ({ data }) => {
@@ -49,24 +42,8 @@ const CategoryPostsPage = ({ data }) => {
           Category .{" "}
           <span sx={{ color: `highlight` }}>{data.pageContext.category}</span>
         </h1>
-        <Grid>
-          <Link
-            to={blogPath}
-            sx={{ variant: `links.secondary` }}
-            aria-label={blogPath}
-          >
-            <Button
-              sx={{
-                variant: `buttons.secondary`,
-                display: `grid`,
-                gridTemplateColumns: `repeat(2, auto)`,
-                gridGap: `5px`,
-              }}
-            >
-              {blogPath.substr(1)} <FaArrowAltCircleRight />
-            </Button>
-          </Link>
-        </Grid>
+
+        <PageToggle link={blogPath.substr(1)} />
       </Flex>
       <section style={{ margin: `40px auto` }}>
         <BlogPostListing posts={postsArray} />
