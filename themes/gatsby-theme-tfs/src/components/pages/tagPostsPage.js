@@ -2,11 +2,11 @@
 import { jsx, Button } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 import BlogPostListing from "../shared/blogPostListing";
 import SEO from "../shared/seo";
-import useAcmeBlogConfig from '../../hooks/useAcmeBlogConfig';
-
+import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
 const Flex = styled.div`
   display: flex;
@@ -16,14 +16,14 @@ const Flex = styled.div`
 `;
 
 const Grid = styled.div`
-display: grid; 
-grid-template-columns: repeat(2, auto); 
-grid-gap: 5px;
-`
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 5px;
+`;
 
 const TagPostsPage = ({ data }) => {
   const { blogPath } = useAcmeBlogConfig();
-  
+
   let postsArray = [];
   data.postsOfTag.nodes.map((post) => {
     const postObject = {
@@ -48,16 +48,15 @@ const TagPostsPage = ({ data }) => {
           Tag . <span sx={{ color: `highlight` }}>{data.pageContext.tag}</span>
         </h1>
         <Grid>
-        <Link
-          to={blogPath}
-          sx={{ variant: `links.secondary` }}
-          aria-label={blogPath}
-        >
-          <Button sx={{ variant: `buttons.secondary` }}>
-            {blogPath.substr(1)} &rarr;
-          </Button>
-        </Link>
-
+          <Link
+            to={blogPath}
+            sx={{ variant: `links.secondary` }}
+            aria-label={blogPath}
+          >
+            <Button sx={{ variant: `buttons.secondary` }}>
+              {blogPath.substr(1)} <FaArrowAltCircleRight />
+            </Button>
+          </Link>
         </Grid>
       </Flex>
       <section style={{ margin: `40px auto` }}>

@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx , Button} from "theme-ui";
+import { jsx, Button } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
-
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 import BlogPostListing from "../shared/blogPostListing";
-import SEO from '../shared/seo'
-import useAcmeBlogConfig from '../../hooks/useAcmeBlogConfig';
+import SEO from "../shared/seo";
+import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 
 const Flex = styled.div`
   display: flex;
@@ -16,11 +16,10 @@ const Flex = styled.div`
 `;
 
 const Grid = styled.div`
-display: grid; 
-grid-template-columns: repeat(2, auto); 
-grid-gap: 5px;
-`
-
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 5px;
+`;
 
 const CategoryPostsPage = ({ data }) => {
   const { blogPath } = useAcmeBlogConfig();
@@ -41,24 +40,32 @@ const CategoryPostsPage = ({ data }) => {
     postsArray.push(postObject);
     return postsArray;
   });
-  
+
   return (
-    <div sx={{variant: `layout.container`}}>
-       <SEO title={`Category: ${data.pageContext.category}`}/>
+    <div sx={{ variant: `layout.container` }}>
+      <SEO title={`Category: ${data.pageContext.category}`} />
       <Flex>
         <h1>
-          Category . <span sx={{ color: `highlight` }}>{data.pageContext.category}</span>
+          Category .{" "}
+          <span sx={{ color: `highlight` }}>{data.pageContext.category}</span>
         </h1>
         <Grid>
-        <Link
-          to={blogPath}
-          sx={{ variant: `links.secondary` }}
-          aria-label={blogPath}
-        >
-          <Button sx={{ variant: `buttons.secondary` }}>
-            {blogPath.substr(1)} &rarr;
-          </Button>
-        </Link>
+          <Link
+            to={blogPath}
+            sx={{ variant: `links.secondary` }}
+            aria-label={blogPath}
+          >
+            <Button
+              sx={{
+                variant: `buttons.secondary`,
+                display: `grid`,
+                gridTemplateColumns: `repeat(2, auto)`,
+                gridGap: `5px`,
+              }}
+            >
+              {blogPath.substr(1)} <FaArrowAltCircleRight />
+            </Button>
+          </Link>
         </Grid>
       </Flex>
       <section style={{ margin: `40px auto` }}>
