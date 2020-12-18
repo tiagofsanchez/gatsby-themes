@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import moment from "moment";
 import Img from "gatsby-image";
 
-import ReadMore from './readMore'
+import ReadMore from "./readMore";
 
 const PostHeaderContainerMinimal = styled.div`
   padding: 20px 10px;
@@ -104,10 +104,20 @@ export const BlogHeaderMinimal = ({
             <p sx={{ my: `5px`, opacity: `0.5` }}>
               {date} . {timeToRead}
             </p>
-            <p>{excerpt}</p>
-           <ReadMore />
+            <p sx={{ my: 2 }}>{excerpt}</p>
+            <ReadMore />
           </div>
-          {newest && <p sx={{ color: `highlight`, fontWeight: `900`, alignSelf: `flex-start` }}>new</p>}
+          {newest && (
+            <p
+              sx={{
+                color: `highlight`,
+                fontWeight: `900`,
+                alignSelf: `flex-start`,
+              }}
+            >
+              new
+            </p>
+          )}
         </Grid>
       </Link>
     </PostHeaderContainerMinimal>

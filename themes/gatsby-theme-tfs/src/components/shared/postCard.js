@@ -26,7 +26,14 @@ const PostCard = ({ title, slug, img, excerpt }) => {
       aria-label={title}
       sx={{ variant: `links.secondary` }}
     >
-      <Card sx={{ bg: `hover`, color: `text` }}>
+      <Card
+        sx={{
+          bg: `hover`,
+          color: `text`,
+          border: `1px solid`,
+          borderColor: `primary`,
+        }}
+      >
         <ImgContainer>
           <Img fluid={img} />
         </ImgContainer>
