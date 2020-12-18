@@ -9,6 +9,7 @@ import { IoIosArrowDropdown, IoIosArrowDropright } from "react-icons/io";
 const Container = styled.div`
   padding: 5px;
   border-radius: 4px;
+  margin-top: 10px;
 `;
 
 const Grid = styled.div`
@@ -32,7 +33,7 @@ const TableOfContents = ({ tableOfContentsArray }) => {
   };
 
   return (
-    <Container hideTable={hideTable}>
+    <Container>
       <Link
         sx={{
           variant: `links.secondary`,
