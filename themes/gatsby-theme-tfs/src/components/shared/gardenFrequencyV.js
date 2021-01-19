@@ -60,8 +60,12 @@ const GardenFrequencyV = ({ gardenPosts }) => {
     <FrequencyContainer sx={{ bg: `hover` }}>
       <Flex>
         <h4 sx={{ m: `0` }}>Gardening frequency</h4>
-
-        <Select defaultValue={year} name="year-toogle" onChange={changeYear} sx={{width: `70px`}}>
+        <Select
+          defaultValue={year}
+          name="year-toogle"
+          onChange={changeYear}
+          sx={{ width: `70px` }}
+        >
           {yearArray.map((y) => (
             <option key={y} value={y}>
               {y}
