@@ -19,14 +19,14 @@ const Flex = styled.div`
 
 const currentYear = moment().year();
 
-const GardenFrequencyV = ({ gardenPosts }) => {
+const GardenFrequencyV = ({ gardenPosts , gardenStartYear }) => {
   const [year, setYear] = useState(currentYear);
   const { theme } = useThemeUI();
+  
 
   //   So that the dashboard presents all years since the 2019 onwards
-  //   Need to bring this on the themeOptions
   let yearArray = [];
-  for (let i = 2019; i <= currentYear; i++) {
+  for (let i = gardenStartYear; i <= currentYear; i++) {
     yearArray.push(i);
   }
 

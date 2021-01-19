@@ -36,9 +36,13 @@ const GridStats = styled.div`
 `;
 
 const DashboardPage = ({ data }) => {
-  const { blogPath, categoryPath, tagsPath } = useAcmeBlogConfig();
+  const {
+    blogPath,
+    categoryPath,
+    tagsPath,
+    gardenStartYear,
+  } = useAcmeBlogConfig();
   const { gardenOverallStats, gardenCatStats, gardenPosts, gardenTags } = data;
-
   return (
     <section sx={{ variant: `layout.container` }}>
       <Flex>
@@ -54,7 +58,10 @@ const DashboardPage = ({ data }) => {
             categoryPath={categoryPath}
           />
         </GridStats>
-        <GardenFrequencyV gardenPosts={gardenPosts} />
+        <GardenFrequencyV
+          gardenPosts={gardenPosts}
+          gardenStartYear={gardenStartYear}
+        />
         <GardenTags
           gardenTags={gardenTags}
           blogPath={blogPath}

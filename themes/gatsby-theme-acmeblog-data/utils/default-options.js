@@ -9,6 +9,7 @@ module.exports = (themeOptions) => {
   const categoryPath = themeOptions.categoryPath || `/category`
   const postTableOfContents = themeOptions.postTableOfContents || false
   const githubUrl = themeOptions.githubUrl || ``
+  const gardenStartYear = themeOptions.gardenStartYear || 2019
 
   return {
     blogPath,
@@ -19,6 +20,7 @@ module.exports = (themeOptions) => {
     tagsPath,
     categoryPath,
     postTableOfContents,
-    githubUrl
+    githubUrl,
+    gardenStartYear
   };
 };

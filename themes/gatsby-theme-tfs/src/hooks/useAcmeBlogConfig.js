@@ -13,6 +13,7 @@ const useAcmeBlogConfig = () => {
         tagsPath,
         postTableOfContents
         githubUrl
+        gardenStartYear
       }
     }
   `);

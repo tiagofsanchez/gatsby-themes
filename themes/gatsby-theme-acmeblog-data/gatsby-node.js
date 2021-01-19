@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const mkdirp = require("mkdirp");
-const withDefaults = require(`./utils/default-options`)
+const withDefaults = require(`./utils/default-options`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const _ = require("lodash");
 const blogPostComponent = require.resolve("./src/templates/blogPost.js");
@@ -12,33 +12,34 @@ const categoryPostsComponent = require.resolve(
 const homePageComponent = require.resolve("./src/templates/homePage.js");
 const otherPages = require.resolve("./src/templates/otherPages.js");
 
-
 //embeed the themeoptions in my graphql so that they can be queried
-exports.sourceNodes =({actions, createContentDigest}, options) => { 
-  const { createNode} = actions 
-  const { 
+exports.sourceNodes = ({ actions, createContentDigest }, options) => {
+  const { createNode } = actions;
+  const {
     blogPath,
     postsContentPath,
     postsContentThumbnail,
     pagesContentPath,
     otherImagesContentPath,
-    tagsPath, 
+    tagsPath,
     categoryPath,
-    postTableOfContents, 
-    githubUrl
-  } = withDefaults(options)
+    postTableOfContents,
+    githubUrl,
+    gardenStartYear,
+  } = withDefaults(options);
 
-  const acmeBlogConfig = { 
+  const acmeBlogConfig = {
     blogPath,
     postsContentPath,
     postsContentThumbnail,
     pagesContentPath,
-    otherImagesContentPath, 
-    tagsPath, 
+    otherImagesContentPath,
+    tagsPath,
     categoryPath,
     postTableOfContents,
-    githubUrl
-  }
+    githubUrl,
+    gardenStartYear,
+  };
 
   createNode({
     ...acmeBlogConfig,
@@ -51,12 +52,14 @@ exports.sourceNodes =({actions, createContentDigest}, options) => {
       content: JSON.stringify(acmeBlogConfig),
       description: `Options for @tfs/gatsby-theme-acmeblog-data-config`,
     },
-  })
-}
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }, options) => {
   const { createNodeField } = actions;
-  const { postsContentPath, pagesContentPath , blogPath } = withDefaults(options);
+  const { postsContentPath, pagesContentPath, blogPath } = withDefaults(
+    options
+  );
   //just for mdx
   if (node.internal.type !== `Mdx`) {
     return;
@@ -130,37 +133,36 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     component: homePageComponent,
   });
 
-  blogPostArray.forEach((node , index ) => {
+  blogPostArray.forEach((node, index) => {
     createPage({
       path: node.fields.slug,
       component: blogPostComponent,
-      context: { 
-        slug: node.fields.slug, 
+      context: {
+        slug: node.fields.slug,
         // prev: index=== 0 ? null : blogPostArray[index-1].fields.slug,
         // next: index === (blogPostArray.length - 1 ) ? null: blogPostArray[index+1].fields.slug
-       },
+      },
     });
   });
 
+  //gets all the tags in one Array
+  const tagsArray = [];
+  blogPostArray.forEach((node) => {
+    node.frontmatter.tags.forEach((tag) => {
+      if (tagsArray.includes(tag) === false) {
+        tagsArray.push(tag);
+      }
+    });
+  });
 
-    //gets all the tags in one Array
-    const tagsArray = [];
-    blogPostArray.forEach((node) => {
-      node.frontmatter.tags.forEach((tag) => {
-        if (tagsArray.includes(tag) === false) {
-          tagsArray.push(tag);
-        }
-      });
+  tagsArray.forEach((tag) => {
+    createPage({
+      path: `${blogPath}${tagsPath}/${_.kebabCase(tag)}`,
+      component: tagPostsComponent,
+      context: { tag },
     });
-  
-    tagsArray.forEach((tag) => {
-      createPage({
-        path: `${blogPath}${tagsPath}/${_.kebabCase(tag)}`,
-        component: tagPostsComponent,
-        context: { tag },
-      });
-    });
-  
+  });
+
   blogPostArray.forEach((node) => {
     const category = node.frontmatter.category;
 
@@ -189,13 +191,17 @@ If not creates one for us
 */
 exports.onPreBootstrap = ({ store }, options) => {
   const { program } = store.getState();
-  const { postsContentPath, postsContentThumbnail, pagesContentPath , otherImagesContentPath} = withDefaults(options);
+  const {
+    postsContentPath,
+    postsContentThumbnail,
+    pagesContentPath,
+    otherImagesContentPath,
+  } = withDefaults(options);
 
   const dirPostsContentPath = path.join(program.directory, postsContentPath);
   if (!fs.existsSync(dirPostsContentPath)) {
     mkdirp.sync(dirPostsContentPath);
   }
-
 
   const dirPostContnentThumbnail = path.join(
     program.directory,
@@ -209,9 +215,11 @@ exports.onPreBootstrap = ({ store }, options) => {
     mkdirp.sync(dirPagesContentPath);
   }
 
-  const dirOtherImagesContentPath = path.join(program.directory, otherImagesContentPath);
+  const dirOtherImagesContentPath = path.join(
+    program.directory,
+    otherImagesContentPath
+  );
   if (!fs.existsSync(dirOtherImagesContentPath)) {
     mkdirp.sync(dirOtherImagesContentPath);
   }
-
 };
