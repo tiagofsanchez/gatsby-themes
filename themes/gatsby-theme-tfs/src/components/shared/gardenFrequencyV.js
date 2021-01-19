@@ -1,11 +1,10 @@
 /** @jsx jsx */
-import { jsx, Radio, Label, useThemeUI } from "theme-ui";
+import { jsx, Select, useThemeUI } from "theme-ui";
 import { useState } from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryLabel } from "victory";
 import moment from "moment";
-
 
 const FrequencyContainer = styled.div`
   border-radius: 6px;
@@ -18,13 +17,6 @@ const Flex = styled.div`
   justify-content: space-between;
 `;
 
-const Grid = styled.div`
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(2, auto);
-  align-items: center;
-`;
-
 const currentYear = moment().year();
 
 const GardenFrequencyV = ({ gardenPosts }) => {
@@ -32,6 +24,7 @@ const GardenFrequencyV = ({ gardenPosts }) => {
   const { theme } = useThemeUI();
 
   //   So that the dashboard presents all years since the 2019 onwards
+  //   Need to bring this on the themeOptions
   let yearArray = [];
   for (let i = 2019; i <= currentYear; i++) {
     yearArray.push(i);
@@ -67,19 +60,14 @@ const GardenFrequencyV = ({ gardenPosts }) => {
     <FrequencyContainer sx={{ bg: `hover` }}>
       <Flex>
         <h4 sx={{ m: `0` }}>Gardening frequency</h4>
-        <Grid>
+
+        <Select defaultValue={year} name="year-toogle" onChange={changeYear} sx={{width: `70px`}}>
           {yearArray.map((y) => (
-            <Label key={y}>
-              <Radio
-                name="year-toogle"
-                value={y}
-                onClick={changeYear}
-                defaultChecked={y === currentYear ? true : false}
-              />
+            <option key={y} value={y}>
               {y}
-            </Label>
+            </option>
           ))}
-        </Grid>
+        </Select>
       </Flex>
       <VictoryChart height={250}>
         <VictoryBar
