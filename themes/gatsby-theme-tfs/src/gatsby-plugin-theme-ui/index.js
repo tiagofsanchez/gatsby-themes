@@ -64,6 +64,7 @@ const theme = {
         whiteSpace: "pre-wrap",
         wordBreak: `break-word`,
         p: 3,
+        pt:4,
         my: 4,
         borderRadius: `0px 0px 4px 4px`,
       },
@@ -183,6 +184,7 @@ const theme = {
         overflow: `auto`,
         borderCollapse: `collapse`,
         borderSpacing: 0,
+        color: `primary`,
         [[`th`]]: {
           bg: `bg2`,
         },
@@ -193,7 +195,7 @@ const theme = {
           pl: 2,
           border: `1px`,
           borderStyle: `solid`,
-          borderColor: `primary`,
+          borderColor: `bg2`,
         },
       },
       img: {
