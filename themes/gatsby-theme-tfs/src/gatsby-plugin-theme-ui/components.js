@@ -1,6 +1,7 @@
-import Prism from '@theme-ui/prism'
+import React from "react";
+import Code from "../components/shared/code";
+
 const components = {
-  pre: props => props.children,
-  code: Prism,
-}
-export default components
+  pre: (props) => <Code {...props} />,
+};
+export default components;

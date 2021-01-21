@@ -53,42 +53,50 @@ const theme = {
       fontWeight: "body",
       code: {
         ...prism,
-        fontSize: 16,
+        fontSize: 18,
         fontFamily: "body",
         px: 2,
       },
       pre: {
-        ...prism,
+        fontSize: 16,
+        lineHeight: 1.5,
+        overflow: `auto`,
         whiteSpace: "pre-wrap",
-        wordBreak: "break-all",
-        wordWrap: "break-word",
-        maxWidth: "100%",
-        overflowX: "auto",
+        wordBreak:`break-word`,
         p: 3,
         my: 4,
-        borderRadius: `4px`,
+        borderRadius: `0px 0px 4px 4px`,
       },
       h1: {
-        fontSize: 44,
+        fontSize: [35,44],
         fontFamily: "heading",
         fontWeight: "bold",
         color: "primary",
         my: 4,
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       h2: {
-        fontSize: 30,
+        fontSize: [27,30],
         fontFamily: "heading",
         fontWeight: "bold",
         color: "primary",
         my: 3,
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       h3: {
-        fontSize: 26,
+        fontSize: [20, 26],
         fontFamily: "heading",
         lineHeight: 1.7,
         fontWeight: "bold",
         color: "primary",
         my: 3,
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       h4: {
         fontSize: 22,
@@ -97,14 +105,20 @@ const theme = {
         fontWeight: "bold",
         color: "primary",
         my: 3,
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       h5: {
-        fontSize: 18,
+        fontSize: 20,
         fontFamily: "heading",
         lineHeight: 1.7,
         fontWeight: "bold",
         color: "primary",
         my: 3,
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       hr: {
         borderColor: `hover`,
@@ -114,17 +128,29 @@ const theme = {
         fontSize: 20,
         fontFamily: "body",
         lineHeight: 1.7,
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       ul: {
         my: 2,
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       ol: {
         my: 2,
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       li: {
         fontSize: 20,
         fontFamily: "body",
         lineHeight: 1.7,
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       a: {
         color: `link`,
@@ -134,6 +160,9 @@ const theme = {
           color: `link`,
           borderBottom: `solid`,
         },
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       blockquote: {
         borderLeftColor: `highlight`,
@@ -144,6 +173,9 @@ const theme = {
         p: {
           fontStyle: `italic`,
         },
+        "&::selection": { 
+          bg: `highlight`
+        }
       },
       table: {
         width: `100%`,
@@ -163,10 +195,9 @@ const theme = {
       },
       img: {
         maxWidth: "100%",
-        height: "auto",
         textAlign: `center`,
         display: `block`,
-        margin: `auto`,
+    
       },
     },
   },
@@ -188,13 +219,13 @@ const theme = {
         borderBottom: "none",
       },
     },
-    edit: {
-      borderBottom: `none`,
+    edit: { 
+      borderBottom: `none`, 
       fontSize: 15,
       "&:hover": {
         borderBottom: "none",
       },
-    },
+    }
   },
   layout: {
     header: {
@@ -214,7 +245,7 @@ const theme = {
       margin: `0 auto`,
     },
     footer: {
-      width: [`90%`, `80%`, `70%`],
+      width: [`100%`, `80%`, `70%`],
       margin: `auto`,
       bottom: `0`,
     },
@@ -293,7 +324,7 @@ const theme = {
       bg: `background`,
       color: "highlight",
       "&:hover": {
-        fontWeight: "900", 
+        bg: "bg2",
         cursor: `pointer`,
       },
     },
