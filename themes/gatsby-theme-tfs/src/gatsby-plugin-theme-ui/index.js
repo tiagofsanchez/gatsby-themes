@@ -62,30 +62,30 @@ const theme = {
         lineHeight: 1.5,
         overflow: `auto`,
         whiteSpace: "pre-wrap",
-        wordBreak:`break-word`,
+        wordBreak: `break-word`,
         p: 3,
         my: 4,
         borderRadius: `0px 0px 4px 4px`,
       },
       h1: {
-        fontSize: [35,44],
+        fontSize: [35, 44],
         fontFamily: "heading",
         fontWeight: "bold",
         color: "primary",
         my: 4,
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       h2: {
-        fontSize: [27,30],
+        fontSize: [27, 30],
         fontFamily: "heading",
         fontWeight: "bold",
         color: "primary",
         my: 3,
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       h3: {
         fontSize: [20, 26],
@@ -94,9 +94,9 @@ const theme = {
         fontWeight: "bold",
         color: "primary",
         my: 3,
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       h4: {
         fontSize: 22,
@@ -105,9 +105,9 @@ const theme = {
         fontWeight: "bold",
         color: "primary",
         my: 3,
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       h5: {
         fontSize: 20,
@@ -116,9 +116,9 @@ const theme = {
         fontWeight: "bold",
         color: "primary",
         my: 3,
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       hr: {
         borderColor: `hover`,
@@ -128,29 +128,29 @@ const theme = {
         fontSize: 20,
         fontFamily: "body",
         lineHeight: 1.7,
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       ul: {
         my: 2,
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       ol: {
         my: 2,
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       li: {
         fontSize: 20,
         fontFamily: "body",
         lineHeight: 1.7,
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       a: {
         color: `link`,
@@ -160,9 +160,9 @@ const theme = {
           color: `link`,
           borderBottom: `solid`,
         },
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       blockquote: {
         borderLeftColor: `highlight`,
@@ -173,9 +173,9 @@ const theme = {
         p: {
           fontStyle: `italic`,
         },
-        "&::selection": { 
-          bg: `highlight`
-        }
+        "&::selection": {
+          bg: `highlight`,
+        },
       },
       table: {
         width: `100%`,
@@ -183,8 +183,8 @@ const theme = {
         overflow: `auto`,
         borderCollapse: `collapse`,
         borderSpacing: 0,
-        [[`th`]] : { 
-          bg: `bg2`
+        [[`th`]]: {
+          bg: `bg2`,
         },
         [[`th`, `td`]]: {
           textAlign: `left`,
@@ -200,7 +200,6 @@ const theme = {
         maxWidth: "100%",
         textAlign: `center`,
         display: `block`,
-    
       },
     },
   },
@@ -222,13 +221,13 @@ const theme = {
         borderBottom: "none",
       },
     },
-    edit: { 
-      borderBottom: `none`, 
+    edit: {
+      borderBottom: `none`,
       fontSize: 15,
       "&:hover": {
         borderBottom: "none",
       },
-    }
+    },
   },
   layout: {
     header: {
@@ -274,7 +273,7 @@ const theme = {
       p: `15px`,
       borderRadius: `4px`,
     },
-    ctg2: { 
+    ctg2: {
       fontSize: 2,
       p: `2px 5px`,
       border: `2px solid`,
