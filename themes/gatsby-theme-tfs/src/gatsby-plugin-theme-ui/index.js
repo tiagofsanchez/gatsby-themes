@@ -181,16 +181,19 @@ const theme = {
         width: `100%`,
         my: 4,
         overflow: `auto`,
-        borderCollapse: `separate`,
+        borderCollapse: `collapse`,
         borderSpacing: 0,
+        [[`th`]] : { 
+          bg: `bg2`
+        },
         [[`th`, `td`]]: {
           textAlign: `left`,
           py: `8px`,
           pr: `4px`,
-          pl: 0,
-          borderColor: `muted`,
+          pl: 2,
           border: `1px`,
-          borderBottomStyle: `solid`,
+          borderStyle: `solid`,
+          borderColor: `primary`,
         },
       },
       img: {
