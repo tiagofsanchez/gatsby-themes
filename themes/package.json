@@ -4,6 +4,7 @@
     "gatsby-theme-acmeblog-data",
     "gatsby-theme-acmeblog",
     "gatsby-theme-acme",
-    "gatsby-theme-tfs"
+    "gatsby-theme-tfs",
+    "site"
   ]
 }

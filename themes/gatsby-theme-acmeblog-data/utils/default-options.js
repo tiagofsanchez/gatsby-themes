@@ -7,8 +7,8 @@ module.exports = (themeOptions) => {
   const otherImagesContentPath = themeOptions.otherImagesContentPath || `content/images`
   const tagsPath = themeOptions.tagsPath || `/tags`
   const categoryPath = themeOptions.categoryPath || `/category`
-  const postTableOfContents = themeOptions.postTableOfContents || false
-  const githubUrl = themeOptions.githubUrl || ``
+  const postTableOfContents = themeOptions.postTableOfContents || true
+  const githubUrl = themeOptions.githubUrl || `https://github.com/tiagofsanchez/tiagofsanchez/blob/master/`
   const gardenStartYear = themeOptions.gardenStartYear || 2019
 
   return {
