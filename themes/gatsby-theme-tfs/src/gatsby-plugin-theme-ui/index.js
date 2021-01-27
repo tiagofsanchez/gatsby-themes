@@ -65,7 +65,7 @@ const theme = {
         wordBreak: `break-word`,
         p: 3,
         pt:4,
-        my: 4,
+        mt:0,
         borderRadius: `0px 0px 4px 4px`,
       },
       h1: {

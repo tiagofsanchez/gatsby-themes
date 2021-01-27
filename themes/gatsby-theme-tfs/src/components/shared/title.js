@@ -40,13 +40,13 @@ const Title = (props) => {
       >
         {text}
       </Text>
-      <LanguageTag
+      {children && <LanguageTag
         sx={{
           bg: `highlight`,
         }}
       >
         {children}
-      </LanguageTag>
+      </LanguageTag>}
     </TitleContainer>
   );
 };
