@@ -56,9 +56,11 @@ module.exports = {
         categoryPath: "/mycategory", // the default will be /category
         postsContentPath: "myblog/posts", // the default will be content/posts
         pagesContentPath: "myblog/pages", // the default will be content/pages
+        postsContentThumbnail: "myblog/thumbnails", // the default will be content/thumbnails
         otherImagesContentPath: "mysuperimages", // the default will be images
-        postTableOfContents: true //the default is false,
-        githuUrl: `https://github.com/tiagofsanchez/tiagofsanchez/blob/master/` // else defaults to '' and doesn't render
+        postTableOfContents: false //the default is true
+        githubUrl: `https://github.com/tiagofsanchez/tiagofsanchez/blob/master/`, // else defaults to '' and doesn't render
+        gardenStartYear: 2021 // else it will default to 2019
       }
     },
   ],
