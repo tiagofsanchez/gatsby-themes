@@ -6,7 +6,7 @@
     "gatsby-plugin",
     "gatsby-theme"
   ],
-  "version": "2.0.02",
+  "version": "2.0.03",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {

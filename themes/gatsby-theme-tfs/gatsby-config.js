@@ -1,4 +1,6 @@
-module.exports =  {
+module.exports = (options) =>  {
+  
+  return {
     siteMetadata: {
       siteTitle: `tiagofsanchez`,
       siteTitleAlt: `digital garden - @tiagofsanchez/gatsby-theme-tfs`,
@@ -49,6 +51,7 @@ module.exports =  {
       },
       {
         resolve: "gatsby-theme-acmeblog-data",
+        options,
       },
     ],
-  };
+  }};
