@@ -1,0 +1,27 @@
+{
+  "name": "site",
+  "author": "Tiago Sanchez",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme"
+  ],
+  "version": "2.0.10",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.31.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "gatsby": "^2.31.0",
+    "gatsby-theme-tfs": "*"
+  },
+  "scripts": {
+    "develop": "gatsby clean & gatsby develop",
+    "clean": "gatsby clean",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  }
+}
