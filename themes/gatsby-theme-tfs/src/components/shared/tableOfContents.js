@@ -12,24 +12,37 @@ const Container = styled.div`
   margin-top: 10px;
 `;
 
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 10px;
-  align-items: center;
 `;
 
-const Ul = styled.ul``;
+const Rotate = styled.div`
+align-self: center;
+transform: ${(props) => props.rotate ? "rotate(90deg)"  : null};
+transition: transform 200ms ease-in;
+`
+
+const Ul = styled.ul`
+margin-top: 0px;
+display: ${(props) => props.show ? "block" : "none" };
+transition: display 1000ms ease-in;
+`
 
 const Li = styled.li`
   list-style-type: none;
 `;
 
+
 const TableOfContents = ({ tableOfContentsArray }) => {
   const [hideTable, setHideTable] = useState(false);
+  const [isAnimate, setisAnimate] = useState(false);
 
   const onHideTableHandler = () => {
     setHideTable(!hideTable);
+    setisAnimate(!isAnimate);
   };
 
   return (
@@ -43,16 +56,14 @@ const TableOfContents = ({ tableOfContentsArray }) => {
         onClick={onHideTableHandler}
       >
         <Grid>
-          {hideTable ? (
-            <IoIosArrowDropdown size={25} />
-          ) : (
+          <Rotate rotate={hideTable}>
             <IoIosArrowDropright size={25} />
-          )}
-          <h3 sx={{ m: `0px` }}> Table of contents</h3>
+          </Rotate>
+          <h3 sx={{ m: `0px`, pb: `4px` }}> Table of contents</h3>
         </Grid>
       </Link>
       {hideTable ? (
-        <Ul>
+        <Ul show={isAnimate}>
           {tableOfContentsArray.map((item) => (
             <Li key={item.url}>
               <Link
