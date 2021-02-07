@@ -4,7 +4,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-import { IoIosArrowDropdown, IoIosArrowDropright } from "react-icons/io";
+import { IoIosArrowDropright } from "react-icons/io";
 
 const Container = styled.div`
   padding: 5px;
