@@ -45,7 +45,7 @@ const Header = () => {
         </Link>
       </FlexBox>
       <NavContainer>
-        <Nav navigation={navigation} />
+        <Nav navigation={navigation} mode={colorMode}/>
         <IconButton
           aria-label="toggle color theme"
           onClick={changeModehandler}

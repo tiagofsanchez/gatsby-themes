@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import Avatar from "../shared/avatar";
 import MenuLink from "../Layout/menuLink";
 import Social from "../shared/social";
+import ToogleMode from '../Layout/toogleMode'
 
 const Container = styled.div`
   display: grid;
@@ -12,15 +13,18 @@ const Container = styled.div`
   grid-gap: 5px;
 `;
 
-const MegaMenuHero = () => {
+const MegaMenuHero = ({ closeMenu , mode}) => {
   return (
-    <Container>
-      <Avatar width="150px" />
-      <MenuLink link="about" />
-      <MenuLink link="anything" />
-      <MenuLink link="dashboard" />
-      <Social />
-    </Container>
+    <div>
+      <Container>
+        <Avatar width="150px" />
+        <MenuLink link="about" closeMenu={closeMenu} />
+        <MenuLink link="anything" closeMenu={closeMenu} />
+        <MenuLink link="dashboard" closeMenu={closeMenu} />
+        <Social />
+      </Container>
+      <ToogleMode mode={mode} />
+    </div>
   );
 };
 

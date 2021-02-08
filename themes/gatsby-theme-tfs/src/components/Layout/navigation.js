@@ -5,7 +5,7 @@ import { CgMenuGridR } from "react-icons/cg";
 
 import MegaMenu from "../Layout/megaMenu";
 
-const Navigation = ({ navigation }) => {
+const Navigation = ({ navigation , mode }) => {
   const [isMegaMenu, setIsMegaMenu] = useState(false);
 
   const showMenuHandler = () => {
@@ -23,12 +23,11 @@ const Navigation = ({ navigation }) => {
             width: `auto`,
             height: `auto`,
             cursor: `pointer`,
+            px: 3,
+            py: 1,
             ":hover": {
               boxShadow: "inset 0 0 0 0",
-              bg: `rgba(15, 14, 71, 0.3)`,
-              backdropFilter: `blur(40px) brightness(80%) saturate(150%)`,
-              border: `2px solid`,
-              borderColor: `highlight`,
+              bg: `bg2`,
             },
           }}
         >
@@ -36,7 +35,7 @@ const Navigation = ({ navigation }) => {
           <h5 sx={{ m: `0px`, ml: 1 }}>{navigation[0].title}</h5>
         </IconButton>
       </nav>
-      {isMegaMenu && <MegaMenu closeMenu={showMenuHandler} />}
+      {isMegaMenu && <MegaMenu closeMenu={showMenuHandler} mode={mode}/>}
     </div>
   );
 };

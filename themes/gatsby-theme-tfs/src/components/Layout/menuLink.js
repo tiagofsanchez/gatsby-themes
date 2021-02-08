@@ -3,9 +3,14 @@ import { jsx, IconButton } from "theme-ui";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
-const MenuLink = ({ link }) => {
+const MenuLink = ({ link, closeMenu }) => {
   return (
-    <Link to={`/${link}`} sx={{ variant: `links.link` }} aria-label={link}>
+    <Link
+      to={`/${link}`}
+      sx={{ variant: `links.link` }}
+      aria-label={link}
+      onClick={closeMenu}
+    >
       {link}
     </Link>
   );
