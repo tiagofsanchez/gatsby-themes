@@ -26,7 +26,7 @@ const Social = () => {
         aria-label="Tiago's Github"
       >
         <Logo
-          sx={{ bg: `hover`, "&:hover": { bg: `background` } }}
+          sx={{ "&:hover": { bg: `bg2` } }}
           src={github}
           alt="Tiago's Github"
         />
@@ -38,7 +38,7 @@ const Social = () => {
         aria-label="Tiago's LinkedIn"
       >
         <Logo
-          sx={{ bg: `hover`, "&:hover": { bg: `background` } }}
+          sx={{ "&:hover": { bg: `bg2` } }}
           src={linkedin}
           alt="Tiago's LinkedIn"
         />
@@ -50,7 +50,7 @@ const Social = () => {
         aria-label="Tiago's Instagram"
       >
         <Logo
-          sx={{ bg: `hover`, "&:hover": { bg: `background` } }}
+          sx={{ "&:hover": { bg: `bg2` } }}
           src={instagram}
           alt="Tiago's Instagram"
         />

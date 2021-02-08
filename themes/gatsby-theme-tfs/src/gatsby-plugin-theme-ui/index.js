@@ -64,8 +64,8 @@ const theme = {
         whiteSpace: "pre-wrap",
         wordBreak: `break-word`,
         p: 3,
-        pt:4,
-        mt:0,
+        pt: 4,
+        mt: 0,
         borderRadius: `0px 0px 4px 4px`,
       },
       h1: {
@@ -217,6 +217,18 @@ const theme = {
         borderBottom: "none",
       },
     },
+    link: {
+      fontSize: 2,
+      fontWeight: `bold`,
+      padding: `6px 10px`,
+      cursor: `pointer`,
+      borderBottom: "none",
+      "&:hover": {
+        borderBottom: "none",
+        bg: "bg2",
+        borderRadius: 4,
+      },
+    },
     secondary: {
       borderBottom: "none",
       "&:hover": {
@@ -327,9 +339,9 @@ const theme = {
       padding: `6px 10px`,
       bg: `background`,
       color: "highlight",
+      cursor: `pointer`,
       "&:hover": {
         bg: "bg2",
-        cursor: `pointer`,
       },
     },
   },
