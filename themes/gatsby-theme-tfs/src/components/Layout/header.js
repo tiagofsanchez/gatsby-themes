@@ -3,8 +3,6 @@ import { useColorMode, IconButton, jsx } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
-
-
 import useSiteMetadata from "../../hooks/useSiteMetadata";
 import ToogleMode from "./toogleMode";
 import Nav from "./navigation";
@@ -23,13 +21,14 @@ const FlexBox = styled.div`
 
 const NavContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2,auto);
+  align-items: center;
+  grid-template-columns: repeat(2, auto);
 `;
 
-const Header = ({showMenu}) => {
+const Header = () => {
   const [colorMode, setColorMode] = useColorMode();
   const { siteTitle, navigation } = useSiteMetadata();
-  
+
   const changeModehandler = () => {
     setColorMode(colorMode === "default" ? "light" : "default");
   };
@@ -56,7 +55,7 @@ const Header = ({showMenu}) => {
             borderRadius: `15px`,
             marginLeft: `10px`,
             width: `auto`,
-            cursor: `pointer`
+            cursor: `pointer`,
           }}
         >
           <ToogleMode mode={colorMode} onClick={changeModehandler} />
