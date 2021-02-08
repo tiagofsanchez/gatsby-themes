@@ -26,7 +26,7 @@ const NavContainer = styled.div`
   align-items: center;
 `;
 
-const Header = () => {
+const Header = ({showMenu}) => {
   const [colorMode, setColorMode] = useColorMode();
   const { siteTitle, navigation } = useSiteMetadata();
   

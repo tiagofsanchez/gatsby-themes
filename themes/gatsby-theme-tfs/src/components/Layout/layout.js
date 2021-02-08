@@ -10,15 +10,17 @@ const Grid = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-gap: 80px;
-
   height: 100vh;
 `;
 
 const Layout = ({ children }) => {
+
+
   if (typeof window !== "undefined") {
     // eslint-disable-next-line global-require
     require("smooth-scroll")('a[href*="#"]');
   }
+
 
   return (
     <Grid>
