@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, IconButton } from "theme-ui";
 import { useState } from "react";
+import { CgMenuGridR } from "react-icons/cg";
 
 import MegaMenu from "../Layout/megaMenu";
 
@@ -31,7 +32,8 @@ const Navigation = ({ navigation }) => {
             },
           }}
         >
-          <h5 sx={{ m: `0px` }}>{navigation[0].title}</h5>
+          <CgMenuGridR size={28} />{" "}
+          <h5 sx={{ m: `0px`, ml: 1 }}>{navigation[0].title}</h5>
         </IconButton>
       </nav>
       {isMegaMenu && <MegaMenu closeMenu={showMenuHandler} />}
