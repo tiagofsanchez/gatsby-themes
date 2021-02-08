@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useColorMode, Button, jsx } from "theme-ui";
+import { useColorMode, IconButton, jsx } from "theme-ui";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
@@ -22,8 +22,8 @@ const FlexBox = styled.div`
 `;
 
 const NavContainer = styled.div`
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2,auto);
 `;
 
 const Header = ({showMenu}) => {
@@ -47,7 +47,7 @@ const Header = ({showMenu}) => {
       </FlexBox>
       <NavContainer>
         <Nav navigation={navigation} />
-        <Button
+        <IconButton
           aria-label="toggle color theme"
           onClick={changeModehandler}
           style={{
@@ -55,10 +55,12 @@ const Header = ({showMenu}) => {
             backgroundColor: `none`,
             borderRadius: `15px`,
             marginLeft: `10px`,
+            width: `auto`,
+            cursor: `pointer`
           }}
         >
           <ToogleMode mode={colorMode} onClick={changeModehandler} />
-        </Button>
+        </IconButton>
       </NavContainer>
     </HeaderContainer>
   );

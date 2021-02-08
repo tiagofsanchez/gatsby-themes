@@ -1,21 +1,17 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, IconButton } from "theme-ui";
 import { useState } from "react";
 import styled from "@emotion/styled";
 
-const NavItems = styled.nav`
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-
-
 const MegaMenuContainer = styled.div`
-z-index: 100px; 
-background-color: white;
-width: 100%
-height: 100px;
-`
+  position: absolute;
+  z-index: 100;
+  left: 0px;
+  top: 80px;
+  background-color: white;
+  width: 100%;
+  height: 800px;
+`;
 
 const activeStyle = {
   borderRadius: `4px`,
@@ -29,19 +25,18 @@ const Navigation = ({ navigation }) => {
     setIsMegaMenu(!isMegaMenu);
   };
 
-
-
   return (
     <div>
-    <NavItems>
-      <h5
-        onClick={showMenuHandler}
-        sx={{ color: `primary`, margin: `0`, p: `10px` }}
-      >
-        {navigation[0].title}
-      </h5>
-    </NavItems>
-    {isMegaMenu && <MegaMenuContainer >T</MegaMenuContainer>}
+      <nav>
+        <IconButton
+          aria-label="Menu pop up"
+          onClick={showMenuHandler}
+          sx={{ color: `primary`, width: `auto`, cursor: `pointer` }}
+        >
+          <h5>{navigation[0].title}</h5>
+        </IconButton>
+      </nav>
+      {isMegaMenu && <MegaMenuContainer></MegaMenuContainer>}
     </div>
   );
 };
