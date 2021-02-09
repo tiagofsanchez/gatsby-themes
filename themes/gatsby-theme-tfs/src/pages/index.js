@@ -30,14 +30,14 @@ const IndexPage = () => {
       <section sx={{ variant: `layout.blogHeader` }}>
         <Hero />
       </section>
-      {/* <section sx={{ variant: `layout.container` }}>
+      <section sx={{ variant: `layout.container` }}>
         <h1>The stuff I like to write about</h1>
         <CategoryListing
           categoriesArray={categoriesArray}
           categoryPath={categoryPath}
           blogPath={blogPath}
         />
-      </section> */}
+      </section>
       <section sx={{ variant: `layout.container` }}>
         <h1>Selection of posts</h1>
         <PostCardList selectedPostsArray={selectedPostsArray} />

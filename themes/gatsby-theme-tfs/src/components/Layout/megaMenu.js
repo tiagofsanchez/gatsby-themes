@@ -17,7 +17,7 @@ const MegaMenuContainer = styled.div`
   backdrop-filter: blur(20px) brightness(50%) saturate(20%);
 `;
 
-const MegaMenu = ({ closeMenu , mode}) => {
+const MegaMenu = ({ closeMenu }) => {
   return (
     <MegaMenuContainer sx={{ borderColor: `highlight` }}>
       <Close
@@ -32,7 +32,7 @@ const MegaMenu = ({ closeMenu , mode}) => {
         onClick={closeMenu}
       />
       <div sx={{ variant: `layout.header`, py: 5 }}>
-        <MegaMenuHero closeMenu={closeMenu} mode={mode}/>
+        <MegaMenuHero closeMenu={closeMenu} />
       </div>
     </MegaMenuContainer>
   );

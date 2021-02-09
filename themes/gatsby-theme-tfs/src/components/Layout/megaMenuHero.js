@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
+import { Link } from "gatsby";
 
 import Avatar from "../shared/avatar";
 import MenuLink from "../Layout/menuLink";
 import Social from "../shared/social";
-import ToogleMode from '../Layout/toogleMode'
 
 const Container = styled.div`
   display: grid;
@@ -13,17 +13,28 @@ const Container = styled.div`
   grid-gap: 5px;
 `;
 
-const MegaMenuHero = ({ closeMenu , mode}) => {
+const MegaMenuHero = ({ closeMenu }) => {
   return (
     <div>
       <Container>
-        <Avatar width="150px" />
-        <MenuLink link="about" closeMenu={closeMenu} />
-        <MenuLink link="anything" closeMenu={closeMenu} />
-        <MenuLink link="dashboard" closeMenu={closeMenu} />
+        <Link
+          to="/"
+          sx={{
+            borderBottom: `none`,
+            ":hover": {
+              borderBottom: `none`,
+            },
+          }}
+          onClick={closeMenu}
+        >
+          <Avatar width="150px" />
+        </Link>
+        <MenuLink link="" text="home" closeMenu={closeMenu} />
+        <MenuLink link="about" text="about" closeMenu={closeMenu} />
+        <MenuLink link="anything" text="anything" closeMenu={closeMenu} />
+        <MenuLink link="dashboard" text="dashboard" closeMenu={closeMenu} />
         <Social />
       </Container>
-      <ToogleMode mode={mode} />
     </div>
   );
 };
