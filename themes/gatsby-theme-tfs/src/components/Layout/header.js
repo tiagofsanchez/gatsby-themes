@@ -49,7 +49,7 @@ const Header = () => {
         <IconButton
           aria-label="toggle color theme"
           onClick={changeModehandler}
-          style={{
+          sx={{
             padding: `0px`,
             backgroundColor: `none`,
             borderRadius: `15px`,

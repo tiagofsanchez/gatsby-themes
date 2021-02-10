@@ -11,6 +11,9 @@ const ToogleContainer = styled.div`
   border-radius: 15px;
   display: flex;
   align-items: center;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Toogle = styled.div`
