@@ -1,0 +1,18 @@
+.menu-enter {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+.menu-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 0.9s ease-out, transform 0.5s ease-out;
+}
+.menu-exit {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.menu-exit-active {
+  opacity: 0;
+  transform: translateY(-400px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}

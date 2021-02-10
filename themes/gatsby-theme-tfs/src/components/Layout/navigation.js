@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { CSSTransition } from "react-transition-group";
 import { CgMenuGridR } from "react-icons/cg";
 
-import "../../css/code.css";
+import "../../css/animation.css";
 import MegaMenu from "../Layout/megaMenu";
 
 const H5 = styled.h5`
@@ -21,12 +21,6 @@ const Navigation = ({ navigation }) => {
 
   const showMenuHandler = () => {
     setIsMegaMenu(!isMegaMenu);
-  };
-  console.log(isMegaMenu);
-
-  const animationTiming = {
-    enter: 10000,
-    exit: 1000,
   };
 
   return (
@@ -53,10 +47,10 @@ const Navigation = ({ navigation }) => {
       </nav>
       <CSSTransition
         in={isMegaMenu}
-        timeout={animationTiming}
+        timeout={1000}
         mountOnEnter
         unmountOnExit
-        classNames="fade"
+        classNames="menu"
       >
         <MegaMenu closeMenu={showMenuHandler} />
       </CSSTransition>
