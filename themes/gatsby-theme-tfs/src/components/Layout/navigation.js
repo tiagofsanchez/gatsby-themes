@@ -3,7 +3,7 @@ import { jsx, IconButton } from "theme-ui";
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { CSSTransition } from "react-transition-group";
-import { CgMenuGridR } from "react-icons/cg";
+import { TiThLargeOutline } from "react-icons/ti";
 
 import "../../css/animation.css";
 import MegaMenu from "../Layout/megaMenu";
@@ -42,7 +42,7 @@ const Navigation = ({ navigation }) => {
             },
           }}
         >
-          <CgMenuGridR size={28} /> <H5>{navigation[0].title}</H5>
+          <TiThLargeOutline size={28} /> <H5>{navigation[0].title}</H5>
         </IconButton>
       </nav>
       <CSSTransition
