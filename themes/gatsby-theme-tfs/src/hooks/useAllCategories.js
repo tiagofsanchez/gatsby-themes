@@ -3,9 +3,15 @@ import { useStaticQuery, graphql } from "gatsby";
 const useAllCategories = () => {
   const data = useStaticQuery(graphql`
     {
-      allMdx(sort: { fields: frontmatter___category, order: ASC }) {
+      allMdx(sort: { order: DESC, fields: frontmatter___date }) {
         group(field: frontmatter___category) {
           fieldValue
+          nodes {
+            frontmatter {
+              title
+            }
+            slug
+          }
         }
       }
     }

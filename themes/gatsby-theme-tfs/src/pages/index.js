@@ -39,11 +39,11 @@ const IndexPage = () => {
         />
       </section>
       <section sx={{ variant: `layout.container` }}>
-        <h1>My selection</h1>
+        <h1>Selection of posts</h1>
         <PostCardList selectedPostsArray={selectedPostsArray} />
       </section>
       <section sx={{ variant: `layout.container` }}>
-        <h1> My latest posts</h1>
+        <h1>Latest posts</h1>
         <div>
           {postsArray.map((blogPost) => {
             return <BlogHeaderMinimal {...blogPost} key={blogPost.title} />;

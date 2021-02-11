@@ -1,101 +1,59 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Link } from "gatsby";
+import { jsx, IconButton } from "theme-ui";
+import { useState } from "react";
 import styled from "@emotion/styled";
+import { CSSTransition } from "react-transition-group";
+import { TiThLargeOutline } from "react-icons/ti";
 
-const NavItems = styled.nav`
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  place-contents: center;
+import "../../css/animation.css";
+import MegaMenu from "../Layout/megaMenu";
+
+const H5 = styled.h5`
+  margin: 0px;
+  margin-left: 5px;
   @media (max-width: 600px) {
     display: none;
   }
 `;
 
-const MobileMenu = styled.nav`
-  position: fixed;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding-top: 10px;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  left: 0;
-  z-index: 100;
-  border-top: 1px solid;
-  @media (min-width: 599px) {
-    display: none;
-  }
-`;
-
-const FlexMenu = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0px 20px 0px 20px;
-`;
-
-const activeStyle = { borderRadius: `4px`, background:`rgba(194, 36, 93 , 0.4)`  };
-
 const Navigation = ({ navigation }) => {
+  const [isMegaMenu, setIsMegaMenu] = useState(false);
+
+  const showMenuHandler = () => {
+    setIsMegaMenu(!isMegaMenu);
+  };
+
   return (
     <div>
-      <NavItems>
-        {navigation.map((url) => (
-          <Link
-            key={url.title}
-            to={url.slug}
-            aria-label={`${url.title} page`}
-            sx={{ variant: `links.secondary` }}
-            activeStyle={activeStyle}
-          >
-            <h5 sx={{ color: `primary`, margin: `0`, p: `10px` }}>{url.title}</h5>
-          </Link>
-        ))}
-      </NavItems>
-      <MobileMenu sx={{ bg: `background` }}>
-        <FlexMenu>
-          <Link
-            to="/"
-            sx={{ borderBottom: `0px` , variant: `links.secondary`  }}
-            aria-label={`home page`}
-            activeStyle={activeStyle}
-          >
-            <h5
-              sx={{
-                color: `primary`,
-                margin: `0px`,
-                fontWeight: `600`,
-                textDecoration: `none`,
-                p: `0px 15px` ,
-              }}
-            >
-              Home
-            </h5>
-          </Link>
-          {navigation.map((nav) => (
-            <Link
-              key={nav.title}
-              to={nav.slug}
-              sx={{ borderBottom: `0px` , variant: `links.secondary` }}
-              activeStyle={activeStyle}
-            >
-              <h5
-                sx={{
-                  margin: `0`,
-                  color: `primary`,
-                  fontWeight: `600`,
-                  p: `0px 10px` 
-                }}
-              >
-                {nav.title}
-              </h5>
-            </Link>
-          ))}
-        </FlexMenu>
-      </MobileMenu>
+      <nav>
+        <IconButton
+          aria-label="Menu pop up"
+          onClick={showMenuHandler}
+          sx={{
+            color: `primary`,
+            width: `auto`,
+            height: `auto`,
+            cursor: `pointer`,
+            px: 3,
+            py: 1,
+            ":hover": {
+              boxShadow: "inset 0 0 0 0",
+              bg: `bg2`,
+            },
+          }}
+        >
+          <TiThLargeOutline size={28} /> <H5>{navigation[0].title}</H5>
+        </IconButton>
+      </nav>
+      <CSSTransition
+        in={isMegaMenu}
+        timeout={1000}
+        mountOnEnter
+        unmountOnExit
+        classNames="menu"
+      >
+        <MegaMenu closeMenu={showMenuHandler} />
+      </CSSTransition>
     </div>
   );
 };

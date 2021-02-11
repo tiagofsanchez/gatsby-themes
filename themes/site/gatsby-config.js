@@ -11,12 +11,8 @@ module.exports =  {
       author: `tiagofsanchez`,
       navigation: [
         {
-          title: `Digital garden`,
+          title: `Garden`,
           slug: `/anything`,
-        },
-        {
-          title: `Me`,
-          slug: `/about`,
         },
       ],
       externalLinks: [
