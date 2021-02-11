@@ -4,7 +4,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-import { IoIosArrowDropright } from "react-icons/io";
+import { IoIosArrowDropright, IoIosArrowDropdown } from "react-icons/io";
 
 const Container = styled.div`
   padding: 5px;
@@ -12,29 +12,22 @@ const Container = styled.div`
   margin-top: 10px;
 `;
 
-
 const Grid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 10px;
+  align-items: center;
 `;
 
-const Rotate = styled.div`
-align-self: center;
-transform: ${(props) => props.rotate ? "rotate(90deg)"  : null};
-transition: transform 200ms ease-in;
-`
-
 const Ul = styled.ul`
-margin-top: 0px;
-display: ${(props) => props.show ? "block" : "none" };
-transition: display 1000ms ease-in;
-`
+  margin-top: 0px;
+  display: ${(props) => (props.show ? "block" : "none")};
+  transition: display 1000ms ease-in;
+`;
 
 const Li = styled.li`
   list-style-type: none;
 `;
-
 
 const TableOfContents = ({ tableOfContentsArray }) => {
   const [hideTable, setHideTable] = useState(false);
@@ -56,9 +49,11 @@ const TableOfContents = ({ tableOfContentsArray }) => {
         onClick={onHideTableHandler}
       >
         <Grid>
-          <Rotate rotate={hideTable}>
+          {hideTable ? (
+            <IoIosArrowDropdown size={25} />
+          ) : (
             <IoIosArrowDropright size={25} />
-          </Rotate>
+          )}
           <h3 sx={{ m: `0px`, pb: `4px` }}> Table of contents</h3>
         </Grid>
       </Link>

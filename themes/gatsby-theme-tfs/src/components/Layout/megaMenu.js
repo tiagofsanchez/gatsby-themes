@@ -34,8 +34,8 @@ const MegaMenu = ({ closeMenu }) => {
         sx={{
           position: `absolute`,
           right: `0px`,
-          mt: 2,
-          mr: 2,
+          mt: 4,
+          mr: 4,
           color: `highlight`,
           cursor: `pointer`,
         }}
