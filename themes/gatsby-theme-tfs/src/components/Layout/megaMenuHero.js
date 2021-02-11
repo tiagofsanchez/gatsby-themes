@@ -29,10 +29,10 @@ const MegaMenuHero = ({ closeMenu }) => {
         >
           <Avatar width="150px" />
         </Link>
-        <MenuLink link="" text="home" closeMenu={closeMenu} />
-        <MenuLink link="about" text="about" closeMenu={closeMenu} />
-        <MenuLink link="anything" text="anything" closeMenu={closeMenu} />
-        <MenuLink link="dashboard" text="dashboard" closeMenu={closeMenu} />
+        <MenuLink link="/" text="home" closeMenu={closeMenu} />
+        <MenuLink link="/about" text="about" closeMenu={closeMenu} />
+        <MenuLink link="/anything" text="anything" closeMenu={closeMenu} />
+        <MenuLink link="/dashboard" text="dashboard" closeMenu={closeMenu} />
         <Social />
       </Container>
     </div>

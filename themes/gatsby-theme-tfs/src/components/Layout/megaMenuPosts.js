@@ -1,17 +1,25 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
+import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 import MenuLink from "./menuLink";
 
-const MegaMenuPosts = () => {
+const _ = require("lodash");
+
+const MegaMenuPosts = ({ category, closeMenu }) => {
+  const { fieldValue, nodes } = category;
+  const { blogPath, categoryPath } = useAcmeBlogConfig();
   return (
     <div>
-      <h3>This category</h3>
-      <h5>Bla</h5>
-      <h5>Bla</h5>
-      <h5>Bla</h5>
-      <h5>Bla</h5>
-      <MenuLink link="/" text="something" />
+      <h3>{fieldValue}</h3>
+      {nodes.slice(0, 4).map((post) => (
+        <p key={post.frontmatter.title}>{post.frontmatter.title}</p>
+      ))}
+      <MenuLink
+        closeMenu={closeMenu}
+        link={`${blogPath}${categoryPath}/${_.kebabCase(fieldValue)}`}
+        text={`${_.kebabCase(fieldValue)}`}
+      />
     </div>
   );
 };

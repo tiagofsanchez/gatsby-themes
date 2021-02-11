@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 const MenuLink = ({ link, closeMenu, text }) => {
   return (
     <Link
-      to={`/${link}`}
+      to={`${link}`}
       sx={{ variant: `links.link` }}
       aria-label={link}
       onClick={closeMenu}
