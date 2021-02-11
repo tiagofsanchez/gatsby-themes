@@ -3,18 +3,23 @@ import { jsx, Close } from "theme-ui";
 import styled from "@emotion/styled";
 
 import MegaMenuHero from "../Layout/megaMenuHero";
+import MegaMenuPosts from "../Layout/megaMenuPosts";
 
 const MegaMenuContainer = styled.div`
   position: absolute;
   z-index: 100;
   top: 100px;
-  left: 5%;
-  width: 90%;
+  left: 0px;
+  width: 100%;
   height: auto;
-  border: 2px solid;
-  border-radius: 12px;
   background: rgba(15, 14, 71, 0.3);
   backdrop-filter: blur(20px) brightness(50%) saturate(20%);
+`;
+
+const SectionContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
 `;
 
 const MegaMenu = ({ closeMenu }) => {
@@ -31,9 +36,11 @@ const MegaMenu = ({ closeMenu }) => {
         }}
         onClick={closeMenu}
       />
-      <div sx={{ variant: `layout.header`, py: 5 }}>
+      <SectionContainer sx={{ variant: `layout.header`, py: 5 }}>
         <MegaMenuHero closeMenu={closeMenu} />
-      </div>
+        <MegaMenuPosts />
+        <MegaMenuPosts />
+      </SectionContainer>
     </MegaMenuContainer>
   );
 };
