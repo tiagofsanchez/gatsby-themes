@@ -18,7 +18,7 @@ const MegaMenuPosts = ({ category, closeMenu }) => {
       <MenuLink
         closeMenu={closeMenu}
         link={`${blogPath}${categoryPath}/${_.kebabCase(fieldValue)}`}
-        text={`${_.kebabCase(fieldValue)}`}
+        text={`all about ${_.kebabCase(fieldValue)}`}
       />
     </div>
   );

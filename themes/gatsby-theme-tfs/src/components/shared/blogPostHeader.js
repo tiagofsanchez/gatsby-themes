@@ -6,9 +6,9 @@ import moment from "moment";
 import Img from "gatsby-image";
 
 import ReadMore from "./readMore";
+import BlogPostHover from "../shared/blogPostHover";
 
 const PostHeaderContainerMinimal = styled.div`
-  padding: 20px 10px;
   border-radius: 4px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -83,43 +83,43 @@ export const BlogHeaderMinimal = ({
 }) => {
   const newest = moment(new Date(date)) > moment().subtract(1, "months");
   return (
-    <PostHeaderContainerMinimal
-      sx={{ ":hover": { bg: `hover`, boxShadow: "inset 0 0 0 0" } }}
-    >
-      <Link
-        style={{
-          textDecoration: `none`,
-          color: `inherit`,
-          fontWeight: `normal`,
-        }}
-        to={slug}
-        aria-label={`post title: ${title}`}
-      >
-        <Grid>
-          <ThumbnailContainer small={true} sx={{ alignSelf: `baseline` }}>
-            <Img fluid={thumbnail.childImageSharp.fluid} />
-          </ThumbnailContainer>
-          <div>
-            <h2 sx={{ marginBottom: `3px`, mt: `-8px` }}>{title}</h2>
-            <p sx={{ my: `5px`, opacity: `0.5` }}>
-              {date} . {timeToRead}
-            </p>
-            <p sx={{ my: 2 }}>{excerpt}</p>
-            <ReadMore />
-          </div>
-          {newest && (
-            <p
-              sx={{
-                color: `highlight`,
-                fontWeight: `900`,
-                alignSelf: `flex-start`,
-              }}
-            >
-              new
-            </p>
-          )}
-        </Grid>
-      </Link>
+    <PostHeaderContainerMinimal>
+      <BlogPostHover>
+        <Link
+          style={{
+            textDecoration: `none`,
+            color: `inherit`,
+            fontWeight: `normal`,
+          }}
+          to={slug}
+          aria-label={`post title: ${title}`}
+        >
+          <Grid>
+            <ThumbnailContainer small={true} sx={{ alignSelf: `baseline` }}>
+              <Img fluid={thumbnail.childImageSharp.fluid} />
+            </ThumbnailContainer>
+            <div>
+              <h2 sx={{ marginBottom: `3px`, mt: `-8px` }}>{title}</h2>
+              <p sx={{ my: `5px`, opacity: `0.5` }}>
+                {date} . {timeToRead}
+              </p>
+              <p sx={{ my: 2 }}>{excerpt}</p>
+              <ReadMore />
+            </div>
+            {newest && (
+              <p
+                sx={{
+                  color: `highlight`,
+                  fontWeight: `900`,
+                  alignSelf: `flex-start`,
+                }}
+              >
+                new
+              </p>
+            )}
+          </Grid>
+        </Link>
+      </BlogPostHover>
     </PostHeaderContainerMinimal>
   );
 };
