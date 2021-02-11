@@ -8,7 +8,7 @@ const MenuLink = ({ link, closeMenu, text }) => {
     <Link
       to={`${link}`}
       sx={{ variant: `links.link` }}
-      aria-label={link}
+      aria-label={`Go to the following page: ${link}`}
       onClick={closeMenu}
     >
       {text}

@@ -3,6 +3,7 @@ import { jsx, Close } from "theme-ui";
 import styled from "@emotion/styled";
 
 import useAllCategories from "../../hooks/useAllCategories";
+import useAcmeBlogConfig from "../../hooks/useAcmeBlogConfig";
 import MegaMenuHero from "../Layout/megaMenuHero";
 import MegaMenuPosts from "../Layout/megaMenuPosts";
 
@@ -25,6 +26,7 @@ const SectionContainer = styled.div`
 
 const MegaMenu = ({ closeMenu }) => {
   const categoriesArray = useAllCategories();
+  const { blogPath, categoryPath } = useAcmeBlogConfig();
 
   return (
     <MegaMenuContainer sx={{ borderColor: `highlight` }}>
@@ -40,12 +42,14 @@ const MegaMenu = ({ closeMenu }) => {
         onClick={closeMenu}
       />
       <SectionContainer sx={{ variant: `layout.header`, py: 5 }}>
-        <MegaMenuHero closeMenu={closeMenu} />
+        <MegaMenuHero closeMenu={closeMenu} blogPath={blogPath} />
         {categoriesArray.map((category) => (
           <MegaMenuPosts
             key={category.fieldValue}
             category={category}
             closeMenu={closeMenu}
+            blogPath={blogPath}
+            categoryPath={categoryPath}
           />
         ))}
       </SectionContainer>

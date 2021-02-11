@@ -219,14 +219,12 @@ const theme = {
     },
     link: {
       fontSize: 2,
+      m: 2, 
       fontWeight: `bold`,
-      padding: `6px 10px`,
       cursor: `pointer`,
       borderBottom: "none",
       "&:hover": {
         borderBottom: "none",
-        bg: "bg2",
-        borderRadius: 4,
       },
     },
     secondary: {

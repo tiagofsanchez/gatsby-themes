@@ -13,7 +13,7 @@ const Container = styled.div`
   grid-gap: 5px;
 `;
 
-const MegaMenuHero = ({ closeMenu }) => {
+const MegaMenuHero = ({ closeMenu, blogPath }) => {
   return (
     <div>
       <Container>
@@ -31,7 +31,11 @@ const MegaMenuHero = ({ closeMenu }) => {
         </Link>
         <MenuLink link="/" text="home" closeMenu={closeMenu} />
         <MenuLink link="/about" text="about" closeMenu={closeMenu} />
-        <MenuLink link="/anything" text="anything" closeMenu={closeMenu} />
+        <MenuLink
+          link={`${blogPath}`}
+          text={`${blogPath.slice(1, blogPath.length)}`}
+          closeMenu={closeMenu}
+        />
         <MenuLink link="/dashboard" text="dashboard" closeMenu={closeMenu} />
         <Social />
       </Container>
