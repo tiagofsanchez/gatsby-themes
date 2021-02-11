@@ -24,6 +24,7 @@ const IndexPage = () => {
   const categoriesArray = useAllCategories();
   const { categoryPath, blogPath } = useAcmeBlogConfig();
 
+  console.log(categoriesArray)
   return (
     <GridContainer>
       <SEO />

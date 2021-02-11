@@ -6,6 +6,12 @@ const useAllCategories = () => {
       allMdx(sort: { fields: frontmatter___category, order: ASC }) {
         group(field: frontmatter___category) {
           fieldValue
+          nodes {
+            frontmatter {
+              title
+            }
+            slug
+          }
         }
       }
     }
