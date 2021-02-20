@@ -7,50 +7,64 @@ import MenuLink from "./menuLink";
 
 const _ = require("lodash");
 
-const Container = styled.div`
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  a {
+    margin-left: 0px;
+  }
+`;
+
+const GridContainer = styled.div`
   display: grid;
   grid-template-rows: auto;
   grid-gap: 5px;
+  p {
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, 0.8);
+  }
 `;
 
 const MegaMenuPosts = ({ category, closeMenu, blogPath, categoryPath }) => {
   const { fieldValue, nodes } = category;
 
   return (
-    <div>
+    <div sx={{ height:`100%` }}>
       <h3 sx={{ color: `white`, mt: `0px` }}>{fieldValue}</h3>
-      <Container>
-        {nodes.slice(0, 4).map((post) => (
-          <Link
-            key={post.frontmatter.title}
-            to={`${blogPath}/${post.slug}`}
-            aria-label={`post about: ${post.frontmatter.title}`}
-            onClick={closeMenu}
-            sx={{ variant: `links.link`, m: `0px`, fontWeight: `400` }}
-          >
-            <p
-              sx={{
-                p: `5px 10px`,
-                borderRadius: 4,
-                my: `0px`,
-                color: `rgba(255,255,255, 0.8)`,
-                ":hover": {
-                  boxShadow: "inset 0 0 0 0",
-                  bg: `bg2`,
-                },
-              }}
+      <FlexContainer>
+        <GridContainer>
+          {nodes.slice(0, 4).map((post) => (
+            <Link
+              key={post.frontmatter.title}
+              to={`${blogPath}/${post.slug}`}
+              aria-label={`post about: ${post.frontmatter.title}`}
+              onClick={closeMenu}
+              sx={{ variant: `links.link`, m: `0px`, fontWeight: `400` }}
             >
-              {post.frontmatter.title}
-            </p>
-          </Link>
-        ))}
+              <p
+                sx={{
+                  ":hover": {
+                    boxShadow: "inset 0 0 0 0",
+                    bg: `bg2`,
+                  },
+                }}
+              >
+                {post.frontmatter.title}
+              </p>
+            </Link>
+          ))}
+        </GridContainer>
 
         <MenuLink
           closeMenu={closeMenu}
           link={`${blogPath}${categoryPath}/${_.kebabCase(fieldValue)}`}
           text={`all about ${_.kebabCase(fieldValue)}`}
         />
-      </Container>
+      </FlexContainer>
     </div>
   );
 };

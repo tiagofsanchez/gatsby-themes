@@ -16,6 +16,8 @@ const MegaMenuContainer = styled.div`
   height: auto;
   background: rgba(15, 14, 71, 0.3);
   backdrop-filter: blur(20px) brightness(50%) saturate(20%);
+  border-bottom: solid 1px;
+  border-top: solid 1px;
 `;
 
 const SectionContainer = styled.div`
@@ -41,7 +43,7 @@ const MegaMenu = ({ closeMenu }) => {
         }}
         onClick={closeMenu}
       />
-      <SectionContainer sx={{ variant: `layout.header`, py: 5 }}>
+      <SectionContainer sx={{ variant: `layout.header`, my: 5 }}>
         <MegaMenuHero closeMenu={closeMenu} blogPath={blogPath} />
         {categoriesArray.map((category) => (
           <MegaMenuPosts
