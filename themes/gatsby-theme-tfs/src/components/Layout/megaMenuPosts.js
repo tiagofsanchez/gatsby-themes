@@ -7,9 +7,13 @@ import MenuLink from "./menuLink";
 
 const _ = require("lodash");
 
+const PostContainer = styled.div``;
+
 const FlexContainer = styled.div`
   display: flex;
+  height: min-content; // This is just wrong and I don't get it
   flex-direction: column;
+  justify-content: space-between;
   a {
     margin-left: 0px;
   }
@@ -33,7 +37,7 @@ const MegaMenuPosts = ({ category, closeMenu, blogPath, categoryPath }) => {
   const { fieldValue, nodes } = category;
 
   return (
-    <div sx={{ height:`100%` }}>
+    <PostContainer>
       <h3 sx={{ color: `white`, mt: `0px` }}>{fieldValue}</h3>
       <FlexContainer>
         <GridContainer>
@@ -58,14 +62,13 @@ const MegaMenuPosts = ({ category, closeMenu, blogPath, categoryPath }) => {
             </Link>
           ))}
         </GridContainer>
-
         <MenuLink
           closeMenu={closeMenu}
           link={`${blogPath}${categoryPath}/${_.kebabCase(fieldValue)}`}
           text={`all about ${_.kebabCase(fieldValue)}`}
         />
       </FlexContainer>
-    </div>
+    </PostContainer>
   );
 };
 

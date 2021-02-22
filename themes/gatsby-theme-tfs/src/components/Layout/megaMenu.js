@@ -22,6 +22,7 @@ const MegaMenuContainer = styled.div`
 
 const SectionContainer = styled.div`
   display: grid;
+  height: min-content;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
 `;
