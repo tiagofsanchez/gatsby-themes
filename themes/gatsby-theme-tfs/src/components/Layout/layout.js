@@ -13,14 +13,16 @@ const Grid = styled.div`
   height: 100vh;
 `;
 
+const FooterContainer = styled.footer`
+  padding-top: 40px;
+  padding-bottom: 40px;
+`;
+
 const Layout = ({ children }) => {
-
-
   if (typeof window !== "undefined") {
     // eslint-disable-next-line global-require
     require("smooth-scroll")('a[href*="#"]');
   }
-
 
   return (
     <Grid>
@@ -30,9 +32,9 @@ const Layout = ({ children }) => {
       <main sx={{ variant: `layout.main`, alignSelf: `grid-start` }}>
         {children}
       </main>
-      <footer sx={{ variant: `layout.footer` }}>
+      <FooterContainer sx={{ bg: `hover`}}>
         <Footer />
-      </footer>
+      </FooterContainer>
     </Grid>
   );
 };

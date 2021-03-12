@@ -7,7 +7,9 @@ import MenuLink from "./menuLink";
 
 const _ = require("lodash");
 
-const PostContainer = styled.div``;
+const PostContainer = styled.div`
+  min-height: 0;
+`;
 
 const FlexContainer = styled.div`
   display: flex;
