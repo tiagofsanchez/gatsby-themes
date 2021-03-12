@@ -16,6 +16,8 @@ const Grid = styled.div`
 const FooterContainer = styled.footer`
   padding-top: 40px;
   padding-bottom: 40px;
+  background: rgba(15, 14, 71, 0.3);  
+  backdrop-filter: blur(20px) brightness(50%) saturate(20%);
 `;
 
 const Layout = ({ children }) => {
@@ -32,7 +34,7 @@ const Layout = ({ children }) => {
       <main sx={{ variant: `layout.main`, alignSelf: `grid-start` }}>
         {children}
       </main>
-      <FooterContainer sx={{ bg: `hover`}}>
+      <FooterContainer >
         <Footer />
       </FooterContainer>
     </Grid>
